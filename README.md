@@ -1,4 +1,4 @@
-# katnayan
+# A rough working directory for my personal use. 
 
 demo.py == ruben's original code (maybe with some notes). contains both the preprocessor-SDWAN and the template engine functions
 

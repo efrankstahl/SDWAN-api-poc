@@ -1,4 +1,8 @@
 # sim of the GUI sending me the... is it a dictionary containing the yaml file?'
+
+print("Testing git.")
+
+
 '''
  - he says that 'tehse are the api values that the gui would send to you (the preproc)'
 	document_outline : the file/folder with all the data. 

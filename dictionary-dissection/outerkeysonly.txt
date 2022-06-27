@@ -1,0 +1,24 @@
+dict_keys([Path('app_defs_custom'), Path('app_defs_system_or'), Path('circuit_categories'), Path('global_prefixes'), Path('jinja_rendered_doc'), Path('nat_policy_sets'), Path('nat_policy_stacks'), Path('nat_prefixes_all'), Path('ngfw_policy_sets'), Path('ngfw_policy_stacks'), Path('ngfw_prefixes_global'), Path('ngfw_prefixes_local'), Path('ngfw_zones'), Path('old_stack_poly_version'), Path('path_policy_sets'), Path('path_policy_stacks'), Path('path_prefixes_all'), Path('qos_policy_sets'), Path('qos_policy_stacks'), Path('qos_prefixes_all'), Path('sdwan_apps'), Path('sites'), Path('stack_policies_formatted')])
+app_defs_custom
+app_defs_system_or
+circuit_categories
+global_prefixes
+jinja_rendered_doc
+nat_policy_sets
+nat_policy_stacks
+nat_prefixes_all
+ngfw_policy_sets
+ngfw_policy_stacks
+ngfw_prefixes_global
+ngfw_prefixes_local
+ngfw_zones
+old_stack_poly_version
+path_policy_sets
+path_policy_stacks
+path_prefixes_all
+qos_policy_sets
+qos_policy_stacks
+qos_prefixes_all
+sdwan_apps
+sites
+stack_policies_formatted

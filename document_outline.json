@@ -1,0 +1,4064 @@
+[
+    {
+        "HEADING_2": {
+            "text": "Enterprise Global Prefixes"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "List of globally identified Enterprise Prefixes."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Enterprise Global Prefixes"
+            ],
+            "col_widths": [],
+            "head_caption": {
+                "text": "Table 4 \u2013 Enterprise Global Prefixes"
+            },
+            "values": [
+                [
+                    "10.0.0.0/8\n172.16.0.0/12\n192.168.0.0/16\n159.1.1.1/32"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_2": {
+            "text": "Stack Policies"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "This section describes the Application Policies to be used for standardization of the SD-WAN deployment. Prisma SD-WAN uses mapping of 3rd party services and Prisma SD-WAN data centers to allow flexibility when creating network policy rules, while accounting for uniqueness across sites."
+        }
+    },
+    {
+        "HEADING_3": {
+            "text": "Path Policies"
+        }
+    },
+    {
+        "HEADING_4": {
+            "text": "Path Policy Stack(s)"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows the Path Policy Stacks and associated Policy Sets."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Path Policy Stack",
+                "Path Policy Set(s)",
+                "Default Path Policy Set"
+            ],
+            "col_widths": [
+                120
+            ],
+            "head_caption": {
+                "text": "Table 5 \u2013 Path Policy Stack(s)"
+            },
+            "values": [
+                [
+                    "Rich - Default Path (Simple)",
+                    "Rich - Default Path Policy Set (Simple)",
+                    "Rich - Default Path Default Rule Policy Set (Simple)"
+                ],
+                [
+                    "YOSEF_TEST_1",
+                    "YOSEF-TEST-1",
+                    "AC-Path-Policy-Set"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_4": {
+            "text": "Path Policy Set(s)"
+        }
+    },
+    {
+        "HEADING_5": {
+            "text": "Rich - Default Path Policy Set (Simple)"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows the path policy rules in the Rich - Default Path Policy Set (Simple) Policy Set."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Rule Name",
+                "Order No.",
+                "Included App(s)",
+                "Active Path",
+                "Backup Path",
+                "Path of Last Resort",
+                "DC Group"
+            ],
+            "col_widths": [
+                60,
+                42,
+                70,
+                70,
+                70
+            ],
+            "head_caption": {
+                "text": "Table 6 \u2013 Rich - Default Path Policy Set (Simple) Path Policy Set Rule(s)"
+            },
+            "values": [
+                [
+                    "ICMP Test",
+                    1024,
+                    "ICMP",
+                    "Direct on Primary-Internet",
+                    "N/A",
+                    "N/A",
+                    "None"
+                ],
+                [
+                    "CloudGenix",
+                    1024,
+                    "CloudGenix\nCloudGenix Control",
+                    "Direct on Any Public",
+                    "N/A",
+                    "N/A",
+                    "None"
+                ],
+                [
+                    "DIA Office 365",
+                    1024,
+                    "Office365\nOffice365 Service Mgmt\nOffice365 Portal\nOffice365 Video",
+                    "Direct on Any Public",
+                    "N/A",
+                    "N/A",
+                    "None"
+                ],
+                [
+                    "Guest Wifi",
+                    1024,
+                    "Any",
+                    "Direct on Any Public",
+                    "Prisma SD-WAN VPN on Any Public",
+                    "N/A",
+                    "None"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_5": {
+            "text": "Rich - Default Path Default Rule Policy Set (Simple)"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows the path policy rules in the Rich - Default Path Default Rule Policy Set (Simple) Policy Set."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Rule Name",
+                "Order No.",
+                "Included App(s)",
+                "Active Path",
+                "Backup Path",
+                "Path of Last Resort",
+                "DC Group"
+            ],
+            "col_widths": [
+                60,
+                42,
+                70,
+                70,
+                70
+            ],
+            "head_caption": {
+                "text": "Table 7 \u2013 Rich - Default Path Default Rule Policy Set (Simple) Path Policy Set Rule(s)"
+            },
+            "values": [
+                [
+                    "enterprise-default",
+                    1024,
+                    "Any",
+                    "Prisma SD-WAN VPN on Primary-Internet",
+                    "Prisma SD-WAN VPN on Secondary-Internet",
+                    "N/A",
+                    "Active = Rich-Primary-DC\nBackup = Rich-Backup-DC"
+                ],
+                [
+                    "default",
+                    1024,
+                    "Any",
+                    "Direct on Any Public",
+                    "N/A",
+                    "N/A",
+                    "None"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_5": {
+            "text": "YOSEF-TEST-1"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows the path policy rules in the YOSEF-TEST-1 Policy Set."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Rule Name",
+                "Order No.",
+                "Included App(s)",
+                "Active Path",
+                "Backup Path",
+                "Path of Last Resort",
+                "DC Group"
+            ],
+            "col_widths": [
+                60,
+                42,
+                70,
+                70,
+                70
+            ],
+            "head_caption": {
+                "text": "Table 8 \u2013 YOSEF-TEST-1 Path Policy Set Rule(s)"
+            },
+            "values": [
+                [
+                    "Citrix",
+                    1024,
+                    "Any",
+                    "Prisma SD-WAN VPN on Any Private",
+                    "Prisma SD-WAN VPN on Any Public",
+                    "N/A",
+                    "Active = Yosef-Primary-DC\nBackup = Yosef-Secondary-DC"
+                ],
+                [
+                    "Microsoft-Backhaul",
+                    1024,
+                    "Microsoft\nMicrosoft Azure\nMicrosoft Message Queuing\nMicrosoft Operations Manager\nMicrosoft update",
+                    "Prisma SD-WAN VPN on Any Public\n\nPrisma SD-WAN VPN on Any Private",
+                    "N/A",
+                    "N/A",
+                    "Active = Yosef-Primary-DC\nBackup = Yosef-Secondary-DC"
+                ],
+                [
+                    "Zoom-DIA",
+                    1024,
+                    "Zoom.us",
+                    "Direct on Any Public",
+                    "N/A",
+                    "N/A",
+                    "None"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_5": {
+            "text": "AC-Path-Policy-Set"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows the path policy rules in the AC-Path-Policy-Set Policy Set."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Rule Name",
+                "Order No.",
+                "Included App(s)",
+                "Active Path",
+                "Backup Path",
+                "Path of Last Resort",
+                "DC Group"
+            ],
+            "col_widths": [
+                60,
+                42,
+                70,
+                70,
+                70
+            ],
+            "head_caption": {
+                "text": "Table 9 \u2013 AC-Path-Policy-Set Path Policy Set Rule(s)"
+            },
+            "values": [
+                [
+                    "enterprise-default",
+                    1024,
+                    "Any",
+                    "Prisma SD-WAN VPN on Any Public\n\nDirect on Any Private\n\nPrisma SD-WAN VPN on Any Private",
+                    "N/A",
+                    "N/A",
+                    "None"
+                ],
+                [
+                    "default",
+                    1024,
+                    "Any",
+                    "Direct on Any Public\n\nPrisma SD-WAN VPN on Any Public\n\nDirect on Any Private\n\nPrisma SD-WAN VPN on Any Private",
+                    "N/A",
+                    "N/A",
+                    "None"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_3": {
+            "text": "QoS Policies"
+        }
+    },
+    {
+        "HEADING_4": {
+            "text": "QoS Policy Stack(s)"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows the QoS Policy Stacks and associated Policy Sets."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "QoS Policy Stack",
+                "QoS Policy Set(s)",
+                "Default QoS Policy Set"
+            ],
+            "col_widths": [
+                120
+            ],
+            "head_caption": {
+                "text": "Table 10 \u2013 QoS Policy Stack(s)"
+            },
+            "values": [
+                [
+                    "Rich - Default Priority (Simple)",
+                    "Rich - Default Priority Policy Set (Simple)",
+                    "Rich - Default Priority Default Rule Policy Set (Simple)"
+                ],
+                [
+                    "Yosef-QoS-Stack (Simple)",
+                    "Yosef-QoS-Stack Policy Set (Simple)",
+                    "Yosef-QoS-Stack Default Rule Policy Set (Simple)"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_4": {
+            "text": "QoS Policy Set(s)"
+        }
+    },
+    {
+        "HEADING_5": {
+            "text": "Rich - Default Priority Policy Set (Simple)"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows the QoS policy rules in the Rich - Default Priority Policy Set (Simple) Policy Set."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Rule Name",
+                "Order No.",
+                "Source Prefix",
+                "Destination Prefix",
+                "Included App(s)",
+                "QoS Class",
+                "DSCP Mark/Remark"
+            ],
+            "col_widths": [
+                60,
+                42,
+                70,
+                70,
+                70
+            ],
+            "head_caption": {
+                "text": "Table 11 \u2013 Rich - Default Priority Policy Set (Simple) QoS Policy Set Rule(s)"
+            },
+            "values": [
+                [
+                    "Zoom-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "Zoom.us",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "Ring-Central-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "Ring Central",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "sip-tls-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "sip-tls",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "Dynamics365-Financials-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "Dynamics 365 Financials",
+                    "Gold",
+                    "None"
+                ],
+                [
+                    "Dynamics365-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "Dynamics 365",
+                    "Gold",
+                    "None"
+                ],
+                [
+                    "Dynamics365-Marketing-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "Dynamics 365 Marketing",
+                    "Gold",
+                    "None"
+                ],
+                [
+                    "Office-365-Mgmt-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "Office365 Service Mgmt",
+                    "Gold",
+                    "None"
+                ],
+                [
+                    "Office-365-Video-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "Office365 Video",
+                    "Gold",
+                    "None"
+                ],
+                [
+                    "service-now-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "ServiceNow",
+                    "Gold",
+                    "None"
+                ],
+                [
+                    "OneNote-365-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "OneNote",
+                    "Gold",
+                    "None"
+                ],
+                [
+                    "Office-365-Outlook-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "Outlook",
+                    "Gold",
+                    "None"
+                ],
+                [
+                    "dns-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "dns",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "webex-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "WebEx",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "cisco-callmanager-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "cisco-callmanager",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "skype-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "Skype",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "sip-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "sip",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "workday-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "Workday",
+                    "Gold",
+                    "None"
+                ],
+                [
+                    "skype-media-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "skype-media",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "Office-365-Lync-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "Lync",
+                    "Gold",
+                    "None"
+                ],
+                [
+                    "shoretel-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "shoretel",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "successfactors-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "SuccessFactors",
+                    "Gold",
+                    "None"
+                ],
+                [
+                    "rtcp-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "rtcp",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "h323-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "h323",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "citriximaclient-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "citriximaclient",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "citrixima-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "citrixima",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "citrixadmin-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "citrixadmin",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "PCoIP-UDP-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "PC Over IP UDP",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "PCoIP-TCP-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "PC Over IP TCP",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "rtp-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "rtp",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "Office-365-portal-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "Office365 Portal",
+                    "Gold",
+                    "None"
+                ],
+                [
+                    "Office-365-SharePoint-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "SharePoint",
+                    "Gold",
+                    "None"
+                ],
+                [
+                    "RDP-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "Remote Desktop Protocol",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "skinny-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "skinny",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "gotomeeting-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "GoToMeeting",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "salesforce-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "Salesforce",
+                    "Gold",
+                    "None"
+                ],
+                [
+                    "citrix-ica-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "citrix-ica",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "Office-365-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "Office365",
+                    "Gold",
+                    "None"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_5": {
+            "text": "Rich - Default Priority Default Rule Policy Set (Simple)"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows the QoS policy rules in the Rich - Default Priority Default Rule Policy Set (Simple) Policy Set."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Rule Name",
+                "Order No.",
+                "Source Prefix",
+                "Destination Prefix",
+                "Included App(s)",
+                "QoS Class",
+                "DSCP Mark/Remark"
+            ],
+            "col_widths": [
+                60,
+                42,
+                70,
+                70,
+                70
+            ],
+            "head_caption": {
+                "text": "Table 12 \u2013 Rich - Default Priority Default Rule Policy Set (Simple) QoS Policy Set Rule(s)"
+            },
+            "values": [
+                [
+                    "enterprise-default",
+                    1024,
+                    "None",
+                    "EnterpriseGlobalPrefix",
+                    "Any",
+                    "Silver",
+                    "None"
+                ],
+                [
+                    "default",
+                    1024,
+                    "None",
+                    "None",
+                    "Any",
+                    "Bronze",
+                    "None"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_5": {
+            "text": "Yosef-QoS-Stack Policy Set (Simple)"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows the QoS policy rules in the Yosef-QoS-Stack Policy Set (Simple) Policy Set."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Rule Name",
+                "Order No.",
+                "Source Prefix",
+                "Destination Prefix",
+                "Included App(s)",
+                "QoS Class",
+                "DSCP Mark/Remark"
+            ],
+            "col_widths": [
+                60,
+                42,
+                70,
+                70,
+                70
+            ],
+            "head_caption": {
+                "text": "Table 13 \u2013 Yosef-QoS-Stack Policy Set (Simple) QoS Policy Set Rule(s)"
+            },
+            "values": [
+                [
+                    "Zoom-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "Zoom.us",
+                    "Platinum",
+                    "46"
+                ],
+                [
+                    "Ring-Central-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "Ring Central",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "sip-tls-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "sip-tls",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "Dynamics365-Financials-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "Dynamics 365 Financials",
+                    "Gold",
+                    "None"
+                ],
+                [
+                    "Dynamics365-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "Dynamics 365",
+                    "Gold",
+                    "None"
+                ],
+                [
+                    "Dynamics365-Marketing-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "Dynamics 365 Marketing",
+                    "Gold",
+                    "None"
+                ],
+                [
+                    "Office-365-Mgmt-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "Office365 Service Mgmt",
+                    "Gold",
+                    "None"
+                ],
+                [
+                    "Office-365-Video-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "Office365 Video",
+                    "Gold",
+                    "None"
+                ],
+                [
+                    "service-now-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "ServiceNow",
+                    "Gold",
+                    "None"
+                ],
+                [
+                    "OneNote-365-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "OneNote",
+                    "Gold",
+                    "None"
+                ],
+                [
+                    "Office-365-Outlook-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "Outlook",
+                    "Gold",
+                    "None"
+                ],
+                [
+                    "dns-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "dns",
+                    "Platinum",
+                    "46"
+                ],
+                [
+                    "webex-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "WebEx",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "cisco-callmanager-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "cisco-callmanager",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "skype-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "Skype",
+                    "Platinum",
+                    "46"
+                ],
+                [
+                    "sip-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "sip",
+                    "Platinum",
+                    "46"
+                ],
+                [
+                    "workday-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "Workday",
+                    "Gold",
+                    "None"
+                ],
+                [
+                    "skype-media-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "skype-media",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "Office-365-Lync-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "Lync",
+                    "Gold",
+                    "None"
+                ],
+                [
+                    "shoretel-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "shoretel",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "successfactors-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "SuccessFactors",
+                    "Gold",
+                    "None"
+                ],
+                [
+                    "rtcp-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "rtcp",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "h323-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "h323",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "citriximaclient-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "citriximaclient",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "citrixima-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "citrixima",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "citrixadmin-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "citrixadmin",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "PCoIP-UDP-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "PC Over IP UDP",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "PCoIP-TCP-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "PC Over IP TCP",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "rtp-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "rtp",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "Office-365-portal-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "Office365 Portal",
+                    "Gold",
+                    "None"
+                ],
+                [
+                    "Office-365-SharePoint-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "SharePoint",
+                    "Gold",
+                    "None"
+                ],
+                [
+                    "RDP-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "Remote Desktop Protocol",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "skinny-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "skinny",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "gotomeeting-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "GoToMeeting",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "salesforce-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "Salesforce",
+                    "Gold",
+                    "None"
+                ],
+                [
+                    "citrix-ica-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "citrix-ica",
+                    "Platinum",
+                    "None"
+                ],
+                [
+                    "Office-365-Policy",
+                    1024,
+                    "None",
+                    "None",
+                    "Office365",
+                    "Gold",
+                    "None"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_5": {
+            "text": "Yosef-QoS-Stack Default Rule Policy Set (Simple)"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows the QoS policy rules in the Yosef-QoS-Stack Default Rule Policy Set (Simple) Policy Set."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Rule Name",
+                "Order No.",
+                "Source Prefix",
+                "Destination Prefix",
+                "Included App(s)",
+                "QoS Class",
+                "DSCP Mark/Remark"
+            ],
+            "col_widths": [
+                60,
+                42,
+                70,
+                70,
+                70
+            ],
+            "head_caption": {
+                "text": "Table 14 \u2013 Yosef-QoS-Stack Default Rule Policy Set (Simple) QoS Policy Set Rule(s)"
+            },
+            "values": [
+                [
+                    "enterprise-default",
+                    1024,
+                    "None",
+                    "EnterpriseGlobalPrefix",
+                    "Any",
+                    "Silver",
+                    "None"
+                ],
+                [
+                    "default",
+                    1024,
+                    "None",
+                    "None",
+                    "Any",
+                    "Bronze",
+                    "None"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_3": {
+            "text": "NAT Policies"
+        }
+    },
+    {
+        "HEADING_4": {
+            "text": "NAT Policy Stack(s)"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows the NAT Policy Stacks and associated Policy Sets."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "NAT Policy Stack",
+                "NAT Policy Set(s)"
+            ],
+            "col_widths": [
+                144
+            ],
+            "head_caption": {
+                "text": "Table 15 \u2013 NAT Policy Stack(s)"
+            },
+            "values": [
+                [
+                    "Rich-NAT",
+                    "Rich-NAT\nDefault-NATPolicySet"
+                ],
+                [
+                    "Yosef-NAT (Simple)",
+                    "Test-Set\nDefault-NATPolicySet"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_4": {
+            "text": "NAT Policy Set(s)"
+        }
+    },
+    {
+        "HEADING_5": {
+            "text": "Rich-NAT"
+        }
+    },
+    {
+        "HEADING_6": {
+            "text": "Source Zone NAT Rules"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows the Source Zone based NAT policies for the Rich-NAT Policy Set."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Name",
+                "Order No.",
+                "Source Prefix",
+                "Source Port",
+                "Destination Prefix",
+                "Destination Port",
+                "Protocol",
+                "Action",
+                "NAT Pool"
+            ],
+            "col_widths": [
+                null,
+                42,
+                null,
+                null,
+                null,
+                null,
+                55
+            ],
+            "head_caption": {
+                "text": "Table 16 \u2013 Rich-NAT Policy Set Source Zone Rule(s)"
+            },
+            "values": [
+                [
+                    "Inbound DNAT",
+                    1,
+                    "None",
+                    "None",
+                    "Rich-Internet1",
+                    "7774:7773\n",
+                    6,
+                    "Destination Nat Dynamic\n",
+                    "Rich-PA-Untrusted\n"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_6": {
+            "text": "Destination Zone NAT Rules"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "No Destination Zone NAT rules are defined in the Rich-NAT Policy Set."
+        }
+    },
+    {
+        "HEADING_5": {
+            "text": "Default-NATPolicySet"
+        }
+    },
+    {
+        "HEADING_6": {
+            "text": "Source Zone NAT Rules"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "No Source Zone NAT rules are defined in the Default-NATPolicySet Policy Set."
+        }
+    },
+    {
+        "HEADING_6": {
+            "text": "Destination Zone NAT Rules"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows the Destination Zone based NAT policies for the Default-NATPolicySet Policy Set."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Name",
+                "Order No.",
+                "Source Prefix",
+                "Source Port",
+                "Destination Prefix",
+                "Destination Port",
+                "Protocol",
+                "Action",
+                "NAT Pool"
+            ],
+            "col_widths": [
+                null,
+                42,
+                null,
+                null,
+                null,
+                null,
+                55
+            ],
+            "head_caption": {
+                "text": "Table 17 \u2013 Default-NATPolicySet Policy Set Destination Zone Rule(s)"
+            },
+            "values": [
+                [
+                    "Default-InternetRule",
+                    1,
+                    "None",
+                    "None",
+                    "None",
+                    "None",
+                    null,
+                    "Source Nat Dynamic\n",
+                    "None"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_5": {
+            "text": "Test-Set"
+        }
+    },
+    {
+        "HEADING_6": {
+            "text": "Source Zone NAT Rules"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "No Source Zone NAT rules are defined in the Test-Set Policy Set."
+        }
+    },
+    {
+        "HEADING_6": {
+            "text": "Destination Zone NAT Rules"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows the Destination Zone based NAT policies for the Test-Set Policy Set."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Name",
+                "Order No.",
+                "Source Prefix",
+                "Source Port",
+                "Destination Prefix",
+                "Destination Port",
+                "Protocol",
+                "Action",
+                "NAT Pool"
+            ],
+            "col_widths": [
+                null,
+                42,
+                null,
+                null,
+                null,
+                null,
+                55
+            ],
+            "head_caption": {
+                "text": "Table 18 \u2013 Test-Set Policy Set Destination Zone Rule(s)"
+            },
+            "values": [
+                [
+                    "Test NAT rule",
+                    1,
+                    "Berlin_milan_private",
+                    "None",
+                    "None",
+                    "None",
+                    null,
+                    "Source Nat Dynamic\n",
+                    "Test\n"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_2": {
+            "text": "Custom Applications"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "This section will outline Custom Applications, outlined by L7 and L3/L4 applications. "
+        }
+    },
+    {
+        "HEADING_3": {
+            "text": "Custom L3/L4 Application(s)"
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "App Name",
+                "protocol",
+                "Source/ Client Prefix (Ports)",
+                "Destination/ Server Prefix (Ports)",
+                "Transfer Type",
+                "Path Affinity",
+                "Idle Timeout"
+            ],
+            "col_widths": [
+                72,
+                50,
+                90,
+                90,
+                68
+            ],
+            "head_caption": {
+                "text": "Table 19 \u2013 Custom L3/L4 Application(s)"
+            },
+            "values": [
+                [
+                    "Amir_TEST",
+                    "icmp",
+                    " ",
+                    " ",
+                    "rt-audio",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "Chris Dolan Live",
+                    "TCP",
+                    "ChDo (443 - 443)",
+                    " (1 - 443)",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "Erdp",
+                    "UDP",
+                    " ",
+                    " ",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "Home Apple",
+                    "TCP",
+                    "ChDo (10 - 10)",
+                    "",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "NETBIOS_SCAN",
+                    "TCP",
+                    " (139 - 139)",
+                    "",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "Nikesh",
+                    "TCP",
+                    "abrakadabra (80 - 80)",
+                    "",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "PB Teams - L3",
+                    "TCP",
+                    "MS Teams Subnets (80 - 80)",
+                    "",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "PB Teams - RealTime",
+                    "UDP",
+                    "MS Teams Audio (3478 - 3481)",
+                    " ",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "SNMP",
+                    "UDP",
+                    "test (161 - 161)",
+                    " ",
+                    "transactional",
+                    "strict",
+                    "0s"
+                ],
+                [
+                    "Scan-App",
+                    "TCP",
+                    "Firewall_IP (1 - 65535)",
+                    "",
+                    "bulk",
+                    "none",
+                    "30s"
+                ],
+                [
+                    "Scan-App",
+                    "UDP",
+                    "Firewall_IP (1 - 65535)",
+                    " ",
+                    "bulk",
+                    "none",
+                    "30s"
+                ],
+                [
+                    "Security Cam App",
+                    "TCP",
+                    "SecurityCamApp (2000 - 2000)",
+                    "",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "ShaunF-JLP-NTPServers",
+                    "UDP",
+                    "ShaunF-JLP-NTP Servers (123 - 123)",
+                    " ",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "ShaunF-JLP-SCCM-Legacy",
+                    "UDP",
+                    " ",
+                    " ",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "ShaunF_JLP_HTTP",
+                    "TCP",
+                    " (80 - 80)",
+                    "",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "ShaunF_JLP_External_DNS",
+                    "UDP",
+                    "ShaunF-JLP-External DNS Servers (53 - 53)",
+                    " ",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "ShaunF_JLP_Internal_DNS",
+                    "UDP",
+                    "ShaunF-JLP-Internal DNS Servers (53 - 53)",
+                    " ",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "ShaunTestApp",
+                    "TCP",
+                    "TestPortIP1 (3000 - 4000)\nTestPortIP2 (3000 - 4000)",
+                    "Shaun_Test_Prefix (5000 - 4000)",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "ShaunTestApp",
+                    "UDP",
+                    "test (1000 - 2000)\nTest_2 (1000 - 2000)",
+                    " ",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "ShaunTestApp",
+                    "icmp",
+                    "Private Addresses\nShaun_Test_Prefix",
+                    "filter2",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "TestPort1",
+                    "TCP",
+                    "TestPortIP1 (1200 - 12010)",
+                    "",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "TestPort2",
+                    "TCP",
+                    "TestPortIP2 (12000 - 12010)",
+                    "",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "danASA",
+                    "TCP",
+                    "dan_aas (1 - 65000)",
+                    "",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "ex-RDP",
+                    "TCP",
+                    "Test_2 (3389 - 3389)",
+                    "",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "ex-RDP",
+                    "UDP",
+                    "Test_2 (3389 - 3389)",
+                    " ",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "print-server-corp",
+                    "TCP",
+                    "printerserver-corp (8585 - 8585)",
+                    "",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "ssh_ftp_SRV",
+                    "TCP",
+                    "Jordan_Lake_SRV (22 - 22)",
+                    "",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "ssh_ftp_SRV",
+                    "TCP",
+                    "Jordan_Lake_SRV (21 - 21)",
+                    "",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "test",
+                    "TCP",
+                    " (10 - 10)",
+                    "",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_3": {
+            "text": "Custom L7 Application(s)"
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "App Name",
+                "Domains",
+                "Transfer Type",
+                "Path Affinity",
+                "Idle Timeout"
+            ],
+            "col_widths": [
+                100,
+                180,
+                80
+            ],
+            "head_caption": {
+                "text": "Table 20 \u2013 Custom L7 Application(s)"
+            },
+            "values": [
+                [
+                    "Apple Applications",
+                    "apple.com\nicloud.com",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "Google Regional",
+                    "google.com.au\ngoogle.com.hk\ngoogle.co.uk",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "Lionel FUN APP",
+                    "www.funlionel.com",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "PB Teams - L7",
+                    "teams.microsoft.com\nlync.com\nskype.com\nsfbassets.com\nmediaservices.windows.net\nmsecnd.net\najax.aspnetcdn.com\nmlccdn.blob.core.windows.net\namp.azure.net\naka.ms\nusers.storage.live.com\nadl.windows.com\nskypeforbusiness.com\nmsedge.net\ncompass-ssl.microsoft.com\nmstea.ms",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "Test_App",
+                    "uhs-akamai.ustream.tv\nustream.tv",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "VSpare Application",
+                    "vc01.uecu1.local:443",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "WLC-App",
+                    "wlc.local",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "cbs.com",
+                    "cbs.com",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "cnn.com",
+                    "cnn.com",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "mts.by",
+                    "mts.by",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "smtp-custom",
+                    "dottys-com.mail.protection.outlook.com:25",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ],
+                [
+                    "testdfasfasfd",
+                    "aa.com\naa1.com\n2.com\n3.com\n4.com\n5.com\n6.com\n7.com\n8.com\n9.com\n10.com\n11.com\n12.com\n13.com\n14.com\n15.com",
+                    "transactional",
+                    "strict",
+                    "3600s"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_2": {
+            "text": "CloudBlades"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "This section will outline CloudBlade configuration(s)."
+        }
+    },
+    {
+        "HEADING_3": {
+            "text": "Prisma Access for Networks (managed by Panorama)"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "Integration with Prisma Access for Networks (managed by Panorama). Requires installation and configuration of On-Premise Docker container \"cloudgenix\\prisma_access_panorama\". For more details, see https://cgx.one/prisma_access_panorama"
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "State",
+                "Version",
+                "Tunnel Inner IP Pool",
+                "ION Default ASN",
+                "Panorama Tenant Name"
+            ],
+            "col_widths": [
+                70,
+                70
+            ],
+            "head_caption": {
+                "text": "Table 21 \u2013 Prisma Access for Networks (managed by Panorama)"
+            },
+            "values": [
+                [
+                    "enabled",
+                    "3.1.5",
+                    "172.16.0.0/16",
+                    "65500",
+                    "customersuccess"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_1": {
+            "text": "Data Centers - Site and Device Details"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "This section outlines the configuration for Data Centers."
+        }
+    },
+    {
+        "HEADING_2": {
+            "text": "Rich-AWS-DC"
+        }
+    },
+    {
+        "HEADING_3": {
+            "text": "Topology Diagram"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The following diagram depicts the connectivity diagram for Site Rich-AWS-DC."
+        }
+    },
+    {
+        "image": "https://lh6.googleusercontent.com/2dQJhkEv5sZt712ugWOSk2VSpTwTCs9hIyBk27OA_cnfX-iksKT3Z6Ke0ofOf8Ant9Ph5dEqKL_i-XUnEF6x3aqGQL5S4PMVDda7R55bPHbpw6VksFQzjJEAO9F1bMGn-mfRwDdYgkCS476RfQ"
+    },
+    {
+        "HEADING_3": {
+            "text": "Site Information"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows the Site level information for Site Rich-AWS-DC."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Site Name",
+                "Location",
+                "ION Devices",
+                "ION Device Name"
+            ],
+            "col_widths": [
+                108,
+                144,
+                80
+            ],
+            "head_caption": {
+                "text": "Table 22 \u2013 Rich-AWS-DC Site Information"
+            },
+            "values": [
+                [
+                    "Rich-AWS-DC",
+                    "Apex,  NC, ",
+                    "x2 ion 7108v",
+                    "Rich-AWS-ION7K-1\nRich-AWS-ION7K-2\n"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_3": {
+            "text": "Circuit Information"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows the Circuit information for Site Rich-AWS-DC."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Circuit Name",
+                "WAN Network",
+                "Circuit Type",
+                "Circuit Category",
+                "Bandwidth Configured"
+            ],
+            "col_widths": [
+                null,
+                null,
+                75,
+                null,
+                90
+            ],
+            "head_caption": {
+                "text": "Table 23 \u2013 Rich-AWS-DC Circuit Information"
+            },
+            "values": [
+                [
+                    "AWS Internet",
+                    "AWS",
+                    "Internet",
+                    "Primary Internet 1",
+                    "100 Mbps Up\n100 Mbps Down"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_4": {
+            "text": "Base Configuration"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows some base configurations on the ION devices for Site Rich-AWS-DC."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Device Name",
+                "Serial Number",
+                "OS Version",
+                "Force VPN to VPN Traffic to Local Next hop",
+                "TAGS"
+            ],
+            "col_widths": [
+                90,
+                90,
+                70,
+                90
+            ],
+            "head_caption": {
+                "text": "Table 24 \u2013 Rich-AWS-DC Base Configurations"
+            },
+            "values": [
+                [
+                    "Rich-AWS-ION7K-1",
+                    "ec2cc77d-42ec-a33a-90cc-8dcb7ec73a5d",
+                    "5.5.1-b7",
+                    "No",
+                    ""
+                ],
+                [
+                    "Rich-AWS-ION7K-2",
+                    "ec233d29-c62a-374f-0d40-27e67a12a7a1",
+                    "5.5.1-b7",
+                    "No",
+                    ""
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_4": {
+            "text": "Interfaces"
+        }
+    },
+    {
+        "HEADING_5": {
+            "text": "Interfaces - Rich-AWS-ION7K-1"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows interface configurations for device Rich-AWS-ION7K-1 at site Rich-AWS-DC."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Interface",
+                "IP Address",
+                "Gateway",
+                "DNS"
+            ],
+            "col_widths": [],
+            "head_caption": {
+                "text": "Table 25 \u2013 Rich-AWS-ION7K-1 Interface Configurations"
+            },
+            "values": [
+                [
+                    "port - 1",
+                    "DHCP"
+                ],
+                [
+                    "port - 2",
+                    "DHCP"
+                ],
+                [
+                    "port - controller 1",
+                    "DHCP"
+                ],
+                [
+                    "service_link - AWS-TG-GRE",
+                    "169.254.11.1/29",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_5": {
+            "text": "Interfaces - Rich-AWS-ION7K-2"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows interface configurations for device Rich-AWS-ION7K-2 at site Rich-AWS-DC."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Interface",
+                "IP Address",
+                "Gateway",
+                "DNS"
+            ],
+            "col_widths": [],
+            "head_caption": {
+                "text": "Table 26 \u2013 Rich-AWS-ION7K-2 Interface Configurations"
+            },
+            "values": [
+                [
+                    "port - 1",
+                    "DHCP"
+                ],
+                [
+                    "port - 2",
+                    "DHCP"
+                ],
+                [
+                    "port - controller 1",
+                    "DHCP"
+                ],
+                [
+                    "service_link - TG-GRE",
+                    "169.254.12.1/29",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_4": {
+            "text": "Routing"
+        }
+    },
+    {
+        "HEADING_5": {
+            "text": "BGP Routing - Rich-AWS-ION7K-1"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table(s) shows the BGP routing information for Rich-AWS-ION7K-1 in  Rich-AWS-DC."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Name",
+                "Peer IP",
+                "Remote ASN",
+                "Local ASN",
+                "Scope",
+                "Description"
+            ],
+            "col_widths": [
+                100,
+                90,
+                54,
+                54,
+                50
+            ],
+            "head_caption": {
+                "text": "Table 27 \u2013 Rich-AWS-ION7K-1 ION BGP Routing"
+            },
+            "values": [
+                [
+                    "AWS-TG-Connect-1",
+                    "169.254.11.2",
+                    "64512",
+                    "65100",
+                    "local",
+                    "None"
+                ],
+                [
+                    "AWS-TG-Connect-2",
+                    "169.254.11.3",
+                    "64512",
+                    "65100",
+                    "local",
+                    "None"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_5": {
+            "text": "BGP Routing - Rich-AWS-ION7K-2"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table(s) shows the BGP routing information for Rich-AWS-ION7K-2 in  Rich-AWS-DC."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Name",
+                "Peer IP",
+                "Remote ASN",
+                "Local ASN",
+                "Scope",
+                "Description"
+            ],
+            "col_widths": [
+                100,
+                90,
+                54,
+                54,
+                50
+            ],
+            "head_caption": {
+                "text": "Table 28 \u2013 Rich-AWS-ION7K-2 ION BGP Routing"
+            },
+            "values": [
+                [
+                    "AWS-TG-Connect-1",
+                    "169.254.12.2",
+                    "64512",
+                    "65100",
+                    "local",
+                    "None"
+                ],
+                [
+                    "AWS-TG-Connect-2",
+                    "169.254.12.3",
+                    "64512",
+                    "65100",
+                    "local",
+                    "None"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_5": {
+            "text": "Static Routing - Rich-AWS-ION7K-1"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table(s) shows the static route information for Rich-AWS-ION7K-1 in  Rich-AWS-DC."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Name",
+                "Destination Prefix",
+                "Next Hop IP",
+                "Admin Distance",
+                "Scope",
+                "Description"
+            ],
+            "col_widths": [
+                90,
+                100,
+                100,
+                57,
+                43
+            ],
+            "head_caption": {
+                "text": "Table 29 \u2013 Rich-AWS-ION7K-1 ION Static Routing"
+            },
+            "values": [
+                [
+                    "Static Route 1",
+                    "0.0.0.0/0",
+                    "172.16.2.1",
+                    "1",
+                    "local"
+                ],
+                [
+                    "Static Route 2",
+                    "169.254.11.2/32",
+                    "None",
+                    "1",
+                    "local"
+                ],
+                [
+                    "Static Route 3",
+                    "169.254.11.3/32",
+                    "None",
+                    "1",
+                    "local"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_5": {
+            "text": "Static Routing - Rich-AWS-ION7K-2"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table(s) shows the static route information for Rich-AWS-ION7K-2 in  Rich-AWS-DC."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Name",
+                "Destination Prefix",
+                "Next Hop IP",
+                "Admin Distance",
+                "Scope",
+                "Description"
+            ],
+            "col_widths": [
+                90,
+                100,
+                100,
+                57,
+                43
+            ],
+            "head_caption": {
+                "text": "Table 30 \u2013 Rich-AWS-ION7K-2 ION Static Routing"
+            },
+            "values": [
+                [
+                    "Static Route 1",
+                    "0.0.0.0/0",
+                    "172.16.2.1",
+                    "1",
+                    "local"
+                ],
+                [
+                    "Static Route 2",
+                    "169.254.12.2/32",
+                    "None",
+                    "1",
+                    "local"
+                ],
+                [
+                    "Static Route 3",
+                    "169.254.12.3/32",
+                    "None",
+                    "1",
+                    "local"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_2": {
+            "text": "Rich-Azure-DC"
+        }
+    },
+    {
+        "HEADING_3": {
+            "text": "Topology Diagram"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The following diagram depicts the connectivity diagram for Site Rich-Azure-DC."
+        }
+    },
+    {
+        "image": "https://lh6.googleusercontent.com/2dQJhkEv5sZt712ugWOSk2VSpTwTCs9hIyBk27OA_cnfX-iksKT3Z6Ke0ofOf8Ant9Ph5dEqKL_i-XUnEF6x3aqGQL5S4PMVDda7R55bPHbpw6VksFQzjJEAO9F1bMGn-mfRwDdYgkCS476RfQ"
+    },
+    {
+        "HEADING_3": {
+            "text": "Site Information"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows the Site level information for Site Rich-Azure-DC."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Site Name",
+                "Location",
+                "ION Devices",
+                "ION Device Name"
+            ],
+            "col_widths": [
+                108,
+                144,
+                80
+            ],
+            "head_caption": {
+                "text": "Table 31 \u2013 Rich-Azure-DC Site Information"
+            },
+            "values": [
+                [
+                    "Rich-Azure-DC",
+                    "Raleigh,  NC, ",
+                    "x2 ion 7108v",
+                    "Rich-Azure-ION7K-1\nRich-Azure-ION7K-2\n"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_3": {
+            "text": "Circuit Information"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows the Circuit information for Site Rich-Azure-DC."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Circuit Name",
+                "WAN Network",
+                "Circuit Type",
+                "Circuit Category",
+                "Bandwidth Configured"
+            ],
+            "col_widths": [
+                null,
+                null,
+                75,
+                null,
+                90
+            ],
+            "head_caption": {
+                "text": "Table 32 \u2013 Rich-Azure-DC Circuit Information"
+            },
+            "values": [
+                [
+                    "Azure-Internet",
+                    "Azure Public",
+                    "Internet",
+                    "Comcast",
+                    "10 Mbps Up\n30 Mbps Down"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_4": {
+            "text": "Base Configuration"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows some base configurations on the ION devices for Site Rich-Azure-DC."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Device Name",
+                "Serial Number",
+                "OS Version",
+                "Force VPN to VPN Traffic to Local Next hop",
+                "TAGS"
+            ],
+            "col_widths": [
+                90,
+                90,
+                70,
+                90
+            ],
+            "head_caption": {
+                "text": "Table 33 \u2013 Rich-Azure-DC Base Configurations"
+            },
+            "values": [
+                [
+                    "Rich-Azure-ION7K-1",
+                    "e06f5c78-6c4a-2b4d-8667-42cced89f932",
+                    "5.5.1-b6",
+                    "No",
+                    "Azure"
+                ],
+                [
+                    "Rich-Azure-ION7K-2",
+                    "382dda50-5337-2f48-971c-b25cb95c98fe",
+                    "5.5.1-b6",
+                    "No",
+                    "Azure"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_4": {
+            "text": "Interfaces"
+        }
+    },
+    {
+        "HEADING_5": {
+            "text": "Interfaces - Rich-Azure-ION7K-1"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows interface configurations for device Rich-Azure-ION7K-1 at site Rich-Azure-DC."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Interface",
+                "IP Address",
+                "Gateway",
+                "DNS"
+            ],
+            "col_widths": [],
+            "head_caption": {
+                "text": "Table 34 \u2013 Rich-Azure-ION7K-1 Interface Configurations"
+            },
+            "values": [
+                [
+                    "port - 1",
+                    "10.10.0.100/24",
+                    "10.10.0.1",
+                    "8.8.8.8, 1.1.1.1"
+                ],
+                [
+                    "port - 2",
+                    "DHCP"
+                ],
+                [
+                    "port - controller 1",
+                    "DHCP"
+                ],
+                [
+                    "service_link - Azure-vWAN-Instance-0",
+                    "10.100.0.1/30",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_5": {
+            "text": "Interfaces - Rich-Azure-ION7K-2"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows interface configurations for device Rich-Azure-ION7K-2 at site Rich-Azure-DC."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Interface",
+                "IP Address",
+                "Gateway",
+                "DNS"
+            ],
+            "col_widths": [],
+            "head_caption": {
+                "text": "Table 35 \u2013 Rich-Azure-ION7K-2 Interface Configurations"
+            },
+            "values": [
+                [
+                    "port - 1",
+                    "10.10.0.200/24",
+                    "10.10.0.1",
+                    "8.8.8.8, 1.1.1.1"
+                ],
+                [
+                    "port - 2",
+                    "DHCP"
+                ],
+                [
+                    "port - controller 1",
+                    "DHCP"
+                ],
+                [
+                    "service_link - Azure-vWAN-Instance-1",
+                    "10.100.0.5/30",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_4": {
+            "text": "Routing"
+        }
+    },
+    {
+        "HEADING_5": {
+            "text": "BGP Routing - Rich-Azure-ION7K-1"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table(s) shows the BGP routing information for Rich-Azure-ION7K-1 in  Rich-Azure-DC."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Name",
+                "Peer IP",
+                "Remote ASN",
+                "Local ASN",
+                "Scope",
+                "Description"
+            ],
+            "col_widths": [
+                100,
+                90,
+                54,
+                54,
+                50
+            ],
+            "head_caption": {
+                "text": "Table 36 \u2013 Rich-Azure-ION7K-1 ION BGP Routing"
+            },
+            "values": [
+                [
+                    "Azure-vWAN-Instance-0",
+                    "10.20.0.12",
+                    "65515",
+                    "65514",
+                    "local",
+                    "None"
+                ],
+                [
+                    "Azure-Route-Server-1",
+                    "10.10.3.4",
+                    "65515",
+                    "65514",
+                    "local",
+                    "None"
+                ],
+                [
+                    "Azure-Route-Server-2",
+                    "10.10.3.5",
+                    "65515",
+                    "65514",
+                    "local",
+                    "None"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_5": {
+            "text": "BGP Routing - Rich-Azure-ION7K-2"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table(s) shows the BGP routing information for Rich-Azure-ION7K-2 in  Rich-Azure-DC."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Name",
+                "Peer IP",
+                "Remote ASN",
+                "Local ASN",
+                "Scope",
+                "Description"
+            ],
+            "col_widths": [
+                100,
+                90,
+                54,
+                54,
+                50
+            ],
+            "head_caption": {
+                "text": "Table 37 \u2013 Rich-Azure-ION7K-2 ION BGP Routing"
+            },
+            "values": [
+                [
+                    "Azure-vWAN-Instance-1",
+                    "10.20.0.13",
+                    "65515",
+                    "65514",
+                    "local",
+                    "None"
+                ],
+                [
+                    "Azure-Route-Server-1",
+                    "10.10.3.4",
+                    "65515",
+                    "65514",
+                    "local",
+                    "None"
+                ],
+                [
+                    "Azure-Route-Server-2",
+                    "10.10.3.5",
+                    "65515",
+                    "65514",
+                    "local",
+                    "None"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_5": {
+            "text": "Static Routing - Rich-Azure-ION7K-1"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table(s) shows the static route information for Rich-Azure-ION7K-1 in  Rich-Azure-DC."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Name",
+                "Destination Prefix",
+                "Next Hop IP",
+                "Admin Distance",
+                "Scope",
+                "Description"
+            ],
+            "col_widths": [
+                90,
+                100,
+                100,
+                57,
+                43
+            ],
+            "head_caption": {
+                "text": "Table 38 \u2013 Rich-Azure-ION7K-1 ION Static Routing"
+            },
+            "values": [
+                [
+                    "Static Route 1",
+                    "0.0.0.0/0",
+                    "10.10.2.1",
+                    "1",
+                    "local"
+                ],
+                [
+                    "Static Route 2",
+                    "10.20.0.12/32",
+                    "None",
+                    "1",
+                    "local"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_5": {
+            "text": "Static Routing - Rich-Azure-ION7K-2"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table(s) shows the static route information for Rich-Azure-ION7K-2 in  Rich-Azure-DC."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Name",
+                "Destination Prefix",
+                "Next Hop IP",
+                "Admin Distance",
+                "Scope",
+                "Description"
+            ],
+            "col_widths": [
+                90,
+                100,
+                100,
+                57,
+                43
+            ],
+            "head_caption": {
+                "text": "Table 39 \u2013 Rich-Azure-ION7K-2 ION Static Routing"
+            },
+            "values": [
+                [
+                    "Static Route 1",
+                    "0.0.0.0/0",
+                    "10.10.2.1",
+                    "1",
+                    "local"
+                ],
+                [
+                    "Static Route 2",
+                    "10.20.0.13/32",
+                    "None",
+                    "1",
+                    "local"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_1": {
+            "text": "Branches - Site and Device Details"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "This section outlines the configuration for Branches."
+        }
+    },
+    {
+        "HEADING_2": {
+            "text": "Rich-Home-2K-HA"
+        }
+    },
+    {
+        "HEADING_3": {
+            "text": "Topology Diagram"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The following diagram depicts the connectivity diagram for Site Rich-Home-2K-HA."
+        }
+    },
+    {
+        "image": "https://lh6.googleusercontent.com/2dQJhkEv5sZt712ugWOSk2VSpTwTCs9hIyBk27OA_cnfX-iksKT3Z6Ke0ofOf8Ant9Ph5dEqKL_i-XUnEF6x3aqGQL5S4PMVDda7R55bPHbpw6VksFQzjJEAO9F1bMGn-mfRwDdYgkCS476RfQ"
+    },
+    {
+        "HEADING_3": {
+            "text": "Site Information"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows the Site level information for Site Rich-Home-2K-HA."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Site Name",
+                "Domain",
+                "Location",
+                "ION Devices",
+                "ION Device Name"
+            ],
+            "col_widths": [
+                90,
+                70,
+                110,
+                80
+            ],
+            "head_caption": {
+                "text": "Table 40 \u2013 Rich-Home-2K-HA Site Information"
+            },
+            "values": [
+                [
+                    "Rich-Home-2K-HA",
+                    "US",
+                    "None, Morrisville, NC None, United States",
+                    "x2 ion 2000",
+                    "Rich-ION2K-1\nRich-ION2K-2\n"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_3": {
+            "text": "Circuit Information"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows the Circuit information for Site Rich-Home-2K-HA."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Circuit Name",
+                "WAN Network",
+                "Circuit Type",
+                "Circuit Category",
+                "Bandwidth Configured"
+            ],
+            "col_widths": [
+                null,
+                null,
+                75,
+                null,
+                90
+            ],
+            "head_caption": {
+                "text": "Table 41 \u2013 Rich-Home-2K-HA Circuit Information"
+            },
+            "values": [
+                [
+                    "Rich-MPLS",
+                    "AT&T",
+                    "Private Wan",
+                    "MPLS",
+                    "50 Mbps Up\n50 Mbps Down"
+                ],
+                [
+                    "Rich-ISP-GF-1",
+                    "GoogleFiber",
+                    "Internet",
+                    "Primary-Internet",
+                    "500 Mbps Up\n500 Mbps Down"
+                ],
+                [
+                    "Rich-ISP-GF-2",
+                    "GoogleFiber",
+                    "Internet",
+                    "Secondary-Internet",
+                    "500 Mbps Up\n500 Mbps Down"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_3": {
+            "text": "Policy Mapping"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows the Stacked Policies bound to Site Rich-Home-2K-HA."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Site",
+                "Path Policy Stack",
+                "QoS Policy Stack",
+                "NAT Policy Stack",
+                "Security Policy Stack"
+            ],
+            "col_widths": [
+                100
+            ],
+            "head_caption": {
+                "text": "Table 42 \u2013 Rich-Home-2K-HA Policy Mapping"
+            },
+            "values": [
+                [
+                    "Rich-Home-2K-HA",
+                    "Rich - Default Path (Simple)",
+                    "Rich - Default Priority (Simple)",
+                    "Default-NATPolicySetStack",
+                    ""
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_3": {
+            "text": "High Availability"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows the HA Configuration Rich-Home-2K-HA."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "HA Cluster",
+                "Pre-emption",
+                "Advertisement Interval"
+            ],
+            "col_widths": [],
+            "head_caption": {
+                "text": "Table 43 \u2013 Rich-Home-2K-HA High Availability"
+            },
+            "values": [
+                [
+                    "Rich-HA",
+                    "True",
+                    "1.0"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_3": {
+            "text": "Extended Tags"
+        }
+    },
+    {
+        "HEADING_5": {
+            "text": "prisma_access"
+        }
+    },
+    {
+        "HEADING_6": {
+            "text": "ECMP"
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Region",
+                "License"
+            ],
+            "col_widths": [],
+            "head_caption": {
+                "text": "Table 44 \u2013 Rich-Home-2K-HA prisma_access ECMP"
+            },
+            "values": [
+                [
+                    "us-east-1",
+                    "100"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_6": {
+            "text": "BGP"
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Enabled",
+                "Element ASN for Tunnels",
+                "Receive Default Route from Prisma Access",
+                "Prisma forward received Branch Routes from Prisma SD-WAN"
+            ],
+            "col_widths": [
+                72,
+                72
+            ],
+            "head_caption": {
+                "text": "Table 45 \u2013 Rich-Home-2K-HA prisma_access ECMP"
+            },
+            "values": [
+                [
+                    "Yes",
+                    "65555",
+                    "False",
+                    "False"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_6": {
+            "text": "Bandwidth Detection"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "Modify Default Prisma License Selection Behavior is not enabled."
+        }
+    },
+    {
+        "HEADING_3": {
+            "text": "Device Configuration"
+        }
+    },
+    {
+        "HEADING_4": {
+            "text": "Base Configuration"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows some base configurations on the ION devices for Site Rich-Home-2K-HA."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Device Name",
+                "Serial Number",
+                "OS Version",
+                "L3 LAN Forwarding",
+                "L3 WAN Forwarding",
+                "TAGS"
+            ],
+            "col_widths": [
+                90,
+                100,
+                54,
+                72,
+                72
+            ],
+            "head_caption": {
+                "text": "Table 46 \u2013 Rich-Home-2K-HA Base Configuration"
+            },
+            "values": [
+                [
+                    "Rich-ION2K-1",
+                    "20-003114-7125",
+                    "5.6.1-b10",
+                    "Yes",
+                    "Yes",
+                    "DEMO\nION2K\nprisma_ha_primary"
+                ],
+                [
+                    "Rich-ION2K-2",
+                    "20-011296-5254",
+                    "5.6.1-b10",
+                    "Yes",
+                    "Yes",
+                    "DEMO\nION2K"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_5": {
+            "text": "Interfaces"
+        }
+    },
+    {
+        "HEADING_6": {
+            "text": "Interfaces - Rich-ION2K-1"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows interface configurations for device Rich-ION2K-1 at site Rich-Home-2K-HA."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Interface",
+                "IP Address",
+                "Gateway",
+                "DNS",
+                "Tags"
+            ],
+            "col_widths": [
+                120,
+                120
+            ],
+            "head_caption": {
+                "text": "Table 47 \u2013 Rich-ION2K-1 Interface Configurations"
+            },
+            "values": [
+                [
+                    "bypasspair - 45",
+                    "DHCP",
+                    " ",
+                    " ",
+                    "AUTO-MESH_Rich, prisma_region:us-east-1:1"
+                ],
+                [
+                    "port - 1",
+                    "DHCP",
+                    " ",
+                    " ",
+                    "AUTO-MESH_Rich, prisma_region:us-east-1:1"
+                ],
+                [
+                    "port - 2",
+                    "20.0.20.2/29",
+                    "20.0.20.1",
+                    "",
+                    ""
+                ],
+                [
+                    "port - 3",
+                    "192.168.181.1/24",
+                    "",
+                    "",
+                    ""
+                ],
+                [
+                    "port - 4",
+                    "DHCP",
+                    " ",
+                    " ",
+                    "AUTO-MESH_Rich, prisma_region:us-east-1:1"
+                ],
+                [
+                    "port - 5",
+                    "DHCP",
+                    " ",
+                    " ",
+                    "AUTO-MESH_Rich, prisma_region:us-east-1:1"
+                ],
+                [
+                    "port - controller",
+                    "192.168.181.3/24",
+                    "192.168.181.1",
+                    "1.1.1.1, 1.0.0.1",
+                    ""
+                ],
+                [
+                    "service_link - AUTO-PRISMA_IPSEC-Tunnel_us-east-1_1",
+                    "172.16.0.12/31",
+                    "",
+                    "",
+                    "AUTO-PRISMA_MANAGED"
+                ],
+                [
+                    "service_link - AUTO-PRISMA_IPSEC-Tunnel_us-east-1_45",
+                    "172.16.0.10/31",
+                    "",
+                    "",
+                    "AUTO-PRISMA_MANAGED"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_6": {
+            "text": "Interfaces - Rich-ION2K-2"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows interface configurations for device Rich-ION2K-2 at site Rich-Home-2K-HA."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Interface",
+                "IP Address",
+                "Gateway",
+                "DNS",
+                "Tags"
+            ],
+            "col_widths": [
+                120,
+                120
+            ],
+            "head_caption": {
+                "text": "Table 48 \u2013 Rich-ION2K-2 Interface Configurations"
+            },
+            "values": [
+                [
+                    "bypasspair - 45",
+                    "DHCP",
+                    " ",
+                    " ",
+                    "AUTO-MESH_Rich, prisma_region:us-east-1:1"
+                ],
+                [
+                    "port - 1",
+                    "DHCP",
+                    " ",
+                    " ",
+                    "AUTO-MESH_Rich, prisma_region:us-east-1:1"
+                ],
+                [
+                    "port - 2",
+                    "20.0.20.3/29",
+                    "20.0.20.1",
+                    "",
+                    ""
+                ],
+                [
+                    "port - 3",
+                    "192.168.181.1/24",
+                    "",
+                    "",
+                    ""
+                ],
+                [
+                    "port - 4",
+                    "DHCP",
+                    " ",
+                    " ",
+                    "AUTO-MESH_Rich, prisma_region:us-east-1:1"
+                ],
+                [
+                    "port - 5",
+                    "DHCP",
+                    " ",
+                    " ",
+                    "AUTO-MESH_Rich, prisma_region:us-east-1:1"
+                ],
+                [
+                    "port - controller",
+                    "192.168.181.4/24",
+                    "192.168.181.1",
+                    "1.1.1.1, 1.0.0.1",
+                    ""
+                ],
+                [
+                    "service_link - AUTO-PRISMA_IPSEC-Tunnel_us-east-1_1",
+                    "172.16.0.10/31",
+                    "",
+                    "",
+                    "AUTO-PRISMA_MANAGED"
+                ],
+                [
+                    "service_link - AUTO-PRISMA_IPSEC-Tunnel_us-east-1_45",
+                    "172.16.0.12/31",
+                    "",
+                    "",
+                    "AUTO-PRISMA_MANAGED"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_4": {
+            "text": "Routing"
+        }
+    },
+    {
+        "HEADING_5": {
+            "text": "BGP Routing - Rich-ION2K-1"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table(s) shows the BGP routing information for Rich-ION2K-1 in  Rich-Home-2K-HA"
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Name",
+                "Peer IP",
+                "Remote ASN",
+                "Local ASN",
+                "Scope",
+                "Description"
+            ],
+            "col_widths": [
+                100,
+                90,
+                54,
+                54,
+                50
+            ],
+            "head_caption": {
+                "text": "Table 49 \u2013 Rich-ION2K-1 ION BGP Routing"
+            },
+            "values": [
+                [
+                    "ATT MPLS",
+                    "20.0.20.1",
+                    "65001",
+                    "65000",
+                    "local",
+                    "None"
+                ],
+                [
+                    "AUTO-PRISMA_IPSEC-Tunnel_us-east-1_45",
+                    "172.16.0.11",
+                    "65534",
+                    "65000",
+                    "global",
+                    "Auto Created by Prisma Access for Networks (managed by Panorama)"
+                ],
+                [
+                    "AUTO-PRISMA_IPSEC-Tunnel_us-east-1_1",
+                    "172.16.0.13",
+                    "65534",
+                    "65000",
+                    "global",
+                    "Auto Created by Prisma Access for Networks (managed by Panorama)"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_5": {
+            "text": "BGP Routing - Rich-ION2K-2"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table(s) shows the BGP routing information for Rich-ION2K-2 in  Rich-Home-2K-HA"
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Name",
+                "Peer IP",
+                "Remote ASN",
+                "Local ASN",
+                "Scope",
+                "Description"
+            ],
+            "col_widths": [
+                100,
+                90,
+                54,
+                54,
+                50
+            ],
+            "head_caption": {
+                "text": "Table 50 \u2013 Rich-ION2K-2 ION BGP Routing"
+            },
+            "values": [
+                [
+                    "AUTO-PRISMA_IPSEC-Tunnel_us-east-1_45",
+                    "172.16.0.13",
+                    "65534",
+                    "65111",
+                    "global",
+                    "Auto Created by Prisma Access for Networks (managed by Panorama)"
+                ],
+                [
+                    "AUTO-PRISMA_IPSEC-Tunnel_us-east-1_1",
+                    "172.16.0.11",
+                    "65534",
+                    "65111",
+                    "global",
+                    "Auto Created by Prisma Access for Networks (managed by Panorama)"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_5": {
+            "text": "Static Routing - Rich-ION2K-1"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table(s) shows the static route information for Rich-ION2K-1 in  Rich-Home-2K-HA"
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Name",
+                "Destination Prefix",
+                "Next Hop IP",
+                "Admin Distance",
+                "Scope",
+                "Description"
+            ],
+            "col_widths": [
+                90,
+                100,
+                100,
+                57,
+                43
+            ],
+            "head_caption": {
+                "text": "Table 51 \u2013 Rich-ION2K-1 ION Static Routing"
+            },
+            "values": [
+                [
+                    "Static Route 1",
+                    "10.30.10.0/24",
+                    "192.168.181.2",
+                    "1",
+                    "local"
+                ],
+                [
+                    "Static Route 2",
+                    "192.168.180.0/22",
+                    "192.168.181.2",
+                    "1",
+                    "global"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_5": {
+            "text": "Static Routing - Rich-ION2K-2"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table(s) shows the static route information for Rich-ION2K-2 in  Rich-Home-2K-HA"
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Name",
+                "Destination Prefix",
+                "Next Hop IP",
+                "Admin Distance",
+                "Scope",
+                "Description"
+            ],
+            "col_widths": [
+                90,
+                100,
+                100,
+                57,
+                43
+            ],
+            "head_caption": {
+                "text": "Table 52 \u2013 Rich-ION2K-2 ION Static Routing"
+            },
+            "values": [
+                [
+                    "Static Route 1",
+                    "10.30.10.0/24",
+                    "192.168.181.2",
+                    "1",
+                    "local"
+                ],
+                [
+                    "Static Route 2",
+                    "192.168.180.0/22",
+                    "192.168.181.2",
+                    "1",
+                    "global"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_2": {
+            "text": "Yosef-Home-Apex"
+        }
+    },
+    {
+        "HEADING_3": {
+            "text": "Topology Diagram"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The following diagram depicts the connectivity diagram for Site Yosef-Home-Apex."
+        }
+    },
+    {
+        "image": "https://lh6.googleusercontent.com/2dQJhkEv5sZt712ugWOSk2VSpTwTCs9hIyBk27OA_cnfX-iksKT3Z6Ke0ofOf8Ant9Ph5dEqKL_i-XUnEF6x3aqGQL5S4PMVDda7R55bPHbpw6VksFQzjJEAO9F1bMGn-mfRwDdYgkCS476RfQ"
+    },
+    {
+        "HEADING_3": {
+            "text": "Site Information"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows the Site level information for Site Yosef-Home-Apex."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Site Name",
+                "Domain",
+                "Location",
+                "ION Devices",
+                "ION Device Name"
+            ],
+            "col_widths": [
+                90,
+                70,
+                110,
+                80
+            ],
+            "head_caption": {
+                "text": "Table 53 \u2013 Yosef-Home-Apex Site Information"
+            },
+            "values": [
+                [
+                    "Yosef-Home-Apex",
+                    "US",
+                    ", Apex, NC 27502, United States",
+                    "x1 ion 1000",
+                    "Yosef-1K\n"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_3": {
+            "text": "Circuit Information"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows the Circuit information for Site Yosef-Home-Apex."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Circuit Name",
+                "WAN Network",
+                "Circuit Type",
+                "Circuit Category",
+                "Bandwidth Configured"
+            ],
+            "col_widths": [
+                null,
+                null,
+                75,
+                null,
+                90
+            ],
+            "head_caption": {
+                "text": "Table 54 \u2013 Yosef-Home-Apex Circuit Information"
+            },
+            "values": [
+                [
+                    "BRANCH-SEGRA-MPLS",
+                    "SEGRA",
+                    "Private Wan",
+                    "MPLS",
+                    "200 Mbps Up\n200 Mbps Down"
+                ],
+                [
+                    "Yosef-ATT-Internet",
+                    "AT&T Internet-Copper",
+                    "Internet",
+                    "Primary-Internet",
+                    "280 Mbps Up\n280 Mbps Down"
+                ],
+                [
+                    "Circuit to ATT",
+                    "ATT",
+                    "Private Wan",
+                    "private-19",
+                    "10 Mbps Up\n30 Mbps Down"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_3": {
+            "text": "Policy Mapping"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows the Stacked Policies bound to Site Yosef-Home-Apex."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Site",
+                "Path Policy Stack",
+                "QoS Policy Stack",
+                "NAT Policy Stack",
+                "Security Policy Stack"
+            ],
+            "col_widths": [
+                100
+            ],
+            "head_caption": {
+                "text": "Table 55 \u2013 Yosef-Home-Apex Policy Mapping"
+            },
+            "values": [
+                [
+                    "Yosef-Home-Apex",
+                    "Yosef-Branch-Stack (Simple)",
+                    "Yosef-QoS-Stack (Simple)",
+                    "Default-NATPolicySetStack",
+                    ""
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_3": {
+            "text": "Extended Tags"
+        }
+    },
+    {
+        "HEADING_5": {
+            "text": "prisma_access"
+        }
+    },
+    {
+        "HEADING_6": {
+            "text": "ECMP"
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Region",
+                "License"
+            ],
+            "col_widths": [],
+            "head_caption": {
+                "text": "Table 56 \u2013 Yosef-Home-Apex prisma_access ECMP"
+            },
+            "values": [
+                [
+                    "us-east-1",
+                    "auto"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_6": {
+            "text": "BGP"
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Enabled",
+                "Element ASN for Tunnels",
+                "Receive Default Route from Prisma Access",
+                "Prisma forward received Branch Routes from Prisma SD-WAN"
+            ],
+            "col_widths": [
+                72,
+                72
+            ],
+            "head_caption": {
+                "text": "Table 57 \u2013 Yosef-Home-Apex prisma_access ECMP"
+            },
+            "values": [
+                [
+                    "Yes",
+                    "65555",
+                    "False",
+                    "False"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_6": {
+            "text": "Bandwidth Detection"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "Modify Default Prisma License Selection Behavior is not enabled."
+        }
+    },
+    {
+        "HEADING_3": {
+            "text": "Device Configuration"
+        }
+    },
+    {
+        "HEADING_4": {
+            "text": "Base Configuration"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows some base configurations on the ION devices for Site Yosef-Home-Apex."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Device Name",
+                "Serial Number",
+                "OS Version",
+                "L3 LAN Forwarding",
+                "L3 WAN Forwarding",
+                "TAGS"
+            ],
+            "col_widths": [
+                90,
+                100,
+                54,
+                72,
+                72
+            ],
+            "head_caption": {
+                "text": "Table 58 \u2013 Yosef-Home-Apex Base Configuration"
+            },
+            "values": [
+                [
+                    "Yosef-1K",
+                    "10-006051-6101",
+                    "5.5.3-b2",
+                    "Yes",
+                    "Yes",
+                    ""
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_5": {
+            "text": "Interfaces"
+        }
+    },
+    {
+        "HEADING_6": {
+            "text": "Interfaces - Yosef-1K"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table shows interface configurations for device Yosef-1K at site Yosef-Home-Apex."
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Interface",
+                "IP Address",
+                "Gateway",
+                "DNS",
+                "Tags"
+            ],
+            "col_widths": [
+                120,
+                120
+            ],
+            "head_caption": {
+                "text": "Table 59 \u2013 Yosef-1K Interface Configurations"
+            },
+            "values": [
+                [
+                    "port - 1",
+                    "172.16.21.1/24",
+                    "172.16.21.2",
+                    "208.67.220.220, 208.67.222.222, 8.8.8.8",
+                    "prisma_region:us-east-1:1"
+                ],
+                [
+                    "port - 2",
+                    "DHCP",
+                    " ",
+                    " ",
+                    ""
+                ],
+                [
+                    "port - 3",
+                    "DHCP",
+                    " ",
+                    " ",
+                    ""
+                ],
+                [
+                    "port - 4",
+                    "172.16.22.1/24",
+                    "",
+                    "",
+                    ""
+                ],
+                [
+                    "service_link - AUTO-PRISMA_IPSEC-Tunnel_us-east-1_1",
+                    "172.16.0.6/31",
+                    "",
+                    "",
+                    "AUTO-PRISMA_MANAGED"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_4": {
+            "text": "Routing"
+        }
+    },
+    {
+        "HEADING_5": {
+            "text": "BGP Routing - Yosef-1K"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "The table(s) shows the BGP routing information for Yosef-1K in  Yosef-Home-Apex"
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Name",
+                "Peer IP",
+                "Remote ASN",
+                "Local ASN",
+                "Scope",
+                "Description"
+            ],
+            "col_widths": [
+                100,
+                90,
+                54,
+                54,
+                50
+            ],
+            "head_caption": {
+                "text": "Table 60 \u2013 Yosef-1K ION BGP Routing"
+            },
+            "values": [
+                [
+                    "LAN-3750-CORE",
+                    "172.16.22.2",
+                    "65001",
+                    "65000",
+                    "global",
+                    "None"
+                ],
+                [
+                    "AUTO-PRISMA_IPSEC-Tunnel_us-east-1_1",
+                    "172.16.0.7",
+                    "65534",
+                    "65000",
+                    "global",
+                    "Auto Created by Prisma Access for Networks (managed by Panorama)"
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_1": {
+            "text": "Document Properties"
+        }
+    },
+    {
+        "paragraph": {
+            "text": "This document is prepared for the sole use by {{customer_name}}."
+        }
+    },
+    {
+        "HEADING_2": {
+            "text": "Contributors"
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Name",
+                "Role",
+                "Title",
+                "Contact Information"
+            ],
+            "col_widths": [
+                100
+            ],
+            "head_caption": {
+                "text": "Table 61 \u2013 Contributors"
+            },
+            "values": [
+                [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                [
+                    "",
+                    "",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_2": {
+            "text": "Revision History"
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Date",
+                "Revision",
+                "Changes By",
+                "Status",
+                "Comments"
+            ],
+            "col_widths": [
+                70,
+                56,
+                108,
+                60
+            ],
+            "head_caption": {
+                "text": "Table 62 \u2013 Revision History"
+            },
+            "values": [
+                [
+                    "06/14/22",
+                    "1.0",
+                    "{{pan_engineer}}",
+                    "Complete",
+                    "Configuration pulled from controller."
+                ],
+                [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                [
+                    "",
+                    "",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    },
+    {
+        "HEADING_2": {
+            "text": "Customer Resources"
+        }
+    },
+    {
+        "table": {
+            "headers": [
+                "Name",
+                "Title",
+                "Contact information"
+            ],
+            "col_widths": [
+                120,
+                180
+            ],
+            "head_caption": {
+                "text": "Table 63 \u2013 Customer Resources"
+            },
+            "values": [
+                [
+                    "",
+                    "",
+                    ""
+                ],
+                [
+                    "",
+                    "",
+                    ""
+                ],
+                [
+                    "",
+                    "",
+                    ""
+                ]
+            ]
+        }
+    }
+]

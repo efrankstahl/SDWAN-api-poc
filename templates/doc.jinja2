@@ -1,0 +1,1302 @@
+{% set table_count = TableCount(4) %}
+{% set ns = namespace() %}
+[
+  {
+    "HEADING_2": {
+      "text": "Enterprise Global Prefixes"
+    }
+  },
+  {
+    "paragraph": {
+      "text": "List of globally identified Enterprise Prefixes."
+    }
+  },
+  {
+    "table": {
+      "headers": ["Enterprise Global Prefixes"],
+      "col_widths": [],
+      "head_caption": {
+        "text":  "Table {{table_count.next()}} – Enterprise Global Prefixes"
+      },
+      "values": [[{{j_dumps('\n'.join(stack_info.enterprise_prefixes))}}]]
+    }
+  },
+
+
+  {
+    "HEADING_2": {
+      "text": "Stack Policies"
+    }
+  },
+  {
+    "paragraph": {
+      "text": "This section describes the Application Policies to be used for standardization of the SD-WAN deployment. Prisma SD-WAN uses mapping of 3rd party services and Prisma SD-WAN data centers to allow flexibility when creating network policy rules, while accounting for uniqueness across sites."
+    }
+  },
+  {
+    "HEADING_3": {
+      "text": "Path Policies"
+    }
+  },
+  {
+    "HEADING_4": {
+      "text": "Path Policy Stack(s)"
+    }
+  },
+  {
+    "paragraph": {
+      "text": "The table shows the Path Policy Stacks and associated Policy Sets."
+    }
+  },
+  {
+    "table": {
+      "headers": ["Path Policy Stack", "Path Policy Set(s)", "Default Path Policy Set"],
+      "col_widths": [120],
+      "head_caption": {
+        "text":  "Table {{table_count.next()}} – Path Policy Stack(s)"
+      },
+      "values": {{path.path_stacks}}
+    }
+  },
+  {
+    "HEADING_4": {
+      "text": "Path Policy Set(s)"
+    }
+  },
+  {% for path_set_name, path_set_table in path.path_sets.items() %}
+  {
+    "HEADING_5": {
+      "text": "{{path_set_name}}"
+    }
+  },
+  {% if json_loads(path_set_table)|length > 0 %}
+  {
+    "paragraph": {
+      "text": "The table shows the path policy rules in the {{path_set_name}} Policy Set."
+    }
+  },
+  {
+    "table": {
+      "headers": ["Rule Name", "Order No.", "Included App(s)", "Active Path", "Backup Path", "Path of Last Resort", "DC Group"],
+      "col_widths": [60, 42, 70, 70, 70],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – {{path_set_name}} Path Policy Set Rule(s)"
+      },
+      "values": {{path_set_table}}
+    }
+  },
+  {% else %}
+  {
+    "paragraph": {
+      "text": "No path policy rules were configured for {{path_set_name}} Policy Set."
+    }
+  },
+  {% endif %}
+  {% endfor %}
+
+
+
+  {
+    "HEADING_3": {
+      "text": "QoS Policies"
+    }
+  },
+{# START QOS Section #}
+  {
+    "HEADING_4": {
+      "text": "QoS Policy Stack(s)"
+    }
+  },
+  {
+    "paragraph": {
+      "text": "The table shows the QoS Policy Stacks and associated Policy Sets."
+    }
+  },
+  {
+    "table": {
+      "headers": ["QoS Policy Stack", "QoS Policy Set(s)", "Default QoS Policy Set"],
+      "col_widths": [120],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – QoS Policy Stack(s)"
+      },
+      "values": {{qos.qos_stacks}}
+    }
+  },
+  {
+    "HEADING_4": {
+      "text": "QoS Policy Set(s)"
+    }
+  },
+  {% for qos_set_name, qos_set_table in qos.qos_sets.items() %}
+  {
+    "HEADING_5": {
+      "text": "{{qos_set_name}}"
+    }
+  },
+  {% if json_loads(qos_set_table)|length > 0 %}
+  {
+    "paragraph": {
+      "text": "The table shows the QoS policy rules in the {{qos_set_name}} Policy Set."
+    }
+  },
+  {
+    "table": {
+      "headers": ["Rule Name", "Order No.", "Source Prefix", "Destination Prefix", "Included App(s)", "QoS Class", "DSCP Mark/Remark"],
+      "col_widths": [60, 42, 70, 70, 70],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – {{qos_set_name}} QoS Policy Set Rule(s)"
+      },
+      "values": {{qos_set_table}}
+    }
+
+  },
+  {% else %}
+  {
+    "paragraph": {
+      "text": "No QoS policy rules were configured for {{qos_set_name}} Policy Set."
+    }
+  },
+  {% endif %}
+  {% endfor %}
+{#END QOS Section#}
+
+
+
+
+{# START NAT Section #}
+  {
+    "HEADING_3": {
+      "text": "NAT Policies"
+    }
+  },
+
+  {
+    "HEADING_4": {
+      "text": "NAT Policy Stack(s)"
+    }
+  },
+  {
+    "paragraph": {
+      "text": "The table shows the NAT Policy Stacks and associated Policy Sets."
+    }
+  },
+  {
+    "table": {
+      "headers": ["NAT Policy Stack", "NAT Policy Set(s)"],
+      "col_widths": [144],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – NAT Policy Stack(s)"
+      },
+      "values": {{nat.nat_stacks}}
+    }
+  },
+  {
+    "HEADING_4": {
+      "text": "NAT Policy Set(s)"
+    }
+  },
+  {% for nat_set_name, nat_tables in nat.nat_sets.items() %}
+  {
+    "HEADING_5": {
+      "text": "{{nat_set_name}}"
+    }
+  },
+  {
+    "HEADING_6": {
+      "text": "Source Zone NAT Rules"
+    }
+  },
+  {% if json_loads(nat_tables.source_zone_table)|length > 0 %}
+  {
+    "paragraph": {
+      "text": "The table shows the Source Zone based NAT policies for the {{nat_set_name}} Policy Set."
+    }
+  },
+  {
+    "table": {
+      "headers": ["Name", "Order No.", "Source Prefix", "Source Port", "Destination Prefix", "Destination Port", "Protocol", "Action", "NAT Pool"],
+      "col_widths": [null, 42, null, null, null, null, 55],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – {{nat_set_name}} Policy Set Source Zone Rule(s)"
+      },
+      "values": {{nat_tables.source_zone_table}}
+    }
+  },
+  {% else %}
+  {
+    "paragraph": {
+      "text": "No Source Zone NAT rules are defined in the {{nat_set_name}} Policy Set."
+    }
+  },
+  {% endif %}
+
+  {
+    "HEADING_6": {
+      "text": "Destination Zone NAT Rules"
+    }
+  },
+  {% if json_loads(nat_tables.destination_zone_table)|length > 0 %}
+  {
+    "paragraph": {
+      "text": "The table shows the Destination Zone based NAT policies for the {{nat_set_name}} Policy Set."
+    }
+  },
+  {
+    "table": {
+      "headers": ["Name", "Order No.", "Source Prefix", "Source Port", "Destination Prefix", "Destination Port", "Protocol", "Action", "NAT Pool"],
+      "col_widths": [null, 42, null, null, null, null, 55],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – {{nat_set_name}} Policy Set Destination Zone Rule(s)"
+      },
+      "values": {{nat_tables.destination_zone_table}}
+    }
+  },
+  {% else %}
+  {
+    "paragraph": {
+      "text": "No Destination Zone NAT rules are defined in the {{nat_set_name}} Policy Set."
+    }
+  },
+  {% endif %}
+  {% endfor %}
+{# END NAT Section #}
+
+
+{# START ZBFW Section #}
+{% if settings.security_stacks %}
+  {
+    "HEADING_3": {
+      "text": "Security Policies"
+    }
+  },
+
+  {
+    "HEADING_4": {
+      "text": "Security Policy Stack(s)"
+    }
+  },
+  {
+    "paragraph": {
+      "text": "The table shows the Security Policy Stacks and associated Policy Sets."
+    }
+  },
+  {
+    "table": {
+      "headers": ["Security Policy Stack", "Security Policy Set(s)", "Default Security Policy Set"],
+      "col_widths": [120],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – Security Policy Stack(s)"
+      },
+      "values": {{security.security_stacks}}
+    }
+  },
+  {
+    "HEADING_4": {
+      "text": "Security Policy Set(s)"
+    }
+  },
+  {% for set_name, set_table in security.security_sets.items() %}
+  {
+    "HEADING_5": {
+      "text": "{{set_name}}"
+    }
+  },
+  {% if json_loads(set_table)|length > 0 %}
+  {
+    "paragraph": {
+      "text": "The table shows the security policy rules in the {{set_name}} Policy Set."
+    }
+  },
+  {
+    "table": {
+      "headers": ["Ord No.", "Name", "Action", "Services", "Src Zones", "Dst Zones", "Src Prefixes", "Dest Prefixes", "Apps"],
+      "col_widths": [32, 64, 45, 72],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – {{set_name}} Path Policy Set Rule(s)"
+      },
+      "values": {{set_table}}
+    }
+  },
+  {% else %}
+  {
+    "paragraph": {
+      "text": "No security policy rules were configured for {{set_name}} Policy Set."
+    }
+  },
+  {% endif %}
+  {% endfor %}
+{# END ZBFW Section #}
+{% endif %}
+
+
+  {
+    "HEADING_2": {
+      "text": "Custom Applications"
+    }
+  },
+  {
+    "paragraph": {
+      "text": "This section will outline Custom Applications, outlined by L7 and L3/L4 applications. "
+    }
+  },
+  {
+    "HEADING_3": {
+      "text": "Custom L3/L4 Application(s)"
+    }
+  },
+  {
+    "table": {
+      "headers": ["App Name", "protocol",  "Source/ Client Prefix (Ports)", "Destination/ Server Prefix (Ports)", "Transfer Type", "Path Affinity", "Idle Timeout"],
+      "col_widths": [72,50,90,90, 68],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – Custom L3/L4 Application(s)"
+      },
+      "values": {{custom_apps.l3_l4_apps}}
+    }
+  },
+  {
+    "HEADING_3": {
+      "text": "Custom L7 Application(s)"
+    }
+  },
+  {
+    "table": {
+      "headers": ["App Name", "Domains", "Transfer Type", "Path Affinity", "Idle Timeout"],
+      "col_widths": [100,180,80],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – Custom L7 Application(s)"
+      },
+      "values": {{custom_apps.l7_apps}}
+    }
+  },
+
+{# START Cloudblade section#}
+{% if True in settings.cloudblades.values() %}
+  {
+    "HEADING_2": {
+      "text": "CloudBlades"
+    }
+  },
+  {
+    "paragraph": {
+      "text": "This section will outline CloudBlade configuration(s)."
+    }
+  },
+  {# START Prisma Access CB Section #}
+  {% if settings.cloudblades['Prisma Access for Networks (managed by Panorama)'] %}
+  {% set current_cb = stack_info.find_sdwan_app('Prisma Access for Networks (managed by Panorama)') %}
+  {
+    "HEADING_3": {
+      "text": "{{current_cb.name}}"
+    }
+  },
+  {
+    "paragraph": {
+      "text": {{j_dumps(current_cb.description)}}
+    }
+  },
+  {% if current_cb.sdwan_app_config|length %}
+  {
+    "table": {
+      "headers": ["State", "Version", "Tunnel Inner IP Pool",  "ION Default ASN", "Panorama Tenant Name"],
+      "col_widths": [70, 70],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – {{current_cb.name}}"
+      },
+      "values": [[
+        "{{current_cb.sdwan_app_config[0].state}}",
+        "{{current_cb.sdwan_app_config[0].version}}",
+        "{{current_cb.sdwan_app_config[0].user_config.CGX_SERVICELINK_TUNNEL_CIDR}}",
+        "{{current_cb.sdwan_app_config[0].user_config.PRISMA_ACCESS_BGP_AS_NUMBER}}",
+        "{{current_cb.sdwan_app_config[0].user_config.PRISMA_ACCESS_MULTI_TENANT_NAME}}"
+      ]]
+    }
+  },
+  {% else %}
+  {
+    "paragraph": {
+      "text": "This CloudBlade has not yet been configured, or it has been uninstalled."
+    }
+  },
+  {% endif %}
+  {% endif %}
+  {# END Prisma Access CB Section #}
+
+  {# START Email Notifications CB Section #}
+  {% if settings.cloudblades['Email Notifications For Alarm-Alerts'] %}
+  {% set current_cb = stack_info.find_sdwan_app('Email Notifications For Alarm-Alerts') %}
+  {
+    "HEADING_3": {
+      "text": "{{current_cb.name}}"
+    }
+  },
+  {
+    "paragraph": {
+      "text": {{j_dumps(current_cb.description)}}
+    }
+  },
+  {% if current_cb.sdwan_app_config|length %}
+  {
+    "table": {
+      "headers": ["State", "Version", "Email(s)",  "Event Codes"],
+      "col_widths": [54, 54, 144],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – {{current_cb.name}}"
+      },
+      "values": [[
+        "{{current_cb.sdwan_app_config[0].state}}",
+        "{{current_cb.sdwan_app_config[0].version}}",
+        {{j_dumps('\n'.join(re.split(', |,', current_cb.sdwan_app_config[0].user_config.email)))}},
+        {{j_dumps('\n'.join(current_cb.sdwan_app_config[0].user_config.eventcodes))}}
+      ]]
+    }
+  },
+  {% else %}
+  {
+    "paragraph": {
+      "text": "This CloudBlade has not yet been configured, or it has been uninstalled."
+    }
+  },
+  {% endif %}
+  {% endif %}
+  {# END Email Notifications CB Section #}
+
+{% endif %}
+{# END Cloudblade section#}
+
+
+{# START DC section #}
+  {
+    "HEADING_1": {
+      "text": "Data Centers - Site and Device Details"
+    }
+  },
+  {
+    "paragraph": {
+      "text": "This section outlines the configuration for Data Centers."
+    }
+  },
+
+  {# Starting DC LEVEL #}
+  {% for site_name, site in sites_config['sites'].items() %}
+  {% if site.element_cluster_role == "HUB" %}
+  {
+    "HEADING_2": {
+      "text": "{{j_dumps(site_name)[1:-1]}}"
+    }
+  },
+  {% if options.topology_diagrams %}
+  {
+    "HEADING_3": {
+      "text": "Topology Diagram"
+    }
+  },
+  {
+    "paragraph": {
+      "text": "The following diagram depicts the connectivity diagram for Site {{j_dumps(site_name)[1:-1]}}."
+    }
+  },
+  {
+    "image": "https://lh6.googleusercontent.com/2dQJhkEv5sZt712ugWOSk2VSpTwTCs9hIyBk27OA_cnfX-iksKT3Z6Ke0ofOf8Ant9Ph5dEqKL_i-XUnEF6x3aqGQL5S4PMVDda7R55bPHbpw6VksFQzjJEAO9F1bMGn-mfRwDdYgkCS476RfQ"
+  },
+  {% endif %}
+  {
+    "HEADING_3": {
+      "text": "Site Information"
+    }
+  },
+  {
+    "paragraph": {
+      "text": "The table shows the Site level information for Site {{j_dumps(site_name)[1:-1]}}."
+    }
+  },
+  {
+    "table": {
+      "headers": ["Site Name", "Location", "ION Devices", "ION Device Name"],
+      "col_widths": [108,144,80],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – {{j_dumps(site_name)[1:-1]}} Site Information"
+      },
+      "values": [[
+        "{{j_dumps(site_name)[1:-1]}}",
+        "{% if site.address.street %}{{site.address.street}}, {% endif %}{% if site.address.city %}{{site.address.city}}, {% endif %} {% if site.address.state %}{{site.address.state}}, {% endif %}{% if site.address.post_code %}{{site.address.post_code}}, {% endif %}{% if site.address.post_code %}{{site.address.country}}, {% endif %}",
+        "{% if site['elements'] %}x{{site['elements']|length}} {{(site['elements'].values()|list)[0].model_name}}{% else %}No elements allocated to this site{% endif %}",
+        "{% if site['elements'] %}{% for element_name, t_element in site['elements'].items() %}{{element_name}}\n{% endfor %}{% endif %}"
+      ]
+       ]
+    }
+  },
+  {
+    "HEADING_3": {
+      "text": "Circuit Information"
+    }
+  },
+  {
+    "paragraph": {
+      "text": "The table shows the Circuit information for Site {{j_dumps(site_name)[1:-1]}}."
+    }
+  },
+  {
+    "table": {
+      "headers": ["Circuit Name", "WAN Network", "Circuit Type", "Circuit Category", "Bandwidth Configured"],
+      "col_widths": [null, null, 75, null, 90],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – {{j_dumps(site_name)[1:-1]}} Circuit Information"
+      },
+      "values": [
+      {% if 'waninterfaces' in site %}
+      {% for circuit_name, circuit in site['waninterfaces'].items() %}[
+        {{j_dumps(circuit_name)}},
+        {{j_dumps(circuit.network_id)}},
+        "{% if circuit.network_type=="privatewan" %}Private Wan{% else %}Internet{% endif %}",
+        {{j_dumps(circuit.label_id)}},
+        "{{circuit.link_bw_up|int}} Mbps Up\n{{circuit.link_bw_down|int}} Mbps Down"
+      ]{% if site['waninterfaces']|length != loop.index %},{% endif %}
+       {% endfor %}
+       {% else %}
+       []
+       {% endif %}
+       ]
+    }
+  },
+
+
+  {% if site['elements'] %}
+  {
+    "HEADING_4": {
+      "text": "Base Configuration"
+    }
+  },
+  {
+    "paragraph": {
+      "text": "The table shows some base configurations on the ION devices for Site {{j_dumps(site_name)[1:-1]}}."
+    }
+  },
+  {
+    "table": {
+      "headers": ["Device Name", "Serial Number", "OS Version", "Force VPN to VPN Traffic to Local Next hop", "TAGS"],
+      "col_widths": [90,90,70,90],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – {{j_dumps(site_name)[1:-1]}} Base Configurations"
+      },
+      "values": [{% for element_name, element in site['elements'].items() %}[
+        "{{element_name}}",
+        "{{element.serial_number}}",
+        "{{element.software_version}}",
+        "{% if element.vpn_to_vpn_forwarding %}No{% else %}Yes{% endif %}",
+        "{% if element.tags %}{% for tag in element.tags %}{{tag}}{% if element.tags|length != loop.index %}\n{% endif %}{% endfor %}{% endif %}"
+      ]{% if site['elements']|length != loop.index %},{% endif %}
+       {% endfor %}]
+    }
+  },
+  {
+    "HEADING_4": {
+      "text": "Interfaces"
+    }
+  },
+  {% for element_name, element in site['elements'].items() %}
+  {
+    "HEADING_5": {
+      "text": "Interfaces - {{element_name}}"
+    }
+  },
+  {
+    "paragraph": {
+      "text": "The table shows interface configurations for device {{element_name}} at site {{j_dumps(site_name)[1:-1]}}."
+    }
+  },
+  {
+    "table": {
+      "headers": ["Interface", "IP Address", "Gateway", "DNS"],
+      "col_widths": [],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – {{element_name}} Interface Configurations"
+      },
+      "values": [{% for intf_name, intf in element["interfaces"].items() %}
+        [
+        "{{intf.type}} - {{intf_name}}",
+        {% if intf.ipv4_config.type == 'static' %}
+        "{{ intf.ipv4_config.static_config.address}}",
+        "{% if intf.ipv4_config.routes %}{{ intf.ipv4_config.routes[0].via}}{% endif %}",
+        "{% if intf.ipv4_config.dns_v4_config %}{{ ', '.join(intf.ipv4_config.dns_v4_config.name_servers) }}{% endif %}"
+        {% else %}"DHCP"
+        {% endif %}
+        ]{% if element["interfaces"]|length != loop.index %},{% endif %}
+       {% endfor %}]
+    }
+  },
+
+  {% endfor %}
+
+  {
+    "HEADING_4": {
+      "text": "Routing"
+    }
+  },
+
+  {% for element_name, element in site['elements'].items() %}
+  {% if 'peers' in element.routing.bgp %}
+    {
+    "HEADING_5": {
+      "text": "BGP Routing - {{element_name}}"
+    }
+  },
+  {
+    "paragraph": {
+      "text": "The table(s) shows the BGP routing information for {{element_name}} in  {{j_dumps(site_name)[1:-1]}}."
+    }
+  },
+  {
+    "table": {
+      "headers": ["Name", "Peer IP", "Remote ASN", "Local ASN", "Scope", "Description"],
+      "col_widths": [100, 90, 54, 54, 50],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – {{element_name}} ION BGP Routing"
+      },
+      "values": [{% for bgp_name, bgp in element.routing.bgp['peers'].items() %}
+        [
+        "{{bgp_name}}",
+        "{{bgp.peer_ip}}",
+        "{{bgp.remote_as_num}}",
+        "{{element.routing.bgp['global_config'].local_as_num}}",
+        "{{bgp.scope}}",
+        {{j_dumps(bgp.description)}}
+        ]{% if element.routing.bgp['peers']|length != loop.index %},{% endif %}
+       {% endfor %}]
+    }
+  },
+  {% endif %}
+  {% endfor %}
+  {# End Loop for BGP Routes #}
+
+  {% for element_name, element in site['elements'].items() %}
+  {% if element.routing['static'] %}
+    {
+    "HEADING_5": {
+      "text": "Static Routing - {{element_name}}"
+    }
+  },
+  {
+    "paragraph": {
+      "text": "The table(s) shows the static route information for {{element_name}} in  {{j_dumps(site_name)[1:-1]}}."
+    }
+  },
+  {
+    "table": {
+      "headers": ["Name", "Destination Prefix", "Next Hop IP", "Admin Distance", "Scope", "Description"],
+      "col_widths": [90, 100, 100, 57, 43],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – {{element_name}} ION Static Routing"
+      },
+      "values": [{% for static_r_name, static_r in element.routing['static'].items() %}
+        [
+        "{{static_r_name}}",
+        "{{static_r.destination_prefix}}",
+        "{% for nexthop in static_r.nexthops %}{%if static_r.nexthops|length >1 %}{{loop.index}}: {% endif %}{{nexthop.nexthop_ip}}{% if static_r.nexthops|length != loop.index %}\n{% endif %}{% endfor %}",
+        "{% for nexthop in static_r.nexthops %}{%if static_r.nexthops|length >1 %}{{loop.index}}: {% endif %}{{nexthop.admin_distance}}{% if static_r.nexthops|length != loop.index %}\n{% endif %}{% endfor %}",
+        "{{static_r.scope}}"
+        ]{% if element.routing['static']|length != loop.index %},{% endif %}
+       {% endfor %}]
+    }
+  },
+  {% endif %}
+  {% endfor %}
+  {# End Loop for Static Routes #}
+
+  {% else %}
+  {
+    "paragraph": {
+      "text": "No Devices have been allocated to this site."
+    }
+  },
+  {% endif %}
+  {# End of Device If Statement DCs#}
+
+  {% endif %}
+  {# End of Site Loops for DCs #}
+  {% endfor %}
+
+
+  {
+    "HEADING_1": {
+      "text": "Branches - Site and Device Details"
+    }
+  },
+  {
+    "paragraph": {
+      "text": "This section outlines the configuration for Branches."
+    }
+  },
+
+  {% for site_name, site in sites_config['sites'].items() %}
+  {% if site.element_cluster_role == "SPOKE" %}
+  {
+    "HEADING_2": {
+      "text": "{{j_dumps(site_name)[1:-1]}}"
+    }
+  },
+  {% if options.topology_diagrams %}
+  {
+    "HEADING_3": {
+      "text": "Topology Diagram"
+    }
+  },
+  {
+    "paragraph": {
+      "text": "The following diagram depicts the connectivity diagram for Site {{j_dumps(site_name)[1:-1]}}."
+    }
+  },
+  {
+    "image": "https://lh6.googleusercontent.com/2dQJhkEv5sZt712ugWOSk2VSpTwTCs9hIyBk27OA_cnfX-iksKT3Z6Ke0ofOf8Ant9Ph5dEqKL_i-XUnEF6x3aqGQL5S4PMVDda7R55bPHbpw6VksFQzjJEAO9F1bMGn-mfRwDdYgkCS476RfQ"
+  },
+  {% endif %}
+  {
+    "HEADING_3": {
+      "text": "Site Information"
+    }
+  },
+  {
+    "paragraph": {
+      "text": "The table shows the Site level information for Site {{j_dumps(site_name)[1:-1]}}."
+    }
+  },
+  {
+    "table": {
+      "headers": ["Site Name", "Domain", "Location", "ION Devices", "ION Device Name"],
+      "col_widths": [90,70,110,80],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – {{j_dumps(site_name)[1:-1]}} Site Information"
+      },
+      "values": [[
+        "{{j_dumps(site_name)[1:-1]}}",
+        "{{site.service_binding}}",
+        "{{site.address.street}}, {{site.address.city}}, {{site.address.state}} {{site.address.post_code}}, {{site.address.country}}",
+        "{% if site['elements'] %}x{{site['elements']|length}} {{(site['elements'].values()|list)[0].model_name}}{% else %}No elements allocated to this site{% endif %}",
+        "{% if site['elements'] %}{% for element_name, t_element in site['elements'].items() %}{{element_name}}\n{% endfor %}{% endif %}"
+      ]
+       ]
+    }
+  },
+  {
+    "HEADING_3": {
+      "text": "Circuit Information"
+    }
+  },
+  {
+    "paragraph": {
+      "text": "The table shows the Circuit information for Site {{j_dumps(site_name)[1:-1]}}."
+    }
+  },
+  {
+    "table": {
+      "headers": ["Circuit Name", "WAN Network", "Circuit Type", "Circuit Category", "Bandwidth Configured"],
+      "col_widths": [null, null, 75, null, 90],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – {{j_dumps(site_name)[1:-1]}} Circuit Information"
+      },
+      "values": [
+      {% if 'waninterfaces' in site %}
+      {% for circuit_name, circuit in site['waninterfaces'].items() %}[
+        {{j_dumps(circuit_name)}},
+        {{j_dumps(circuit.network_id)}},
+        "{% if circuit.network_type=="privatewan" %}Private Wan{% else %}Internet{% endif %}",
+        {{j_dumps(circuit.label_id)}},
+        "{{circuit.link_bw_up|int}} Mbps Up\n{{circuit.link_bw_down|int}} Mbps Down"
+      ]{% if site['waninterfaces']|length != loop.index %},{% endif %}
+       {% endfor %}
+       {% else %}
+       []
+       {% endif %}
+       ]
+    }
+  },
+  {
+    "HEADING_3": {
+      "text": "Policy Mapping"
+    }
+  },
+  {
+    "paragraph": {
+      "text": "The table shows the Stacked Policies bound to Site {{j_dumps(site_name)[1:-1]}}."
+    }
+  },
+  {
+    "table": {
+      "headers": ["Site", "Path Policy Stack", "QoS Policy Stack", "NAT Policy Stack", "Security Policy Stack"],
+      "col_widths": [100],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – {{j_dumps(site_name)[1:-1]}} Policy Mapping"
+      },
+      "values": [[
+        "{{j_dumps(site_name)[1:-1]}}",
+        "{{site.network_policysetstack_id}}",
+        "{{site.priority_policysetstack_id}}",
+        "{{site.nat_policysetstack_id}}",
+        "{% if site.security_policyset_id is not none %}{{site.security_policysetstack_id}}{% endif %}"
+      ]]
+    }
+  },
+  {% if site['spokeclusters'] is defined %}
+  {
+    "HEADING_3": {
+      "text": "High Availability"
+    }
+  },
+  {
+    "paragraph": {
+      "text": "The table shows the HA Configuration {{j_dumps(site_name)[1:-1]}}."
+    }
+  },
+  {
+    "table": {
+      "headers": ["HA Cluster", "Pre-emption", "Advertisement Interval"],
+      "col_widths": [],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – {{j_dumps(site_name)[1:-1]}} High Availability"
+      },
+      "values": [[{% for cluster_name, cluster in site['spokeclusters'].items() %}
+        "{{cluster_name}}",
+        "{{cluster['preempt']}}",
+        "{{cluster['advertisement_interval']}}"
+      ]]
+      {% endfor %}
+    }
+  },{% endif %}
+
+
+  {% if settings.security_stacks %}
+  {
+    "HEADING_3": {
+      "text": "Security Zone Binding"
+    }
+  },
+  {
+    "HEADING_4": {
+      "text": "Site Zone Binding"
+    }
+  },
+
+  {% if site['site_security_zones'] is defined %}
+  {
+    "paragraph": {
+      "text": "The table shows the site zone bindings for {{j_dumps(site_name)[1:-1]}}."
+    }
+  },
+  {
+    "table": {
+      "headers": ["Zone", "Bound Network"],
+      "col_widths": [144],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – {{j_dumps(site_name)[1:-1]}} Security Site Zone Binding"
+      },
+      "values": [{% for zone_bind in site.site_security_zones %}
+        [
+            "{{zone_bind.zone_id}}",
+            "{% for t_netw in zone_bind.networks %}{{t_netw.network_id}}\n{% endfor %}"
+        ]{% if site.site_security_zones|length != loop.index %},{% endif %}
+      {% endfor %}
+      ]
+    }
+  },
+  {% else %}
+  {
+    "paragraph": {
+      "text": "Site {{j_dumps(site_name)[1:-1]}} has no security site bindings."
+    }
+  },
+
+  {% endif %}
+  {
+    "HEADING_4": {
+      "text": "Device Zone Binding"
+    }
+  },
+
+  {% for element_name, element in site['elements'].items() %}
+  {% if element.element_security_zones %}
+  {
+    "paragraph": {
+      "text": "The table shows the device zone bindings for {{j_dumps(element_name)[1:-1]}}."
+    }
+  },
+  {
+    "table": {
+      "headers": ["Zone", "Bound Network/Interface"],
+      "col_widths": [144],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – {{j_dumps(site_name)[1:-1]}} Security Device Zone Binding for {{element_name}}"
+      },
+      "values": [{% for zone_bind in element.element_security_zones %}
+        [
+            "{{zone_bind.zone_id}}",
+            "{% if zone_bind.lannetwork_ids %}{{'\\n'.join(zone_bind.lannetwork_ids)}}\n{%endif%}{% if zone_bind.interface_ids %}{{'\\n'.join(zone_bind.interface_ids)}}\n{%endif%}{% if zone_bind.wanoverlay_ids %}{{'\\n'.join(zone_bind.wanoverlay_ids)}}\n{%endif%}{% if zone_bind.waninterface_ids %}{{'\\n'.join(zone_bind.waninterface_ids)}}{%endif%}"
+        ]{% if element.element_security_zones|length != loop.index %},{% endif %}
+      {% endfor %}
+      ]
+    }
+  },
+  {% else %}
+  {
+    "paragraph": {
+      "text": "Site {{j_dumps(site_name)[1:-1]}} has no security device bindings for {{j_dumps(element_name)[1:-1]}}."
+    }
+  },
+  {% endif %}
+  {% endfor %}
+
+  {% endif %}
+
+  {% if settings.cloudblades['Prisma Access for Networks (managed by Panorama)'] and 'extended_tags' in  site and site.extended_tags %}
+  {
+    "HEADING_3": {
+      "text": "Extended Tags"
+    }
+  },
+  {% set ns.ext_tag = none %}
+  {% set ns.break_loop = false %}
+  {% for extended_tag in site['extended_tags'] if not break_loop %}
+  {% if extended_tag['key'] == 'prisma_access' %}
+  {% set ns.break_loop = true %}
+  {% set ns.ext_tag = j_loads(extended_tag.value) %}
+  {% endif %}
+  {% endfor %}
+  {% if ns.ext_tag is not none %}
+  {
+    "HEADING_5": {
+      "text": "prisma_access"
+    }
+  },
+  {
+    "HEADING_6": {
+      "text": "ECMP"
+    }
+  },
+  {
+    "table": {
+      "headers": ["Region", "License"],
+      "col_widths": [],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – {{j_dumps(site_name)[1:-1]}} prisma_access ECMP"
+      },
+      "values": [
+      {% if ns.ext_tag.ecmp %}
+      [{% for ecmp in ns.ext_tag.ecmp %}
+        "{{ecmp.region}}",
+        "{{ecmp.licence}}"
+      ]{% if ns.ext_tag.ecmp|length != loop.index %},{% endif %}
+       {% endfor %}
+       {% else %}
+       []
+       {% endif %}
+       ]
+    }
+  },
+  {
+    "HEADING_6": {
+      "text": "BGP"
+    }
+  },
+  {
+    "table": {
+      "headers": ["Enabled", "Element ASN for Tunnels", "Receive Default Route from Prisma Access", "Prisma forward received Branch Routes from Prisma SD-WAN"],
+      "col_widths": [72, 72],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – {{j_dumps(site_name)[1:-1]}} prisma_access ECMP"
+      },
+      "values": [
+      [
+        "{% if ns.ext_tag.bgp.enabled %}Yes{% else %}No{% endif %}",
+        "{{ns.ext_tag.bgp.as_number}}",
+        "{{ns.ext_tag.bgp.default_route}}",
+        "{{ns.ext_tag.bgp.advertise_to_prisma}}"
+      ]]
+    }
+  },
+  {
+    "HEADING_6": {
+      "text": "Bandwidth Detection"
+    }
+  },
+  {% if not ns.ext_tag.bandwidth_detection.enabled %}
+  {
+    "paragraph": {
+      "text": "Modify Default Prisma License Selection Behavior is not enabled."
+    }
+  },
+  {% else %}
+  {
+    "paragraph": {
+      "text": "Modify Default Prisma License Selection Behavior."
+    }
+  },
+  {
+    "table": {
+      "headers": ["Enabled", "BW Limit", "BW Ratio", "Only select Prisma licenses BELOW configured WAN interface Bandwidth", "Divide configured Prisma SD-WAN WAN bandwidth equally for multiple Prisma tunnels", "Force all Prisma tunnels to statically use Prisma Tunnel License Limit (above)"],
+      "col_widths": [64,64,64],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – {{j_dumps(site_name)[1:-1]}} prisma_access Bandwidth Detection"
+      },
+      "values": [
+      [
+        "{% if ns.ext_tag.bandwidth_detection.enabled %}Yes{% else %}No{% endif %}",
+        "{{ns.ext_tag.bandwidth_detection.tunnel_bw_limit}}",
+        "{{ns.ext_tag.bandwidth_detection.tunnel_bw_ratio}}",
+        "{{ns.ext_tag.bandwidth_detection.tunnel_bw_bestfit_below}}",
+        "{{ns.ext_tag.bandwidth_detection.tunnel_bw_split}}",
+        "{{ns.ext_tag.bandwidth_detection.tunnel_bw_static}}"
+      ]]
+    }
+  },
+  {% endif %}
+  {% endif %}
+  {% endif %}
+
+
+  {% if site['elements'] %}
+  {
+    "HEADING_3": {
+      "text": "Device Configuration"
+    }
+  },
+  {
+    "HEADING_4": {
+      "text": "Base Configuration"
+    }
+  },
+  {
+    "paragraph": {
+      "text": "The table shows some base configurations on the ION devices for Site {{j_dumps(site_name)[1:-1]}}."
+    }
+  },
+  {
+    "table": {
+      "headers": ["Device Name", "Serial Number", "OS Version", "L3 LAN Forwarding", "L3 WAN Forwarding", "TAGS"],
+      "col_widths": [90,100,54,72,72],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – {{j_dumps(site_name)[1:-1]}} Base Configuration"
+      },
+      "values": [
+      {% if site['elements'] %}
+      {% for element_name, element in site['elements'].items() %}[
+        "{{element_name}}",
+        "{{element.serial_number}}",
+        "{{element.software_version}}",
+        "{% if element.l3_lan_forwarding %}Yes{% else %}No{% endif %}",
+        "{% if element.l3_direct_private_wan_forwarding %}Yes{% else %}No{% endif %}",
+        "{% if element.tags %}{% for tag in element.tags %}{{tag}}{% if element.tags|length != loop.index %}\n{% endif %}{% endfor %}{% endif %}"
+      ]{% if site['elements']|length != loop.index %},{% endif %}
+       {% endfor %}
+       {% else %}
+       []
+       {% endif %}
+       ]
+    }
+  },
+  {
+    "HEADING_5": {
+      "text": "Interfaces"
+    }
+  },
+  {% for element_name, element in site['elements'].items() %}
+  {
+    "HEADING_6": {
+      "text": "Interfaces - {{element_name}}"
+    }
+  },
+  {
+    "paragraph": {
+      "text": "The table shows interface configurations for device {{element_name}} at site {{j_dumps(site_name)[1:-1]}}."
+    }
+  },
+  {
+    "table": {
+      "headers": ["Interface", "IP Address", "Gateway", "DNS", "Tags"],
+      "col_widths": [120, 120],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – {{element_name}} Interface Configurations"
+      },
+      "values": [{% for intf_name, intf in element["interfaces"].items() %}
+        [
+        "{{intf.type}} - {{intf_name}}",
+        {% if intf.ipv4_config.type == 'static' %}
+        "{{ intf.ipv4_config.static_config.address}}",
+        "{% if intf.ipv4_config.routes %}{{ intf.ipv4_config.routes[0].via}}{% endif %}",
+        "{% if intf.ipv4_config.dns_v4_config %}{{ ', '.join(intf.ipv4_config.dns_v4_config.name_servers) }}{% endif %}",
+        {% else %}
+        "DHCP",
+        " ",
+        " ",
+        {% endif %}
+        "{% if intf.tags %}{{', '.join(intf.tags)}}{% endif %}"
+        ]{% if element["interfaces"]|length != loop.index %},{% endif %}
+       {% endfor %}]
+    }
+  },
+
+  {% endfor %}
+
+  {
+    "HEADING_4": {
+      "text": "Routing"
+    }
+  },
+  {% set ns.bgp_route_check = False %}
+  {% set ns.static_route_check = False %}
+  {% for element_name, element in site['elements'].items() %}
+  {% if 'peers' in element.routing.bgp %}{% set ns.bgp_route_check = True %}
+    {
+    "HEADING_5": {
+      "text": "BGP Routing - {{element_name}}"
+    }
+  },
+  {
+    "paragraph": {
+      "text": "The table(s) shows the BGP routing information for {{element_name}} in  {{j_dumps(site_name)[1:-1]}}"
+    }
+  },
+  {
+    "table": {
+      "headers": ["Name", "Peer IP", "Remote ASN", "Local ASN", "Scope", "Description"],
+      "col_widths": [100, 90, 54, 54, 50],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – {{element_name}} ION BGP Routing"
+      },
+      "values": [{% for bgp_name, bgp in element.routing.bgp['peers'].items() %}
+        [
+        "{{bgp_name}}",
+        "{{bgp.peer_ip}}",
+        "{{bgp.remote_as_num}}",
+        "{{element.routing.bgp['global_config'].local_as_num}}",
+        "{{bgp.scope}}",
+        {{j_dumps(bgp.description)}}
+        ]{% if element.routing.bgp['peers']|length != loop.index %},{% endif %}
+       {% endfor %}]
+    }
+  },
+  {% endif %}
+  {% endfor %}
+
+  {% for element_name, element in site['elements'].items() %}
+  {% if element.routing['static'] %}{% set ns.static_route_check = True %}
+    {
+    "HEADING_5": {
+      "text": "Static Routing - {{element_name}}"
+    }
+  },
+  {
+    "paragraph": {
+      "text": "The table(s) shows the static route information for {{element_name}} in  {{j_dumps(site_name)[1:-1]}}"
+    }
+  },
+  {
+    "table": {
+      "headers": ["Name", "Destination Prefix", "Next Hop IP", "Admin Distance", "Scope", "Description"],
+      "col_widths": [90, 100, 100, 57, 43],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – {{element_name}} ION Static Routing"
+      },
+      "values": [{% for static_r_name, static_r in element.routing['static'].items() %}
+        [
+        "{{static_r_name}}",
+        "{{static_r.destination_prefix}}",
+        "{% for nexthop in static_r.nexthops %}{%if static_r.nexthops|length >1 %}{{loop.index}}: {% endif %}{{nexthop.nexthop_ip}}{% if static_r.nexthops|length != loop.index %}\n{% endif %}{% endfor %}",
+        "{% for nexthop in static_r.nexthops %}{%if static_r.nexthops|length >1 %}{{loop.index}}: {% endif %}{{nexthop.admin_distance}}{% if static_r.nexthops|length != loop.index %}\n{% endif %}{% endfor %}",
+        "{{static_r.scope}}"
+        ]{% if element.routing['static']|length != loop.index %},{% endif %}
+       {% endfor %}]
+    }
+  },
+  {% endif %}
+  {% endfor %}
+  {% if not ns.bgp_route_check and not ns.static_route_check%}
+  {
+    "paragraph": {
+      "text": "No Static or BGP routing was configured at this Site."
+    }
+  },
+  {% endif %}
+
+
+  {% else %}
+  {
+    "paragraph": {
+      "text": "No Devices have been allocated to this site."
+    }
+  },
+  {% endif %}{# End of Device If Statement for Branches (Below)#}
+
+  {# End of Site Loops for Branches#}
+  {% endif %}
+  {# End of Site Loops for Branches #}
+  {% endfor %}
+
+  {
+    "HEADING_1": {
+      "text": "Document Properties"
+    }
+  },
+  {
+    "paragraph": {
+      "text": "This document is prepared for the sole use by {% raw %}{{customer_name}}{% endraw %}."
+    }
+  },
+  {
+    "HEADING_2": {
+      "text": "Contributors"
+    }
+  },
+  {
+    "table": {
+      "headers": ["Name", "Role", "Title", "Contact Information"],
+      "col_widths": [100],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – Contributors"
+      },
+      "values": [
+        ["", "", "", ""],
+        ["", "", "", ""],
+        ["", "", "", ""]
+      ]
+    }
+  },
+
+  {
+    "HEADING_2": {
+      "text": "Revision History"
+    }
+  },
+  {
+    "table": {
+      "headers": ["Date", "Revision", "Changes By", "Status", "Comments"],
+      "col_widths": [70,56,108,60],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – Revision History"
+      },
+      "values": [
+        ["{{settings.replacement_texts['date']}}", "1.0", "{% raw %}{{pan_engineer}}{% endraw %}", "Complete" , "Configuration pulled from controller."],
+        ["", "", "", ""],
+        ["", "", "", ""]
+      ]
+    }
+  },
+
+  {
+    "HEADING_2": {
+      "text": "Customer Resources"
+    }
+  },
+  {
+    "table": {
+      "headers": ["Name", "Title", "Contact information"],
+      "col_widths": [120,180],
+      "head_caption": {
+        "text": "Table {{table_count.next()}} – Customer Resources"
+      },
+      "values": [
+        ["", "", ""],
+        ["", "", ""],
+        ["", "", ""]
+      ]
+    }
+  }
+]

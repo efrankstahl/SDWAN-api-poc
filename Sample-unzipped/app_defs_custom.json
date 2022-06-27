@@ -1,0 +1,2446 @@
+[
+    {
+        "id": "16342585222180242",
+        "_etag": 2,
+        "_schema": 3,
+        "_created_on_utc": 16342585222180242,
+        "_updated_on_utc": 16537271473830062,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "Amir_TEST",
+        "abbreviation": "Amir",
+        "domains": null,
+        "tcp_rules": null,
+        "udp_rules": null,
+        "ip_rules": [
+            {
+                "protocol": "icmp",
+                "dest_filters": null,
+                "src_filters": null,
+                "dscp": {
+                    "value": 2
+                },
+                "dest_prefixes": null,
+                "dest_filters_dicts": [],
+                "src_filters_dicts": []
+            }
+        ],
+        "transfer_type": "rt-audio",
+        "app_type": "custom",
+        "category": "voip",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": false
+    },
+    {
+        "id": "16178517512570045",
+        "_etag": 3,
+        "_schema": 3,
+        "_created_on_utc": 16178517512570045,
+        "_updated_on_utc": 16537271473830054,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "Apple Applications",
+        "abbreviation": "Apple",
+        "domains": [
+            "apple.com",
+            "icloud.com"
+        ],
+        "tcp_rules": null,
+        "udp_rules": null,
+        "ip_rules": null,
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "saas",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": false
+    },
+    {
+        "id": "16104623589150175",
+        "_etag": 3,
+        "_schema": 3,
+        "_created_on_utc": 16104623589150175,
+        "_updated_on_utc": 16537271473830050,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "Chris Dolan Live",
+        "abbreviation": "ChDo",
+        "domains": null,
+        "tcp_rules": [
+            {
+                "server_filters": [
+                    "16104621410640040"
+                ],
+                "client_filters": null,
+                "server_port": {
+                    "start": "443",
+                    "end": "443"
+                },
+                "client_port": {
+                    "start": "1",
+                    "end": "65535"
+                },
+                "dscp": {
+                    "value": 1
+                },
+                "server_prefixes": null,
+                "server_filters_dicts": [
+                    {
+                        "id": "16104621410640040",
+                        "_etag": 1,
+                        "_schema": 1,
+                        "_created_on_utc": 16104621410640040,
+                        "_updated_on_utc": 16104621410640040,
+                        "_debug": null,
+                        "_info": null,
+                        "_warning": null,
+                        "_error": null,
+                        "name": "ChDo",
+                        "description": "Chris Dolan Web server LIVE",
+                        "filters": [
+                            {
+                                "type": "ipv4",
+                                "ip_prefixes": [
+                                    "10.10.100.0/24"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "client_filters_dicts": []
+            }
+        ],
+        "udp_rules": null,
+        "ip_rules": null,
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "gaming",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": false
+    },
+    {
+        "id": "15677128972320034",
+        "_etag": 3,
+        "_schema": 3,
+        "_created_on_utc": 15677128972320034,
+        "_updated_on_utc": 16537271473830038,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "Erdp",
+        "abbreviation": "Erdp",
+        "domains": null,
+        "tcp_rules": null,
+        "udp_rules": [
+            {
+                "udp_filters": null,
+                "udp_port": {
+                    "start": "3389",
+                    "end": "3389"
+                },
+                "dscp": null,
+                "dest_prefixes": null,
+                "udp_filters_dicts": []
+            }
+        ],
+        "ip_rules": null,
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "enterprise",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": false
+    },
+    {
+        "id": "15898455897440015",
+        "_etag": 2,
+        "_schema": 3,
+        "_created_on_utc": 15898455897440015,
+        "_updated_on_utc": 16537271473830042,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "Google Regional",
+        "abbreviation": "GoRe",
+        "domains": [
+            "google.com.au",
+            "google.com.hk",
+            "google.co.uk"
+        ],
+        "tcp_rules": null,
+        "udp_rules": null,
+        "ip_rules": null,
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "secure-browsing",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": false
+    },
+    {
+        "id": "16263264041340067",
+        "_etag": 2,
+        "_schema": 3,
+        "_created_on_utc": 16263264041340067,
+        "_updated_on_utc": 16537271473830058,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "Home Apple",
+        "abbreviation": "HoAp",
+        "domains": null,
+        "tcp_rules": [
+            {
+                "server_filters": [
+                    "16104621410640040"
+                ],
+                "client_filters": null,
+                "server_port": {
+                    "start": "10",
+                    "end": "10"
+                },
+                "client_port": null,
+                "dscp": null,
+                "server_prefixes": null,
+                "server_filters_dicts": [
+                    {
+                        "id": "16104621410640040",
+                        "_etag": 1,
+                        "_schema": 1,
+                        "_created_on_utc": 16104621410640040,
+                        "_updated_on_utc": 16104621410640040,
+                        "_debug": null,
+                        "_info": null,
+                        "_warning": null,
+                        "_error": null,
+                        "name": "ChDo",
+                        "description": "Chris Dolan Web server LIVE",
+                        "filters": [
+                            {
+                                "type": "ipv4",
+                                "ip_prefixes": [
+                                    "10.10.100.0/24"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "client_filters_dicts": []
+            }
+        ],
+        "udp_rules": null,
+        "ip_rules": null,
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "anti-virus",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": false
+    },
+    {
+        "id": "16104612076390224",
+        "_etag": 2,
+        "_schema": 3,
+        "_created_on_utc": 16104612076390224,
+        "_updated_on_utc": 16537271473830049,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "Lionel FUN APP",
+        "abbreviation": "LiFu",
+        "domains": [
+            "www.funlionel.com"
+        ],
+        "tcp_rules": null,
+        "udp_rules": null,
+        "ip_rules": null,
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "enterprise",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": false
+    },
+    {
+        "id": "16449951738080135",
+        "_etag": 2,
+        "_schema": 3,
+        "_created_on_utc": 16449951738080135,
+        "_updated_on_utc": 16537271473830063,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "NETBIOS_SCAN",
+        "abbreviation": "NeSc",
+        "domains": null,
+        "tcp_rules": [
+            {
+                "server_filters": null,
+                "client_filters": null,
+                "server_port": {
+                    "start": "139",
+                    "end": "139"
+                },
+                "client_port": null,
+                "dscp": null,
+                "server_prefixes": null,
+                "server_filters_dicts": [],
+                "client_filters_dicts": []
+            }
+        ],
+        "udp_rules": null,
+        "ip_rules": null,
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "enterprise",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": true
+    },
+    {
+        "id": "15478313591490004",
+        "_etag": 4,
+        "_schema": 3,
+        "_created_on_utc": 15478313591490004,
+        "_updated_on_utc": 16537271473830035,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "Nikesh",
+        "abbreviation": "Nikes",
+        "domains": null,
+        "tcp_rules": [
+            {
+                "server_filters": [
+                    "15453354135540236"
+                ],
+                "client_filters": null,
+                "server_port": {
+                    "start": "80",
+                    "end": "80"
+                },
+                "client_port": null,
+                "dscp": null,
+                "server_prefixes": null,
+                "server_filters_dicts": [
+                    {
+                        "id": "15453354135540236",
+                        "_etag": 6,
+                        "_schema": 1,
+                        "_created_on_utc": 15453354135540236,
+                        "_updated_on_utc": 16527312074840153,
+                        "_debug": null,
+                        "_info": null,
+                        "_warning": null,
+                        "_error": null,
+                        "name": "abrakadabra",
+                        "description": null,
+                        "filters": [
+                            {
+                                "type": "ipv4",
+                                "ip_prefixes": [
+                                    "31.2.3.4/32",
+                                    "30.2.3.4/32",
+                                    "29.2.3.4/32",
+                                    "28.2.3.4/32",
+                                    "27.2.3.4/32",
+                                    "26.2.3.4/32",
+                                    "25.2.3.4/32",
+                                    "24.2.3.4/32",
+                                    "23.2.3.4/32",
+                                    "22.2.3.4/32",
+                                    "21.2.3.4/32",
+                                    "1.2.3.14/32",
+                                    "1.2.3.4/32",
+                                    "10.2.3.4/32",
+                                    "11.2.3.4/32",
+                                    "12.2.3.4/32",
+                                    "13.2.3.4/32",
+                                    "14.2.3.4/32",
+                                    "15.2.3.4/32",
+                                    "16.2.3.4/32",
+                                    "17.2.3.4/32",
+                                    "18.2.3.4/32",
+                                    "19.2.3.4/32",
+                                    "2.2.3.4/32",
+                                    "3.2.3.4/32",
+                                    "4.2.3.4/32",
+                                    "5.2.3.4/32",
+                                    "6.2.3.4/32",
+                                    "7.2.3.4/32",
+                                    "8.2.3.4/32",
+                                    "9.2.3.4/32",
+                                    "31.2.3.5/32",
+                                    "31.2.3.6/32",
+                                    "31.2.3.7/32",
+                                    "31.2.3.8/32",
+                                    "31.2.3.9/32",
+                                    "31.2.3.10/32",
+                                    "31.2.3.11/32",
+                                    "31.2.3.12/32",
+                                    "31.2.3.13/32",
+                                    "31.2.3.14/32",
+                                    "31.2.3.15/32",
+                                    "31.2.3.16/32",
+                                    "31.2.3.17/32",
+                                    "31.2.3.18/32",
+                                    "31.2.3.19/32",
+                                    "31.2.3.21/32",
+                                    "31.2.3.22/32",
+                                    "31.2.3.23/32",
+                                    "31.2.3.24/32",
+                                    "31.2.3.25/32",
+                                    "31.2.3.26/32",
+                                    "185.20.224.185/32",
+                                    "185.66.70.45/32",
+                                    "188.226.150.141/32",
+                                    "82.146.58.216/32",
+                                    "106.75.32.182/32",
+                                    "164.163.253.94/32",
+                                    "183.136.225.42/32",
+                                    "191.96.168.225/32",
+                                    "193.93.62.130/32"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "client_filters_dicts": []
+            }
+        ],
+        "udp_rules": null,
+        "ip_rules": null,
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "enterprise",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": true
+    },
+    {
+        "id": "16147900475110042",
+        "_etag": 3,
+        "_schema": 3,
+        "_created_on_utc": 16147900475110042,
+        "_updated_on_utc": 16537271473830051,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "PB Teams - L3",
+        "abbreviation": "PbTe",
+        "domains": null,
+        "tcp_rules": [
+            {
+                "server_filters": [
+                    "16147898521520003"
+                ],
+                "client_filters": null,
+                "server_port": {
+                    "start": "80",
+                    "end": "80"
+                },
+                "client_port": null,
+                "dscp": null,
+                "server_prefixes": null,
+                "server_filters_dicts": [
+                    {
+                        "id": "16147898521520003",
+                        "_etag": 1,
+                        "_schema": 1,
+                        "_created_on_utc": 16147898521520003,
+                        "_updated_on_utc": 16147898521520003,
+                        "_debug": null,
+                        "_info": null,
+                        "_warning": null,
+                        "_error": null,
+                        "name": "MS Teams Subnets",
+                        "description": "5 Prefixes",
+                        "filters": [
+                            {
+                                "type": "ipv4",
+                                "ip_prefixes": [
+                                    "52.244.160.207/32",
+                                    "52.238.119.141/32",
+                                    "52.120.0.0/14",
+                                    "52.112.0.0/14",
+                                    "13.107.64.0/18"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "client_filters_dicts": []
+            }
+        ],
+        "udp_rules": null,
+        "ip_rules": null,
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "enterprise",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": false
+    },
+    {
+        "id": "16147904589390048",
+        "_etag": 2,
+        "_schema": 3,
+        "_created_on_utc": 16147904589390048,
+        "_updated_on_utc": 16537271473830052,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "PB Teams - L7",
+        "abbreviation": "PbTe",
+        "domains": [
+            "teams.microsoft.com",
+            "lync.com",
+            "skype.com",
+            "sfbassets.com",
+            "mediaservices.windows.net",
+            "msecnd.net",
+            "ajax.aspnetcdn.com",
+            "mlccdn.blob.core.windows.net",
+            "amp.azure.net",
+            "aka.ms",
+            "users.storage.live.com",
+            "adl.windows.com",
+            "skypeforbusiness.com",
+            "msedge.net",
+            "compass-ssl.microsoft.com",
+            "mstea.ms"
+        ],
+        "tcp_rules": null,
+        "udp_rules": null,
+        "ip_rules": null,
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "enterprise",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": false
+    },
+    {
+        "id": "16147906454730107",
+        "_etag": 2,
+        "_schema": 3,
+        "_created_on_utc": 16147906454730107,
+        "_updated_on_utc": 16537271473830053,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "PB Teams - RealTime",
+        "abbreviation": "PbTe",
+        "domains": null,
+        "tcp_rules": null,
+        "udp_rules": [
+            {
+                "udp_filters": [
+                    "16147906107260078"
+                ],
+                "udp_port": {
+                    "start": "3478",
+                    "end": "3481"
+                },
+                "dscp": null,
+                "dest_prefixes": null,
+                "udp_filters_dicts": [
+                    {
+                        "id": "16147906107260078",
+                        "_etag": 1,
+                        "_schema": 1,
+                        "_created_on_utc": 16147906107260078,
+                        "_updated_on_utc": 16147906107260078,
+                        "_debug": null,
+                        "_info": null,
+                        "_warning": null,
+                        "_error": null,
+                        "name": "MS Teams Audio",
+                        "description": "3 Prefixes",
+                        "filters": [
+                            {
+                                "type": "ipv4",
+                                "ip_prefixes": [
+                                    "52.120.0.0/14",
+                                    "52.112.0.0/14",
+                                    "13.107.64.0/18"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "ip_rules": null,
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "enterprise",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": false
+    },
+    {
+        "id": "15953658833820147",
+        "_etag": 2,
+        "_schema": 3,
+        "_created_on_utc": 15953658833820147,
+        "_updated_on_utc": 16537271473830043,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 0,
+        "display_name": "SNMP",
+        "abbreviation": "Sn",
+        "domains": null,
+        "tcp_rules": null,
+        "udp_rules": [
+            {
+                "udp_filters": [
+                    "15675325915970022"
+                ],
+                "udp_port": {
+                    "start": "161",
+                    "end": "161"
+                },
+                "dscp": null,
+                "dest_prefixes": null,
+                "udp_filters_dicts": [
+                    {
+                        "id": "15675325915970022",
+                        "_etag": 1,
+                        "_schema": 1,
+                        "_created_on_utc": 15675325915970022,
+                        "_updated_on_utc": 15675325915970022,
+                        "_debug": null,
+                        "_info": null,
+                        "_warning": null,
+                        "_error": null,
+                        "name": "test",
+                        "description": null,
+                        "filters": [
+                            {
+                                "type": "ipv4",
+                                "ip_prefixes": [
+                                    "10.12.12.0/28"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "ip_rules": null,
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "enterprise",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": false
+    },
+    {
+        "id": "16227061304100221",
+        "_etag": 3,
+        "_schema": 3,
+        "_created_on_utc": 16227061304100221,
+        "_updated_on_utc": 16542380171090178,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "none",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 30,
+        "display_name": "Scan-App",
+        "abbreviation": "ScAp",
+        "domains": null,
+        "tcp_rules": [
+            {
+                "server_filters": [
+                    "16227060361840234"
+                ],
+                "client_filters": null,
+                "server_port": {
+                    "start": "1",
+                    "end": "65535"
+                },
+                "client_port": null,
+                "dscp": null,
+                "server_prefixes": null,
+                "server_filters_dicts": [
+                    {
+                        "id": "16227060361840234",
+                        "_etag": 1,
+                        "_schema": 1,
+                        "_created_on_utc": 16227060361840234,
+                        "_updated_on_utc": 16227060361840234,
+                        "_debug": null,
+                        "_info": null,
+                        "_warning": null,
+                        "_error": null,
+                        "name": "Firewall_IP",
+                        "description": null,
+                        "filters": [
+                            {
+                                "type": "ipv4",
+                                "ip_prefixes": [
+                                    "183.60.131.0/24"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "client_filters_dicts": []
+            }
+        ],
+        "udp_rules": [
+            {
+                "udp_filters": [
+                    "16227060361840234"
+                ],
+                "udp_port": {
+                    "start": "1",
+                    "end": "65535"
+                },
+                "dscp": null,
+                "dest_prefixes": null,
+                "udp_filters_dicts": [
+                    {
+                        "id": "16227060361840234",
+                        "_etag": 1,
+                        "_schema": 1,
+                        "_created_on_utc": 16227060361840234,
+                        "_updated_on_utc": 16227060361840234,
+                        "_debug": null,
+                        "_info": null,
+                        "_warning": null,
+                        "_error": null,
+                        "name": "Firewall_IP",
+                        "description": null,
+                        "filters": [
+                            {
+                                "type": "ipv4",
+                                "ip_prefixes": [
+                                    "183.60.131.0/24"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "ip_rules": null,
+        "transfer_type": "bulk",
+        "app_type": "custom",
+        "category": "net-discovery",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": true
+    },
+    {
+        "id": "16270585005700077",
+        "_etag": 2,
+        "_schema": 3,
+        "_created_on_utc": 16270585005700077,
+        "_updated_on_utc": 16537271473830060,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "Security Cam App",
+        "abbreviation": "SeCa",
+        "domains": null,
+        "tcp_rules": [
+            {
+                "server_filters": [
+                    "16270584776860244"
+                ],
+                "client_filters": null,
+                "server_port": {
+                    "start": "2000",
+                    "end": "2000"
+                },
+                "client_port": null,
+                "dscp": null,
+                "server_prefixes": null,
+                "server_filters_dicts": [
+                    {
+                        "id": "16270584776860244",
+                        "_etag": 1,
+                        "_schema": 1,
+                        "_created_on_utc": 16270584776860244,
+                        "_updated_on_utc": 16270584776860244,
+                        "_debug": null,
+                        "_info": null,
+                        "_warning": null,
+                        "_error": null,
+                        "name": "SecurityCamApp",
+                        "description": null,
+                        "filters": [
+                            {
+                                "type": "ipv4",
+                                "ip_prefixes": [
+                                    "10.0.100.100/32"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "client_filters_dicts": []
+            }
+        ],
+        "udp_rules": null,
+        "ip_rules": null,
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "enterprise",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": false
+    },
+    {
+        "id": "16512459278730118",
+        "_etag": 3,
+        "_schema": 3,
+        "_created_on_utc": 16512459278730118,
+        "_updated_on_utc": 16537271473830064,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "ShaunF-JLP-NTPServers",
+        "abbreviation": "ShJl",
+        "domains": null,
+        "tcp_rules": null,
+        "udp_rules": [
+            {
+                "udp_filters": [
+                    "16512458711390084"
+                ],
+                "udp_port": {
+                    "start": "123",
+                    "end": "123"
+                },
+                "dscp": null,
+                "dest_prefixes": null,
+                "udp_filters_dicts": [
+                    {
+                        "id": "16512458711390084",
+                        "_etag": 3,
+                        "_schema": 1,
+                        "_created_on_utc": 16512458711390084,
+                        "_updated_on_utc": 16515876550870193,
+                        "_debug": null,
+                        "_info": null,
+                        "_warning": null,
+                        "_error": null,
+                        "name": "ShaunF-JLP-NTP Servers",
+                        "description": null,
+                        "filters": [
+                            {
+                                "type": "ipv4",
+                                "ip_prefixes": [
+                                    "192.168.42.5/32",
+                                    "192.168.42.1/32",
+                                    "51.155.16.62/32"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "ip_rules": null,
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "enterprise",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": false
+    },
+    {
+        "id": "16517340152270045",
+        "_etag": 2,
+        "_schema": 3,
+        "_created_on_utc": 16517340152270045,
+        "_updated_on_utc": 16537271473830068,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "ShaunF-JLP-SCCM-Legacy",
+        "abbreviation": "ShJl",
+        "domains": null,
+        "tcp_rules": null,
+        "udp_rules": [
+            {
+                "udp_filters": null,
+                "udp_port": {
+                    "start": "1776",
+                    "end": "1776"
+                },
+                "dscp": null,
+                "dest_prefixes": null,
+                "udp_filters_dicts": []
+            }
+        ],
+        "ip_rules": null,
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "enterprise",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": false
+    },
+    {
+        "id": "16515831823310165",
+        "_etag": 6,
+        "_schema": 3,
+        "_created_on_utc": 16515831823310165,
+        "_updated_on_utc": 16537271473830065,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "ShaunF_JLP_HTTP",
+        "abbreviation": "ShJl",
+        "domains": null,
+        "tcp_rules": [
+            {
+                "server_filters": null,
+                "client_filters": null,
+                "server_port": {
+                    "start": "80",
+                    "end": "80"
+                },
+                "client_port": null,
+                "dscp": null,
+                "server_prefixes": null,
+                "server_filters_dicts": [],
+                "client_filters_dicts": []
+            }
+        ],
+        "udp_rules": null,
+        "ip_rules": null,
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "enterprise",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": false
+    },
+    {
+        "id": "16515886677950252",
+        "_etag": 2,
+        "_schema": 3,
+        "_created_on_utc": 16515886677950252,
+        "_updated_on_utc": 16537271473830067,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "ShaunF_JLP_External_DNS",
+        "abbreviation": "ShJl",
+        "domains": null,
+        "tcp_rules": null,
+        "udp_rules": [
+            {
+                "udp_filters": [
+                    "16515884562670008"
+                ],
+                "udp_port": {
+                    "start": "53",
+                    "end": "53"
+                },
+                "dscp": null,
+                "dest_prefixes": null,
+                "udp_filters_dicts": [
+                    {
+                        "id": "16515884562670008",
+                        "_etag": 1,
+                        "_schema": 1,
+                        "_created_on_utc": 16515884562670008,
+                        "_updated_on_utc": 16515884562670008,
+                        "_debug": null,
+                        "_info": null,
+                        "_warning": null,
+                        "_error": null,
+                        "name": "ShaunF-JLP-External DNS Servers",
+                        "description": null,
+                        "filters": [
+                            {
+                                "type": "ipv4",
+                                "ip_prefixes": [
+                                    "192.168.117.120/32",
+                                    "192.168.117.121/32"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "ip_rules": null,
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "enterprise",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": false
+    },
+    {
+        "id": "16515886218150224",
+        "_etag": 2,
+        "_schema": 3,
+        "_created_on_utc": 16515886218150224,
+        "_updated_on_utc": 16537271473830066,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "ShaunF_JLP_Internal_DNS",
+        "abbreviation": "ShJl",
+        "domains": null,
+        "tcp_rules": null,
+        "udp_rules": [
+            {
+                "udp_filters": [
+                    "16515884164530255"
+                ],
+                "udp_port": {
+                    "start": "53",
+                    "end": "53"
+                },
+                "dscp": null,
+                "dest_prefixes": null,
+                "udp_filters_dicts": [
+                    {
+                        "id": "16515884164530255",
+                        "_etag": 1,
+                        "_schema": 1,
+                        "_created_on_utc": 16515884164530255,
+                        "_updated_on_utc": 16515884164530255,
+                        "_debug": null,
+                        "_info": null,
+                        "_warning": null,
+                        "_error": null,
+                        "name": "ShaunF-JLP-Internal DNS Servers",
+                        "description": null,
+                        "filters": [
+                            {
+                                "type": "ipv4",
+                                "ip_prefixes": [
+                                    "172.17.64.0/24",
+                                    "172.22.64.0/24"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "ip_rules": null,
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "enterprise",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": false
+    },
+    {
+        "id": "16251556763980131",
+        "_etag": 2,
+        "_schema": 3,
+        "_created_on_utc": 16251556763980131,
+        "_updated_on_utc": 16537271473830057,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "ShaunTestApp",
+        "abbreviation": "Sh",
+        "domains": null,
+        "tcp_rules": [
+            {
+                "server_filters": [
+                    "15771196029810045",
+                    "15771196469260246"
+                ],
+                "client_filters": [
+                    "16250477233970049"
+                ],
+                "server_port": {
+                    "start": "3000",
+                    "end": "4000"
+                },
+                "client_port": {
+                    "start": "5000",
+                    "end": "6000"
+                },
+                "dscp": {
+                    "value": 31
+                },
+                "server_prefixes": null,
+                "server_filters_dicts": [
+                    {
+                        "id": "15771196029810045",
+                        "_etag": 1,
+                        "_schema": 1,
+                        "_created_on_utc": 15771196029810045,
+                        "_updated_on_utc": 15771196029810045,
+                        "_debug": null,
+                        "_info": null,
+                        "_warning": null,
+                        "_error": null,
+                        "name": "TestPortIP1",
+                        "description": null,
+                        "filters": [
+                            {
+                                "type": "ipv4",
+                                "ip_prefixes": [
+                                    "20.0.0.1/32"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "15771196469260246",
+                        "_etag": 1,
+                        "_schema": 1,
+                        "_created_on_utc": 15771196469260246,
+                        "_updated_on_utc": 15771196469260246,
+                        "_debug": null,
+                        "_info": null,
+                        "_warning": null,
+                        "_error": null,
+                        "name": "TestPortIP2",
+                        "description": null,
+                        "filters": [
+                            {
+                                "type": "ipv4",
+                                "ip_prefixes": [
+                                    "20.0.0.2/32"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "client_filters_dicts": [
+                    {
+                        "id": "16250477233970049",
+                        "_etag": 1,
+                        "_schema": 1,
+                        "_created_on_utc": 16250477233970049,
+                        "_updated_on_utc": 16250477233970049,
+                        "_debug": null,
+                        "_info": null,
+                        "_warning": null,
+                        "_error": null,
+                        "name": "Shaun_Test_Prefix",
+                        "description": null,
+                        "filters": [
+                            {
+                                "type": "ipv4",
+                                "ip_prefixes": [
+                                    "192.168.100.10/32",
+                                    "145.146.45.128/30"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "udp_rules": [
+            {
+                "udp_filters": [
+                    "15675325915970022",
+                    "15617498973280030"
+                ],
+                "udp_port": {
+                    "start": "1000",
+                    "end": "2000"
+                },
+                "dscp": {
+                    "value": 21
+                },
+                "dest_prefixes": null,
+                "udp_filters_dicts": [
+                    {
+                        "id": "15675325915970022",
+                        "_etag": 1,
+                        "_schema": 1,
+                        "_created_on_utc": 15675325915970022,
+                        "_updated_on_utc": 15675325915970022,
+                        "_debug": null,
+                        "_info": null,
+                        "_warning": null,
+                        "_error": null,
+                        "name": "test",
+                        "description": null,
+                        "filters": [
+                            {
+                                "type": "ipv4",
+                                "ip_prefixes": [
+                                    "10.12.12.0/28"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "15617498973280030",
+                        "_etag": 1,
+                        "_schema": 1,
+                        "_created_on_utc": 15617498973280030,
+                        "_updated_on_utc": 15617498973280030,
+                        "_debug": null,
+                        "_info": null,
+                        "_warning": null,
+                        "_error": null,
+                        "name": "Test_2",
+                        "description": null,
+                        "filters": [
+                            {
+                                "type": "ipv4",
+                                "ip_prefixes": [
+                                    "10.128.10.0/24"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "ip_rules": [
+            {
+                "protocol": "icmp",
+                "dest_filters": [
+                    "16137582334480192",
+                    "16250477233970049"
+                ],
+                "src_filters": [
+                    "15724546809580157"
+                ],
+                "dscp": {
+                    "value": 41
+                },
+                "dest_prefixes": null,
+                "dest_filters_dicts": [
+                    {
+                        "id": "16137582334480192",
+                        "_etag": 1,
+                        "_schema": 1,
+                        "_created_on_utc": 16137582334480192,
+                        "_updated_on_utc": 16137582334480192,
+                        "_debug": null,
+                        "_info": null,
+                        "_warning": null,
+                        "_error": null,
+                        "name": "Private Addresses",
+                        "description": null,
+                        "filters": [
+                            {
+                                "type": "ipv4",
+                                "ip_prefixes": [
+                                    "10.0.0.0/8",
+                                    "172.16.0.0/12",
+                                    "192.168.0.0/16"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "16250477233970049",
+                        "_etag": 1,
+                        "_schema": 1,
+                        "_created_on_utc": 16250477233970049,
+                        "_updated_on_utc": 16250477233970049,
+                        "_debug": null,
+                        "_info": null,
+                        "_warning": null,
+                        "_error": null,
+                        "name": "Shaun_Test_Prefix",
+                        "description": null,
+                        "filters": [
+                            {
+                                "type": "ipv4",
+                                "ip_prefixes": [
+                                    "192.168.100.10/32",
+                                    "145.146.45.128/30"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "src_filters_dicts": [
+                    {
+                        "id": "15724546809580157",
+                        "_etag": 1,
+                        "_schema": 1,
+                        "_created_on_utc": 15724546809580157,
+                        "_updated_on_utc": 15724546809580157,
+                        "_debug": null,
+                        "_info": null,
+                        "_warning": null,
+                        "_error": null,
+                        "name": "filter2",
+                        "description": null,
+                        "filters": [
+                            {
+                                "type": "ipv4",
+                                "ip_prefixes": [
+                                    "121.122.112.0/24",
+                                    "121.122.114.0/24",
+                                    "121.122.120.0/24",
+                                    "121.122.122.0/24"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "enterprise",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": false
+    },
+    {
+        "id": "15771196147980017",
+        "_etag": 3,
+        "_schema": 3,
+        "_created_on_utc": 15771196147980017,
+        "_updated_on_utc": 16537271473830040,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "TestPort1",
+        "abbreviation": "TeP1",
+        "domains": null,
+        "tcp_rules": [
+            {
+                "server_filters": [
+                    "15771196029810045"
+                ],
+                "client_filters": null,
+                "server_port": {
+                    "start": "1200",
+                    "end": "12010"
+                },
+                "client_port": null,
+                "dscp": null,
+                "server_prefixes": null,
+                "server_filters_dicts": [
+                    {
+                        "id": "15771196029810045",
+                        "_etag": 1,
+                        "_schema": 1,
+                        "_created_on_utc": 15771196029810045,
+                        "_updated_on_utc": 15771196029810045,
+                        "_debug": null,
+                        "_info": null,
+                        "_warning": null,
+                        "_error": null,
+                        "name": "TestPortIP1",
+                        "description": null,
+                        "filters": [
+                            {
+                                "type": "ipv4",
+                                "ip_prefixes": [
+                                    "20.0.0.1/32"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "client_filters_dicts": []
+            }
+        ],
+        "udp_rules": null,
+        "ip_rules": null,
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "enterprise",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": false
+    },
+    {
+        "id": "15771196563510046",
+        "_etag": 3,
+        "_schema": 3,
+        "_created_on_utc": 15771196563510046,
+        "_updated_on_utc": 16537271473830041,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "TestPort2",
+        "abbreviation": "TeP2",
+        "domains": null,
+        "tcp_rules": [
+            {
+                "server_filters": [
+                    "15771196469260246"
+                ],
+                "client_filters": null,
+                "server_port": {
+                    "start": "12000",
+                    "end": "12010"
+                },
+                "client_port": null,
+                "dscp": null,
+                "server_prefixes": null,
+                "server_filters_dicts": [
+                    {
+                        "id": "15771196469260246",
+                        "_etag": 1,
+                        "_schema": 1,
+                        "_created_on_utc": 15771196469260246,
+                        "_updated_on_utc": 15771196469260246,
+                        "_debug": null,
+                        "_info": null,
+                        "_warning": null,
+                        "_error": null,
+                        "name": "TestPortIP2",
+                        "description": null,
+                        "filters": [
+                            {
+                                "type": "ipv4",
+                                "ip_prefixes": [
+                                    "20.0.0.2/32"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "client_filters_dicts": []
+            }
+        ],
+        "udp_rules": null,
+        "ip_rules": null,
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "enterprise",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": false
+    },
+    {
+        "id": "15635570459180223",
+        "_etag": 3,
+        "_schema": 3,
+        "_created_on_utc": 15635570459180223,
+        "_updated_on_utc": 16537271473830037,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "Test_App",
+        "abbreviation": "TeAp",
+        "domains": [
+            "uhs-akamai.ustream.tv",
+            "ustream.tv"
+        ],
+        "tcp_rules": null,
+        "udp_rules": null,
+        "ip_rules": null,
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "streaming",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": false
+    },
+    {
+        "id": "16292007979520004",
+        "_etag": 3,
+        "_schema": 3,
+        "_created_on_utc": 16292007979520004,
+        "_updated_on_utc": 16537271473830061,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "VSpare Application",
+        "abbreviation": "VsAp",
+        "domains": [
+            "vc01.uecu1.local:443"
+        ],
+        "tcp_rules": null,
+        "udp_rules": null,
+        "ip_rules": null,
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "enterprise",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": false
+    },
+    {
+        "id": "16198001112100028",
+        "_etag": 2,
+        "_schema": 3,
+        "_created_on_utc": 16198001112100028,
+        "_updated_on_utc": 16537271473830055,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "WLC-App",
+        "abbreviation": "WLC",
+        "domains": [
+            "wlc.local"
+        ],
+        "tcp_rules": null,
+        "udp_rules": null,
+        "ip_rules": null,
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "enterprise",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": false
+    },
+    {
+        "id": "16045882175290148",
+        "_etag": 2,
+        "_schema": 3,
+        "_created_on_utc": 16045882175290148,
+        "_updated_on_utc": 16537271473830047,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "cbs.com",
+        "abbreviation": "Cb",
+        "domains": [
+            "cbs.com"
+        ],
+        "tcp_rules": null,
+        "udp_rules": null,
+        "ip_rules": null,
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "enterprise",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": false
+    },
+    {
+        "id": "16045863627450254",
+        "_etag": 2,
+        "_schema": 3,
+        "_created_on_utc": 16045863627450254,
+        "_updated_on_utc": 16537271473830046,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "cnn.com",
+        "abbreviation": "Cn",
+        "domains": [
+            "cnn.com"
+        ],
+        "tcp_rules": null,
+        "udp_rules": null,
+        "ip_rules": null,
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "enterprise",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": false
+    },
+    {
+        "id": "15373298175310077",
+        "_etag": 5,
+        "_schema": 3,
+        "_created_on_utc": 15373298175310077,
+        "_updated_on_utc": 16537271473790033,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "danASA",
+        "abbreviation": "DaAs",
+        "domains": null,
+        "tcp_rules": [
+            {
+                "server_filters": [
+                    "15373296927100172"
+                ],
+                "client_filters": null,
+                "server_port": {
+                    "start": "1",
+                    "end": "65000"
+                },
+                "client_port": null,
+                "dscp": null,
+                "server_prefixes": null,
+                "server_filters_dicts": [
+                    {
+                        "id": "15373296927100172",
+                        "_etag": 1,
+                        "_schema": 1,
+                        "_created_on_utc": 15373296927100172,
+                        "_updated_on_utc": 15373296927100172,
+                        "_debug": null,
+                        "_info": null,
+                        "_warning": null,
+                        "_error": null,
+                        "name": "dan_aas",
+                        "description": null,
+                        "filters": [
+                            {
+                                "type": "ipv4",
+                                "ip_prefixes": [
+                                    "10.0.127.0/24"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "client_filters_dicts": []
+            }
+        ],
+        "udp_rules": null,
+        "ip_rules": null,
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "enterprise",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": false
+    },
+    {
+        "id": "15614019144950159",
+        "_etag": 5,
+        "_schema": 3,
+        "_created_on_utc": 15614019144950159,
+        "_updated_on_utc": 16537271473830036,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "ex-RDP",
+        "abbreviation": "ExRd",
+        "domains": null,
+        "tcp_rules": [
+            {
+                "server_filters": [
+                    "15617498973280030"
+                ],
+                "client_filters": null,
+                "server_port": {
+                    "start": "3389",
+                    "end": "3389"
+                },
+                "client_port": null,
+                "dscp": null,
+                "server_prefixes": null,
+                "server_filters_dicts": [
+                    {
+                        "id": "15617498973280030",
+                        "_etag": 1,
+                        "_schema": 1,
+                        "_created_on_utc": 15617498973280030,
+                        "_updated_on_utc": 15617498973280030,
+                        "_debug": null,
+                        "_info": null,
+                        "_warning": null,
+                        "_error": null,
+                        "name": "Test_2",
+                        "description": null,
+                        "filters": [
+                            {
+                                "type": "ipv4",
+                                "ip_prefixes": [
+                                    "10.128.10.0/24"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "client_filters_dicts": []
+            }
+        ],
+        "udp_rules": [
+            {
+                "udp_filters": [
+                    "15617498973280030"
+                ],
+                "udp_port": {
+                    "start": "3389",
+                    "end": "3389"
+                },
+                "dscp": null,
+                "dest_prefixes": null,
+                "udp_filters_dicts": [
+                    {
+                        "id": "15617498973280030",
+                        "_etag": 1,
+                        "_schema": 1,
+                        "_created_on_utc": 15617498973280030,
+                        "_updated_on_utc": 15617498973280030,
+                        "_debug": null,
+                        "_info": null,
+                        "_warning": null,
+                        "_error": null,
+                        "name": "Test_2",
+                        "description": null,
+                        "filters": [
+                            {
+                                "type": "ipv4",
+                                "ip_prefixes": [
+                                    "10.128.10.0/24"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "ip_rules": null,
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "enterprise",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": false
+    },
+    {
+        "id": "16045884353300232",
+        "_etag": 2,
+        "_schema": 3,
+        "_created_on_utc": 16045884353300232,
+        "_updated_on_utc": 16537271473830048,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "mts.by",
+        "abbreviation": "Mt",
+        "domains": [
+            "mts.by"
+        ],
+        "tcp_rules": null,
+        "udp_rules": null,
+        "ip_rules": null,
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "enterprise",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": false
+    },
+    {
+        "id": "15755881850580057",
+        "_etag": 4,
+        "_schema": 3,
+        "_created_on_utc": 15755881850580057,
+        "_updated_on_utc": 16537271473830039,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "print-server-corp",
+        "abbreviation": "PrSe",
+        "domains": null,
+        "tcp_rules": [
+            {
+                "server_filters": [
+                    "15755886512970178"
+                ],
+                "client_filters": null,
+                "server_port": {
+                    "start": "8585",
+                    "end": "8585"
+                },
+                "client_port": null,
+                "dscp": null,
+                "server_prefixes": null,
+                "server_filters_dicts": [
+                    {
+                        "id": "15755886512970178",
+                        "_etag": 1,
+                        "_schema": 1,
+                        "_created_on_utc": 15755886512970178,
+                        "_updated_on_utc": 15755886512970178,
+                        "_debug": null,
+                        "_info": null,
+                        "_warning": null,
+                        "_error": null,
+                        "name": "printerserver-corp",
+                        "description": null,
+                        "filters": [
+                            {
+                                "type": "ipv4",
+                                "ip_prefixes": [
+                                    "10.1.1.100/32"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "client_filters_dicts": []
+            }
+        ],
+        "udp_rules": null,
+        "ip_rules": null,
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "printing",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": false
+    },
+    {
+        "id": "15968059847410177",
+        "_etag": 2,
+        "_schema": 3,
+        "_created_on_utc": 15968059847410177,
+        "_updated_on_utc": 16537271473830044,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "smtp-custom",
+        "abbreviation": "SmCu",
+        "domains": [
+            "dottys-com.mail.protection.outlook.com:25"
+        ],
+        "tcp_rules": null,
+        "udp_rules": null,
+        "ip_rules": null,
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "enterprise",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": false
+    },
+    {
+        "id": "16003101417340242",
+        "_etag": 4,
+        "_schema": 3,
+        "_created_on_utc": 16003101417340242,
+        "_updated_on_utc": 16537271473830045,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "ssh_ftp_SRV",
+        "abbreviation": "SsSr",
+        "domains": null,
+        "tcp_rules": [
+            {
+                "server_filters": [
+                    "16003100589190091"
+                ],
+                "client_filters": null,
+                "server_port": {
+                    "start": "22",
+                    "end": "22"
+                },
+                "client_port": null,
+                "dscp": null,
+                "server_prefixes": null,
+                "server_filters_dicts": [
+                    {
+                        "id": "16003100589190091",
+                        "_etag": 1,
+                        "_schema": 1,
+                        "_created_on_utc": 16003100589190091,
+                        "_updated_on_utc": 16003100589190091,
+                        "_debug": null,
+                        "_info": null,
+                        "_warning": null,
+                        "_error": null,
+                        "name": "Jordan_Lake_SRV",
+                        "description": null,
+                        "filters": [
+                            {
+                                "type": "ipv4",
+                                "ip_prefixes": [
+                                    "192.168.100.10/32"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "client_filters_dicts": []
+            },
+            {
+                "server_filters": [
+                    "16003100589190091"
+                ],
+                "client_filters": null,
+                "server_port": {
+                    "start": "21",
+                    "end": "21"
+                },
+                "client_port": null,
+                "dscp": null,
+                "server_prefixes": null,
+                "server_filters_dicts": [
+                    {
+                        "id": "16003100589190091",
+                        "_etag": 1,
+                        "_schema": 1,
+                        "_created_on_utc": 16003100589190091,
+                        "_updated_on_utc": 16003100589190091,
+                        "_debug": null,
+                        "_info": null,
+                        "_warning": null,
+                        "_error": null,
+                        "name": "Jordan_Lake_SRV",
+                        "description": null,
+                        "filters": [
+                            {
+                                "type": "ipv4",
+                                "ip_prefixes": [
+                                    "192.168.100.10/32"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "client_filters_dicts": []
+            }
+        ],
+        "udp_rules": null,
+        "ip_rules": null,
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "enterprise",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": false
+    },
+    {
+        "id": "16269009556970040",
+        "_etag": 2,
+        "_schema": 3,
+        "_created_on_utc": 16269009556970040,
+        "_updated_on_utc": 16537271473830059,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "test",
+        "abbreviation": "Te",
+        "domains": null,
+        "tcp_rules": [
+            {
+                "server_filters": null,
+                "client_filters": null,
+                "server_port": {
+                    "start": "10",
+                    "end": "10"
+                },
+                "client_port": null,
+                "dscp": null,
+                "server_prefixes": null,
+                "server_filters_dicts": [],
+                "client_filters_dicts": []
+            }
+        ],
+        "udp_rules": null,
+        "ip_rules": null,
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "enterprise",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": false
+    },
+    {
+        "id": "15453352672550051",
+        "_etag": 3,
+        "_schema": 3,
+        "_created_on_utc": 15453352672550051,
+        "_updated_on_utc": 16537271473830034,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "path_affinity": "strict",
+        "ingress_traffic_pct": 50,
+        "conn_idle_timeout": 3600,
+        "display_name": "testdfasfasfd",
+        "abbreviation": "sdfs",
+        "domains": [
+            "aa.com",
+            "aa1.com",
+            "2.com",
+            "3.com",
+            "4.com",
+            "5.com",
+            "6.com",
+            "7.com",
+            "8.com",
+            "9.com",
+            "10.com",
+            "11.com",
+            "12.com",
+            "13.com",
+            "14.com",
+            "15.com"
+        ],
+        "tcp_rules": null,
+        "udp_rules": null,
+        "ip_rules": null,
+        "transfer_type": "transactional",
+        "app_type": "custom",
+        "category": "enterprise",
+        "session_timeout": 0,
+        "aggregate_flows": null,
+        "order_number": 1,
+        "overrides_allowed": null,
+        "system_app_overridden": null,
+        "tags": null,
+        "description": null,
+        "is_deprecated": null,
+        "parent_id": null,
+        "use_parentapp_network_policy": null,
+        "app_unreachability_detection": true,
+        "network_scan_application": false
+    }
+]

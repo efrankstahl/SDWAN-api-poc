@@ -1,0 +1,250 @@
+[
+    {
+        "id": "16004714174880117",
+        "_etag": 1,
+        "_schema": 1,
+        "_created_on_utc": 16004714174880117,
+        "_updated_on_utc": 16004714174880117,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "name": "H-192.168.168.222",
+        "description": "",
+        "tags": null
+    },
+    {
+        "id": "15880862599380231",
+        "_etag": 2,
+        "_schema": 1,
+        "_created_on_utc": 15880862599380231,
+        "_updated_on_utc": 16180230802050051,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "name": "Csuite-network",
+        "description": "Executives Network",
+        "tags": null,
+        "ipv4_prefixes": [
+            "10.1.0.0/16"
+        ]
+    },
+    {
+        "id": "16256696547630127",
+        "_etag": 1,
+        "_schema": 1,
+        "_created_on_utc": 16256696547630127,
+        "_updated_on_utc": 16256696547630127,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "name": "Dan Home",
+        "description": null,
+        "tags": null,
+        "ipv4_prefixes": [
+            "10.128.128.0/27"
+        ]
+    },
+    {
+        "id": "15571610286970212",
+        "_etag": 1,
+        "_schema": 1,
+        "_created_on_utc": 15571610286970212,
+        "_updated_on_utc": 15571610286970212,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "name": "dan-test",
+        "description": "",
+        "tags": null,
+        "ipv4_prefixes": [
+            "10.10.0.0/16"
+        ]
+    },
+    {
+        "id": "16371827846740236",
+        "_etag": 1,
+        "_schema": 1,
+        "_created_on_utc": 16371827846740236,
+        "_updated_on_utc": 16371827846740236,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "name": "Delmar -Home",
+        "description": null,
+        "tags": null,
+        "ipv4_prefixes": [
+            "10.10.71.0/24"
+        ]
+    },
+    {
+        "id": "15315484534430125",
+        "_etag": 6,
+        "_schema": 1,
+        "_created_on_utc": 15315484534430125,
+        "_updated_on_utc": 16509355617000121,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "name": "EnterpriseGlobalPrefix",
+        "description": "Enterprise Global Prefix",
+        "tags": null,
+        "ipv4_prefixes": [
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "159.1.1.1/32"
+        ]
+    },
+    {
+        "id": "16394416147150160",
+        "_etag": 1,
+        "_schema": 1,
+        "_created_on_utc": 16394416147150160,
+        "_updated_on_utc": 16394416147150160,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "name": "Leo-Azure-Hybrid-Prefixes",
+        "description": null,
+        "tags": null,
+        "ipv4_prefixes": [
+            "10.170.0.0/24",
+            "10.180.0.0/24"
+        ]
+    },
+    {
+        "id": "16468645406440201",
+        "_etag": 1,
+        "_schema": 1,
+        "_created_on_utc": 16468645406440201,
+        "_updated_on_utc": 16468645406440201,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "name": "PanDan - Branch - LAN",
+        "description": null,
+        "tags": null,
+        "ipv4_prefixes": [
+            "10.1.250.64/27"
+        ]
+    },
+    {
+        "id": "16468645887850119",
+        "_etag": 1,
+        "_schema": 1,
+        "_created_on_utc": 16468645887850119,
+        "_updated_on_utc": 16468645887850119,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "name": "PanDan - Home - LANs",
+        "description": null,
+        "tags": null,
+        "ipv4_prefixes": [
+            "10.1.1.0/24",
+            "10.1.2.0/24"
+        ]
+    },
+    {
+        "id": "16468652150720133",
+        "_etag": 1,
+        "_schema": 1,
+        "_created_on_utc": 16468652150720133,
+        "_updated_on_utc": 16468652150720133,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "name": "PanDan Nets",
+        "description": null,
+        "tags": null,
+        "ipv4_prefixes": [
+            "10.1.0.0/16"
+        ]
+    },
+    {
+        "id": "16275813851290201",
+        "_etag": 1,
+        "_schema": 1,
+        "_created_on_utc": 16275813851290201,
+        "_updated_on_utc": 16275813851290201,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "name": "suren-test-2",
+        "description": null,
+        "tags": null,
+        "ipv4_prefixes": [
+            "192.168.1.2/32"
+        ]
+    },
+    {
+        "id": "16530452115780203",
+        "_etag": 1,
+        "_schema": 1,
+        "_created_on_utc": 16530452115780203,
+        "_updated_on_utc": 16530452115780203,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "name": "Training_HUB1_LAN",
+        "description": null,
+        "tags": [
+            "Training",
+            "HUB1"
+        ],
+        "ipv4_prefixes": [
+            "10.10.10.1/32",
+            "172.16.1.0/24"
+        ]
+    },
+    {
+        "id": "16530452485430055",
+        "_etag": 1,
+        "_schema": 1,
+        "_created_on_utc": 16530452485430055,
+        "_updated_on_utc": 16530452485430055,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "name": "Training_HUB2_LAN",
+        "description": null,
+        "tags": [
+            "Training",
+            "HUB2"
+        ],
+        "ipv4_prefixes": [
+            "10.10.10.2/32",
+            "172.16.2.0/24"
+        ]
+    },
+    {
+        "id": "16286585103900005",
+        "_etag": 1,
+        "_schema": 1,
+        "_created_on_utc": 16286585103900005,
+        "_updated_on_utc": 16286585103900005,
+        "_debug": null,
+        "_info": null,
+        "_warning": null,
+        "_error": null,
+        "name": "Yosef-Azure-DC",
+        "description": null,
+        "tags": null,
+        "ipv4_prefixes": [
+            "10.99.99.0/24"
+        ]
+    }
+]

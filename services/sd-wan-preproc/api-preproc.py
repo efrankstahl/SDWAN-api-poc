@@ -1,3 +1,6 @@
+# 6/28 - as-yet unchanged from the original draft
+
+
 import json 
 from flask import Flask, request 
 from pathlib import Path
@@ -36,6 +39,8 @@ def fromgui():
 
         parsed_data = parse_data(loaded_data)
         # will eventually run an error check. 
+        # Anton 6/28:  Return parsed data, not placeholder
+        # Anton: "And that data is what's use din the next method   "
         return "Placeholder."
 
 # IMPORTANT: Is it the template engine that does a GET to access the parsed data? 

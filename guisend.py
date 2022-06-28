@@ -10,4 +10,4 @@ print("Testing git.")
 	init_template:
 	replacement_Vaules: 'words to replace in document (this is a dict)'(used by doc_engine)
 	gdoc_type: true
-'''
+'''	

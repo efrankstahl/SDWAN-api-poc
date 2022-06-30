@@ -14,7 +14,7 @@ import yaml
 file_directory = Path('debug_output/')
 panos_template = Path('panos_doc.jinja2')
 '''
-sdwan_template = Path('sd-wan_doc.jinja2')
+sdwan_template = Path('doc_v3.jinja2')
 # 6/23 API: This has to receive the API data 
 # 6/23 API: AND IT WILL SEND THE DOCUMENT OUTLINE AS A LIST (like JSON, but a python object)
 
@@ -29,21 +29,27 @@ class TableCount(object):
     def next(self):
         v = self.value
         self.value += 1
-        return v
-# currently have this in both the preprocessor and the templating engine ..prolly just need it here. 
+        return v 
+
+
 def j_dumps(raw_text):
     if isinstance(raw_text, (int, type(None))):
         raw_text = str(raw_text)
     json_txt = json.dumps(raw_text)
     return json_txt
 
-# 6/23: Code to, hopefully, receive api info
 
+# 6/28: so we're not making a get request... it's always posting.  
+# ARE THE FLASK APPS POSTING TO THE NEXT FLASK APP IN THE CHAIN? 
+# THEN WHAT EVEN GOES ON IN THE ACTUAL ENGINES?
+
+
+"""
 url = 'http://127.0.0.1:5000/to-gui'
 
 response = requests.get(url)
 print(response.text)
-
+"""
 # 6/24: Ruben's function from the video on the 21st:
 # (the flask api WILL CALL THIS FUNCTION)
 # 'template str' being --we'll define the paths to a bunch fo template strings at the top of the file!
@@ -52,16 +58,6 @@ def create_doc_outline(data, template_str):
     doc_outline = template.render(data=data, j_dumps=j_dumps, j_loads=json.loads, TableCount=TableCount, re=re)
     return doc_outline 
 
-
-
-# 6/24 : THIS CODE STILL NOT WORKING, but it's out of date anyway so.
-'''
-def create_doc_outline(data):
-    template_path = Path('doc_v2.jinja2')
-    template = jinja2.Template(template_path.read_file(), trim_blocks=True)
-    doc_outline = template.render(data=data, j_dumps=j_dumps, j_loads=json.loads, TableCount=TableCount, re=re)
-    return doc_outline
-'''
 # oh ho!! in the new version this function will take the result of the api call as input.  
 # results_dict = load_data(r"C:\Users\estahl\projects\SDWAN-tire-kicking")
 

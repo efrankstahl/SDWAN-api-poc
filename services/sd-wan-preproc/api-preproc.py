@@ -1,23 +1,21 @@
 # 6/28 - as-yet unchanged from the original draft
-
+# 6/29: THIS IS BROKEN, it gives an ENOROMOUS error message when i try to load it.
+#       Unrelated to the other app.
 
 import json 
 from flask import Flask, request 
 from pathlib import Path
 from preprocessorSDWAN import load_data, parse_data
-from template_engine import create_doc_outline
-
+import requests 
+ 
 app = Flask(__name__)
 
-# Sun 6/26: Will import from the GUI's API call in the final version
-# but I'm not sure how to set that up yet. 
-yaml_raw = Path(r"C:\Users\estahl\projects\SDWAN-tire-kicking-2-poc\raw_data.yaml")
+# 6/28: Will import an API file upload eventually, but i'm going to leave it alone for now.  
+yaml_raw = Path(r"C:\Users\estahl\projects\SDWAN-api-poc\newraw_data.yaml")
 # Sun 6/26: doublecheck that clarifying the path as /templates is neccesary/functional  
-sdwan_template = Path("./templates/doc_v2.jinja2")
+sdwan_template = Path(r"C:\Users\estahl\projects\SDWAN-api-poc\services\template-engine\templates\doc_v3.jinja2")
 
-loaded_data = {}
-parsed_data = {}
-doc_outline = []
+loaded_data = {} 
 
 # from an earlier build
 to_temp_dict = {}
@@ -26,63 +24,53 @@ to_temp_dict = {}
 def home():
     return "Proof of Concept for Swiftdoc preproc/template engine -currently nonfunctional."
  
+# This function will take all that "file upload" crap malarkey showed me 
+# then process. 
 @app.route('/from-gui', methods=['GET','POST'])
 def fromgui():
     if request.method == 'POST':
         # PLACEHOLDER.  In final version it loads from GUI/ API. 
+        # 6/28:  It's going to be able to receive a bunch of crap from 
         loaded_data['raw_data'] = load_data(yaml_raw)
         # Below data will be supplied by the API/GUI, but how?
         # New fields in the YAML file? Or is yaml file just part of json/a dict?
-        loaded_data['product'] = "sdwan"
-        loaded_data['replacement_values'] = "placeholder"
-        loaded_data['gdoc_type'] = True
+        loaded_data['product'] = request.form['product'] 
+        loaded_data['replacement_values'] = request.form['replacement_values']
+        loaded_data['gdoc_type'] = request.form['gdoc_type']
 
-        parsed_data = parse_data(loaded_data)
+        # 6:29: going to exclude this for now to remove unncessary compelxity 
+        # parsed_data = parse_data(loaded_data['raw_data'])
         # will eventually run an error check. 
-        # Anton 6/28:  Return parsed data, not placeholder
-        # Anton: "And that data is what's use din the next method   "
-        return "Placeholder."
+        # Anton 6/28:  the data that gets 'returned' is used by
+        #               the next method in the process. 
+        #     
+        #   C
+        # Anton: "And that data is what's use din the next method
 
-# IMPORTANT: Is it the template engine that does a GET to access the parsed data? 
-# It will return the document outline.
-    if request.method == 'GET':
-        if not parsed_data:
-            return "Error: No data to process."
-        else:
-            # There's a more elegant way to write this bit, but that's for a later version.
-            if parsed_data['product'] == 'sdwan':
-                doc_outline = create_doc_outline(parsed_data, sdwan_template)
-            elif parsed_data['product'] == 'panos':
-                print("Then we'll load a different template string.")
-            else: 
-                print("Error: Bad product name.")
-            return doc_outline
+        # ??????? but this is just gonna send it back to the poster.....
+        # 6/28: what if I just put a post call to the template API right here? 
+        # What then?? 
+        
+        # 6/29: Changing this to just return the raw yaml data, as that's all we're giong to be 
+        #       able to process until I figure out Ruben's (or someone else's) file uploads thru APIs.
+        
+        # payload = loaded_data
 
+        # 6/29: processing the post request (or whatever) from the GUI
+        # now triggers a post request to the template engine
+        url = 'http://127.0.0.1:8000/from-preprocessor'
+
+        # 6/28: can i just use the flask version?
+        # how does it differ?
+        # drat = requests.post(url, data=payload)
+        
+        # 6/28: still not completely sure why we're doing this but ok
+        # 6/28: ...unless there is a separate way to access the return from a POST requset.... 
+        return loaded_data  
+    if request.method == 'GET': 
+        return "Placeholder (fromgui)"
  
-
-# OLD.
-
-@app.route('/to-template', methods=['GET','POST'])
-def totemplate():
-    # Sun 6/26: eventually we'll need to check what kind of system it's from. 
-    if request.method =='POST':
-        # 6/24:  how do I get the WHOLE UGLY DICTIONARY TO SEND? 
-        to_temp_dict['raw_data'] = request.form['raw_data']
-        to_temp_dict['product'] = request.form['product']
-        to_temp_dict['replacement_values'] = request.form['replacement_values']
-        to_temp_dict['gdoc_type'] = request.form['gdoc_type']
-
-        # Sun 6/26: adding processing for sent data
-        # Eventually, there will be separate template_paths depending on the product.
-        doc_outline = create_doc_outline(to_temp_dict, sdwan_template)
-        # "return" should eventually return a success/error message. 
-        return to_temp_dict
-    if request.method =='GET':
-        if not to_temp_dict:
-            return "Error: Requested information from [ip_placeholder]/to-template is unavailable."
-        else:
-            # 6/26:  Now returns the processed to_temp_dict, not to_temp_dict itself
-            return doc_outline
+ 
  
 if __name__ == '__main__':
-    app.run()
+    app.run(host='127.0.0.1', port=5000)

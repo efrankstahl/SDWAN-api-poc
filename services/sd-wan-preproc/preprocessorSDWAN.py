@@ -16,7 +16,7 @@ import yaml
 # eventually this will have to receive an API 
 # 6/24 for now we gotta make it take a single yaml file instead of going thru a directory.
 # 6/24 ! we can make a sendgui.py that sends the yaml file thru api 
-yaml_raw = Path(r"C:\Users\estahl\projects\SDWAN-tire-kicking\raw_data.yaml")
+yaml_raw = Path(r"C:\Users\estahl\projects\SDWAN-api-poc\newraw_data.yaml")
 
 
 # open the yaml file and make it a dictionary
@@ -33,10 +33,11 @@ def parse_data(loaded_data):
 # this is a python dictionary 
 full_data = load_data(yaml_raw)
  
-
+# 6/29: Is this breaking something? We'll have to change this anyhow.
 # Sends processed data to the API 
-url = 'http://127.0.0.1:5000/to-template'
+#url = 'http://127.0.0.1:5000/to-template'
 
+# 6/28 REMOVE PROBABLY
 payload = {
     'raw_data': full_data,
     'product': 'SD-WAN',
@@ -44,7 +45,7 @@ payload = {
     'gdoc_type': True
 }
 
-response = requests.post(url, data=payload)
+#response = requests.post(url, data=payload)
  
 
 

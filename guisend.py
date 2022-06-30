@@ -1,13 +1,23 @@
 # sim of the GUI sending me the... is it a dictionary containing the yaml file?'
+import json 
+from flask import Flask, request 
+from pathlib import Path 
+import requests 
+ 
+# 6/29:  Can't actually send yaml data til I figure out the file upload stuff Ruben showed me 
+# 6/29: 	(or figure out how to do this some other way)
 
-print("Testing git.")
+# 6/29:  Because the API-wrapped functions that will receive this request are written to 
+# 		 process yaml for now, not a full payload. 
 
+# yaml_raw = Path(r"C:\Users\estahl\projects\SDWAN-api-poc\newraw_data.yaml")
 
-'''
- - he says that 'tehse are the api values that the gui would send to you (the preproc)'
-	document_outline : the file/folder with all the data. 
-	product: sdwan	
-	init_template:
-	replacement_Vaules: 'words to replace in document (this is a dict)'(used by doc_engine)
-	gdoc_type: true
-'''	
+url = "http://127.0.0.1:5000/to-gui"
+
+payload = {
+	'product': 'sd-wan',
+	'replacement_values': 'more like replaceHOLDER values amirite??',
+	'gdoc_type': True
+}
+
+requests.post(url, data=payload)

@@ -12,10 +12,10 @@ import yaml
 ''' It is just a test that everything is processing together.'''
 
 
-yaml_raw = Path(r"C:\Users\estahl\projects\SDWAN-tire-kicking\raw_data.yaml")
+yaml_raw = Path(r"C:\Users\estahl\projects\SDWAN-api-poc\newraw_data.yaml")
 
 
-sdwan_template = Path(r"C:\Users\estahl\projects\SDWAN-api-poc\services\template-engine\templates\doc_v2.jinja2") 
+sdwan_template = Path(r"C:\Users\estahl\projects\SDWAN-api-poc\services\template-engine\templates\doc_v3.jinja2") 
 
 class TableCount(object):
     def __init__(self, start_value=1):
@@ -51,7 +51,7 @@ full_data = load_data(yaml_raw)
 # 6/28: works til this point
 
 # Now testing the create_doc_outline function 
-# with raw_data.yml + doc_v2.jinja2
+# with raw_data.yml + doc_v3.jinja2
 def create_doc_outline(data, template_str):
     template = jinja2.Template(template_str, trim_blocks=True)
     doc_outline = template.render(data=data, j_dumps=j_dumps, j_loads=json.loads, TableCount=TableCount, re=re)
@@ -59,6 +59,11 @@ def create_doc_outline(data, template_str):
 
 # Ruben's note: If I don't include .read_file(), it will try to run this with just the Path, 
 # not the actual contents of the path. 
-doc_outline = create_doc_outline(load_data, sdwan_template.read_file())
-# 6/28: why is it a string that just contains the path to the 
+doc_outline = create_doc_outline(full_data, sdwan_template.read_file())
+# 6/29:  It's giving me an error, but ruben says it's a problem with the jinja. 
+# print(doc_outline)
+print(doc_outline)
+# 6/29: It's a string
 print(type(doc_outline))
+
+print(doc_outline[0])

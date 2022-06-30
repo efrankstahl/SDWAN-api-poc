@@ -28,6 +28,7 @@ def fromgui():
     if request.method == 'POST':
         # PLACEHOLDER.  In final version it loads from GUI/ API. 
         loaded_data['raw_data'] = load_data(yaml_raw)
+        
         # Below data will be supplied by the API/GUI, but how?
         # New fields in the YAML file? Or is yaml file just part of json/a dict?
         loaded_data['product'] = "sdwan"
@@ -37,7 +38,7 @@ def fromgui():
         parsed_data = parse_data(loaded_data)
         # will eventually run an error check. 
         # Anton 6/28:  Return parsed data, not placeholder
-        # Anton: "And that data is what's use din the next method   "
+        # Anton: "And that data is       what's use din the next method   "
         return "Placeholder."
 
 # IMPORTANT: Is it the template engine that does a GET to access the parsed data? 

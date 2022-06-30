@@ -1,6 +1,7 @@
 
 from dataclasses import dataclass
 from unipath import Path
+import ast
 import json
 import jinja2
 from jinja2 import Template
@@ -54,16 +55,20 @@ full_data = load_data(yaml_raw)
 # with raw_data.yml + doc_v3.jinja2
 def create_doc_outline(data, template_str):
     template = jinja2.Template(template_str, trim_blocks=True)
-    doc_outline = template.render(data=data, j_dumps=j_dumps, j_loads=json.loads, TableCount=TableCount, re=re)
+    outline_string = template.render(data=data, j_dumps=j_dumps, j_loads=json.loads, TableCount=TableCount, re=re)
+    doc_outline = ast.literal_eval(outline_string)
     return doc_outline 
 
 # Ruben's note: If I don't include .read_file(), it will try to run this with just the Path, 
 # not the actual contents of the path. 
 doc_outline = create_doc_outline(full_data, sdwan_template.read_file())
-# 6/29:  It's giving me an error, but ruben says it's a problem with the jinja. 
-# print(doc_outline)
-print(doc_outline)
+# 6/30: error resolved
+#print(doc_outline)
 # 6/29: It's a string
 print(type(doc_outline))
 
 print(doc_outline[0])
+
+# 6/30 : already created this file of doc_outltine output.
+#file = open('filled_template.txt', 'w')
+#file.write(doc_outline)

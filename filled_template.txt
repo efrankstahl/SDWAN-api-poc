@@ -1,0 +1,1084 @@
+[
+    {"HEADING_2":{"text": "Enterprise Global Prefixes"}},
+    {"paragraph": {"text": "List of globally identified Enterprise Prefixes is shown in the following table."}},
+    {"table":
+        {
+            "headers": ["Enterprise Global Prefixes"],
+            "col_widths": [],
+            "head_caption": {"text":  "Table 4 – Enterprise Global Prefixes"},
+            "values": [["10.0.0.0/8\n172.16.0.0/12\n192.168.0.0/16\n159.1.1.1/32"]]
+        }
+    },
+    {"HEADING_2": {"text": "Stack Policies"}},
+    {"paragraph": {"text": "his section describes the Application Policies to be used for standardization of the SD-WAN deployment. Prisma SD-WAN uses mapping of third-party services and Prisma SD-WAN data centers to allow flexibility when creating network policy rules, while accounting for uniqueness across sites."}},
+    {"HEADING_3": {"text": "Path Policies"}},
+    {"HEADING_4": {"text": "Path Policy Stack(s)"}},
+    {"paragraph": {"text": "The following table shows the Path Policy Stacks and associated Policy Sets."}},
+    {"table":
+        {
+            "headers": ["Path Policy Stack", "Path Policy Set(s)", "Default Path Policy Set"],
+            "col_widths": [120],
+            "head_caption": {"text":  "Table 5 – Path Policy Stack(s)"},
+            "values":
+            [
+                [
+                    "Rich - Default Path (Simple)", "Rich - Default Path Policy Set (Simple)", "Rich - Default Path Default Rule Policy Set (Simple)"
+                ],
+                [
+                    "YOSEF_TEST_1", "YOSEF-TEST-1", "AC-Path-Policy-Set"
+                ]
+            ]
+        }
+    },
+    {"HEADING_4": {"text": "Path Policy Set(s)"}},
+    {"HEADING_5": {"text": "AC-Path-Policy-Set"}},
+    {"paragraph": {"text": "The following table shows the path policy rules in the AC-Path-Policy-Set Policy Set."}},
+    {"table":
+        {
+            "headers": ["Rule Name", "Order No.", "Network Context", "Src Prefix", "Dst Prefix", "Apps", "Service & DC Groups"],
+            "col_widths": [60, 38, 54, 54, 54, 60],
+            "head_caption": {"text": "Table 6 – AC-Path-Policy-Set Path Policy Set Rule(s)"},
+            "values":
+            [
+                [
+                    "default",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "",
+                    "Active:\nDirect on Any Public\nPrisma SD-WAN VPN on Any Public\nDirect on Any Private\nPrisma SD-WAN VPN on Any Private\n",
+                    "None"
+                ],
+                [
+                    "enterprise-default",
+                    "1024",
+                    "None",
+                    "None",
+                    "EnterpriseGlobalPrefix",
+                    "",
+                    "Active:\nPrisma SD-WAN VPN on Any Public\nDirect on Any Private\nPrisma SD-WAN VPN on Any Private\n",
+                    "None"
+                ]            ]
+        }
+    },
+    {"HEADING_5": {"text": "Rich - Default Path Default Rule Policy Set (Simple)"}},
+    {"paragraph": {"text": "The following table shows the path policy rules in the Rich - Default Path Default Rule Policy Set (Simple) Policy Set."}},
+    {"table":
+        {
+            "headers": ["Rule Name", "Order No.", "Network Context", "Src Prefix", "Dst Prefix", "Apps", "Service & DC Groups"],
+            "col_widths": [60, 38, 54, 54, 54, 60],
+            "head_caption": {"text": "Table 7 – Rich - Default Path Default Rule Policy Set (Simple) Path Policy Set Rule(s)"},
+            "values":
+            [
+                [
+                    "default",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "",
+                    "Active:\nDirect on Any Public\n",
+                    "None"
+                ],
+                [
+                    "enterprise-default",
+                    "1024",
+                    "None",
+                    "None",
+                    "EnterpriseGlobalPrefix",
+                    "",
+                    "Active:\nPrisma SD-WAN VPN on Primary-Internet\n\nBackup:\nPrisma SD-WAN VPN on Secondary-Internet\n",
+                    "Active: Rich-Primary-DC\nBackup: Rich-Backup-DC"
+                ]            ]
+        }
+    },
+    {"HEADING_5": {"text": "Rich - Default Path Policy Set (Simple)"}},
+    {"paragraph": {"text": "The following table shows the path policy rules in the Rich - Default Path Policy Set (Simple) Policy Set."}},
+    {"table":
+        {
+            "headers": ["Rule Name", "Order No.", "Network Context", "Src Prefix", "Dst Prefix", "Apps", "Service & DC Groups"],
+            "col_widths": [60, 38, 54, 54, 54, 60],
+            "head_caption": {"text": "Table 8 – Rich - Default Path Policy Set (Simple) Path Policy Set Rule(s)"},
+            "values":
+            [
+                [
+                    "CloudGenix",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "CloudGenix\nCloudGenix Control",
+                    "Active:\nDirect on Any Public\n",
+                    "None"
+                ],
+                [
+                    "DIA Office 365",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "Office365\nOffice365 Service Mgmt\nOffice365 Portal\nOffice365 Video",
+                    "Active:\nDirect on Any Public\n",
+                    "None"
+                ],
+                [
+                    "Guest Wifi",
+                    "1024",
+                    "G\nu\ne\ns\nt\n \nW\ni\nf\ni",
+                    "None",
+                    "None",
+                    "",
+                    "Active:\nDirect on Any Public\n\nBackup:\nPrisma SD-WAN VPN on Any Public\n",
+                    "None"
+                ],
+                [
+                    "ICMP Test",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "ICMP",
+                    "Active:\nDirect on Primary-Internet\n",
+                    "None"
+                ]            ]
+        }
+    },
+    {"HEADING_5": {"text": "YOSEF-TEST-1"}},
+    {"paragraph": {"text": "The following table shows the path policy rules in the YOSEF-TEST-1 Policy Set."}},
+    {"table":
+        {
+            "headers": ["Rule Name", "Order No.", "Network Context", "Src Prefix", "Dst Prefix", "Apps", "Service & DC Groups"],
+            "col_widths": [60, 38, 54, 54, 54, 60],
+            "head_caption": {"text": "Table 9 – YOSEF-TEST-1 Path Policy Set Rule(s)"},
+            "values":
+            [
+                [
+                    "Citrix",
+                    "1024",
+                    "None",
+                    "None",
+                    "Citrix Servers",
+                    "",
+                    "Active:\nPrisma SD-WAN VPN on Any Private\n\nBackup:\nPrisma SD-WAN VPN on Any Public\n",
+                    "Active: Yosef-Primary-DC\nBackup: Yosef-Secondary-DC"
+                ],
+                [
+                    "Microsoft-Backhaul",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "Microsoft\nMicrosoft Azure\nMicrosoft Message Queuing\nMicrosoft Operations Manager\nMicrosoft update",
+                    "Active:\nPrisma SD-WAN VPN on Any Public\nPrisma SD-WAN VPN on Any Private\n",
+                    "Active: Yosef-Primary-DC\nBackup: Yosef-Secondary-DC"
+                ],
+                [
+                    "Zoom-DIA",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "Zoom.us",
+                    "Active:\nDirect on Any Public\n",
+                    "None"
+                ]            ]
+        }
+    },
+
+    {"HEADING_3": {"text": "QoS Policies"}},
+    {"HEADING_4": {"text": "QoS Policy Stack(s)"}},
+    {"paragraph": {"text": "The following table shows the QoS Policy Stacks and associated Policy Sets."}},
+    {"table":
+        {
+            "headers": ["QoS Policy Stack", "QoS Policy Set(s)", "Default QoS Policy Set"],
+            "col_widths": [120],
+            "head_caption": {"text": "Table 10 – QoS Policy Stack(s)"},
+            "values":
+            [
+                [
+                    "Rich - Default Priority (Simple)", "Rich - Default Priority Policy Set (Simple)", "Rich - Default Priority Default Rule Policy Set (Simple)"
+                ],
+                [
+                    "Yosef-QoS-Stack (Simple)", "Yosef-QoS-Stack Policy Set (Simple)", "Yosef-QoS-Stack Default Rule Policy Set (Simple)"
+                ]
+            ]
+        }
+    },
+    {"HEADING_5": {"text": "Rich - Default Priority Default Rule Policy Set (Simple)"}},
+    {"paragraph": {"text": "The following table shows the QoS policy rules in the Rich - Default Priority Default Rule Policy Set (Simple) Policy Set."}},
+    {"table":
+        {
+            "headers": ["Rule Name", "Order No.", "Network Context", "Src Prefix", "Dst Prefix", "Apps", "Priority", "DSCP"],
+            "col_widths": [60, 38, 54, 54, 54, 60],
+            "head_caption": {"text": "Table 11 – Rich - Default Priority Default Rule Policy Set (Simple) QoS Policy Set Rule(s)"},
+            "values":
+            [
+                                [
+                    "default",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "",
+                    "Bronze",
+                    ""
+                ],
+                                [
+                    "enterprise-default",
+                    "1024",
+                    "None",
+                    "None",
+                    "EnterpriseGlobalPrefix",
+                    "",
+                    "Silver",
+                    ""
+                ]                            ]
+        }
+    },
+    {"HEADING_5": {"text": "Rich - Default Priority Policy Set (Simple)"}},
+    {"paragraph": {"text": "The following table shows the QoS policy rules in the Rich - Default Priority Policy Set (Simple) Policy Set."}},
+    {"table":
+        {
+            "headers": ["Rule Name", "Order No.", "Network Context", "Src Prefix", "Dst Prefix", "Apps", "Priority", "DSCP"],
+            "col_widths": [60, 38, 54, 54, 54, 60],
+            "head_caption": {"text": "Table 12 – Rich - Default Priority Policy Set (Simple) QoS Policy Set Rule(s)"},
+            "values":
+            [
+                                [
+                    "Dynamics365-Financials-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "Dynamics 365 Financials",
+                    "Gold",
+                    ""
+                ],
+                                [
+                    "Dynamics365-Marketing-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "Dynamics 365 Marketing",
+                    "Gold",
+                    ""
+                ],
+                                [
+                    "Dynamics365-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "Dynamics 365",
+                    "Gold",
+                    ""
+                ],
+                                [
+                    "Office-365-Lync-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "Lync",
+                    "Gold",
+                    ""
+                ],
+                                [
+                    "Office-365-Mgmt-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "Office365 Service Mgmt",
+                    "Gold",
+                    ""
+                ],
+                                [
+                    "Office-365-Outlook-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "Outlook",
+                    "Gold",
+                    ""
+                ],
+                                [
+                    "Office-365-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "Office365",
+                    "Gold",
+                    ""
+                ],
+                                [
+                    "Office-365-SharePoint-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "SharePoint",
+                    "Gold",
+                    ""
+                ],
+                                [
+                    "Office-365-Video-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "Office365 Video",
+                    "Gold",
+                    ""
+                ],
+                                [
+                    "Office-365-portal-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "Office365 Portal",
+                    "Gold",
+                    ""
+                ],
+                                [
+                    "OneNote-365-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "OneNote",
+                    "Gold",
+                    ""
+                ],
+                                [
+                    "PCoIP-TCP-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "PC Over IP TCP",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "PCoIP-UDP-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "PC Over IP UDP",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "RDP-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "Remote Desktop Protocol",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "Ring-Central-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "Ring Central",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "Zoom-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "Zoom.us",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "cisco-callmanager-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "cisco-callmanager",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "citrix-ica-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "citrix-ica",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "citrixadmin-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "citrixadmin",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "citrixima-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "citrixima",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "citriximaclient-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "citriximaclient",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "dns-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "dns",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "gotomeeting-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "GoToMeeting",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "h323-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "h323",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "rtcp-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "rtcp",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "rtp-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "rtp",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "salesforce-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "Salesforce",
+                    "Gold",
+                    ""
+                ],
+                                [
+                    "service-now-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "ServiceNow",
+                    "Gold",
+                    ""
+                ],
+                                [
+                    "shoretel-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "shoretel",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "sip-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "sip",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "sip-tls-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "sip-tls",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "skinny-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "skinny",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "skype-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "Skype",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "skype-media-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "skype-media",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "successfactors-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "SuccessFactors",
+                    "Gold",
+                    ""
+                ],
+                                [
+                    "webex-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "WebEx",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "workday-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "Workday",
+                    "Gold",
+                    ""
+                ]                            ]
+        }
+    },
+    {"HEADING_5": {"text": "Yosef-QoS-Stack Default Rule Policy Set (Simple)"}},
+    {"paragraph": {"text": "The following table shows the QoS policy rules in the Yosef-QoS-Stack Default Rule Policy Set (Simple) Policy Set."}},
+    {"table":
+        {
+            "headers": ["Rule Name", "Order No.", "Network Context", "Src Prefix", "Dst Prefix", "Apps", "Priority", "DSCP"],
+            "col_widths": [60, 38, 54, 54, 54, 60],
+            "head_caption": {"text": "Table 13 – Yosef-QoS-Stack Default Rule Policy Set (Simple) QoS Policy Set Rule(s)"},
+            "values":
+            [
+                                [
+                    "default",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "",
+                    "Bronze",
+                    ""
+                ],
+                                [
+                    "enterprise-default",
+                    "1024",
+                    "None",
+                    "None",
+                    "EnterpriseGlobalPrefix",
+                    "",
+                    "Silver",
+                    ""
+                ]                            ]
+        }
+    },
+    {"HEADING_5": {"text": "Yosef-QoS-Stack Policy Set (Simple)"}},
+    {"paragraph": {"text": "The following table shows the QoS policy rules in the Yosef-QoS-Stack Policy Set (Simple) Policy Set."}},
+    {"table":
+        {
+            "headers": ["Rule Name", "Order No.", "Network Context", "Src Prefix", "Dst Prefix", "Apps", "Priority", "DSCP"],
+            "col_widths": [60, 38, 54, 54, 54, 60],
+            "head_caption": {"text": "Table 14 – Yosef-QoS-Stack Policy Set (Simple) QoS Policy Set Rule(s)"},
+            "values":
+            [
+                                [
+                    "Dynamics365-Financials-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "Dynamics 365 Financials",
+                    "Gold",
+                    ""
+                ],
+                                [
+                    "Dynamics365-Marketing-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "Dynamics 365 Marketing",
+                    "Gold",
+                    ""
+                ],
+                                [
+                    "Dynamics365-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "Dynamics 365",
+                    "Gold",
+                    ""
+                ],
+                                [
+                    "Office-365-Lync-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "Lync",
+                    "Gold",
+                    ""
+                ],
+                                [
+                    "Office-365-Mgmt-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "Office365 Service Mgmt",
+                    "Gold",
+                    ""
+                ],
+                                [
+                    "Office-365-Outlook-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "Outlook",
+                    "Gold",
+                    ""
+                ],
+                                [
+                    "Office-365-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "Office365",
+                    "Gold",
+                    ""
+                ],
+                                [
+                    "Office-365-SharePoint-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "SharePoint",
+                    "Gold",
+                    ""
+                ],
+                                [
+                    "Office-365-Video-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "Office365 Video",
+                    "Gold",
+                    ""
+                ],
+                                [
+                    "Office-365-portal-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "Office365 Portal",
+                    "Gold",
+                    ""
+                ],
+                                [
+                    "OneNote-365-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "OneNote",
+                    "Gold",
+                    ""
+                ],
+                                [
+                    "PCoIP-TCP-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "PC Over IP TCP",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "PCoIP-UDP-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "PC Over IP UDP",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "RDP-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "Remote Desktop Protocol",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "Ring-Central-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "Ring Central",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "Zoom-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "Zoom.us",
+                    "Platinum",
+                    "0x2e"
+                ],
+                                [
+                    "cisco-callmanager-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "cisco-callmanager",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "citrix-ica-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "citrix-ica",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "citrixadmin-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "citrixadmin",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "citrixima-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "citrixima",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "citriximaclient-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "citriximaclient",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "dns-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "dns",
+                    "Platinum",
+                    "0x2e"
+                ],
+                                [
+                    "gotomeeting-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "GoToMeeting",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "h323-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "h323",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "rtcp-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "rtcp",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "rtp-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "rtp",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "salesforce-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "Salesforce",
+                    "Gold",
+                    ""
+                ],
+                                [
+                    "service-now-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "ServiceNow",
+                    "Gold",
+                    ""
+                ],
+                                [
+                    "shoretel-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "shoretel",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "sip-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "sip",
+                    "Platinum",
+                    "0x2e"
+                ],
+                                [
+                    "sip-tls-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "sip-tls",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "skinny-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "skinny",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "skype-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "Skype",
+                    "Platinum",
+                    "0x2e"
+                ],
+                                [
+                    "skype-media-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "skype-media",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "successfactors-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "SuccessFactors",
+                    "Gold",
+                    ""
+                ],
+                                [
+                    "webex-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "WebEx",
+                    "Platinum",
+                    ""
+                ],
+                                [
+                    "workday-Policy",
+                    "1024",
+                    "None",
+                    "None",
+                    "None",
+                    "Workday",
+                    "Gold",
+                    ""
+                ]                            ]
+        }
+    },
+    {"HEADING_3": {"text": "NAT Policies"}},
+    {"HEADING_4": {"text": "NAT Policy Stack(s)"}},
+    {"paragraph": {"text": "The following table shows the NAT Policy Stacks and associated Policy Sets."}},
+    {
+        "table": {
+            "headers": ["NAT Policy Stack", "NAT Policy Set(s)"],
+            "col_widths": [144],
+            "head_caption": {"text": "Table 15 – NAT Policy Stack(s)"},
+            "values":
+            [
+                                [
+                    "Rich-NAT", "Rich-NAT\nDefault-NATPolicySet"
+                ],
+                                [
+                    "Yosef-NAT (Simple)", "Test-Set\nDefault-NATPolicySet"
+                ]                            ]
+        }
+    },
+
+    {"HEADING_4": {"text": "NAT Policy Set(s)"}},
+    {"HEADING_5": {"text": "Default-NATPolicySet"}},
+    {"HEADING_6": {"text": "Source Zone NAT Rules"}},
+        {"paragraph": {"text": "No Source Zone NAT rules are defined in the Default-NATPolicySet Policy Set."}},
+    
+
+    {"HEADING_6": {"text": "Destination Zone NAT Rules"}},
+        {"paragraph": {"text": "No Destination Zone NAT rules are defined in the Default-NATPolicySet Policy Set."}},
+    
+
+    {"HEADING_5": {"text": "Rich-NAT"}},
+    {"HEADING_6": {"text": "Source Zone NAT Rules"}},
+        {"paragraph": {"text": "The following table shows the Source Zone based NAT policies for the  Policy Set."}},
+
+    
+
+    {"HEADING_6": {"text": "Destination Zone NAT Rules"}},
+        
+
+    {"HEADING_5": {"text": "Test-Set"}},
+    {"HEADING_6": {"text": "Source Zone NAT Rules"}},
+        {"paragraph": {"text": "No Source Zone NAT rules are defined in the Test-Set Policy Set."}},
+    
+
+    {"HEADING_6": {"text": "Destination Zone NAT Rules"}},
+        {"paragraph": {"text": "No Destination Zone NAT rules are defined in the Test-Set Policy Set."}},
+    
+
+
+
+
+{"paragraph": {"text": "THE END Just a Place Holder so I don't have to count commas"}}
+
+]

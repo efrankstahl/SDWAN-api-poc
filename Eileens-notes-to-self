@@ -1,24 +1,3 @@
-6/26 changelog: 
-    - made new yaml file that includes product and other properties
-        had to tab all the raw data stuff over
-        ! maybe I don't have to use that one and can just manually fill in that data in the payload
-        but let's not worry about yaml for a quick sec.
-    MY ISSUE WITH YAML IS THAT:  How is a yaml file sent over api??? 
-
-    - OKAY NO i'm going to write the functions to parse a dir of json dicts for now. 
-    - and im probably not going to try to send that file over api... 
-    -  EVENTUALLY preproc will get that data by sending a get to the stuff the gui sent to flaskapp??probably??
-           at the from-gui url
-
-    CHANGED:
-        made a post request to to-template also trigger the create_doc_outline function 
-        a get request to to-template now returns the results of create_doc_outline
-        included a Path to the doc_v2.jinja2 file at top of app.py
-            this functions as the template_str when you call create_doc_outline
-
-
-    ((- now i'm gonna rewrite the loads and parse functions to handle a yaml and turn it into a dict... somehow.))
-    ((- ? THEN should I set up the GUI Send to send that raw yaml file? ))
-
-6/22:  in the new template_engine, the create_doc will take the api results as an arg, nto the load data object?
-
+6/30: chief concern is the format in which the gui is going to do a file upload over api
+	is that going to be compatible with the jija template?
+	because the current jinja template works fine with just the yaml file. 

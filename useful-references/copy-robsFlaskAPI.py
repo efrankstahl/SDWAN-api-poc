@@ -1,13 +1,11 @@
 import json 
 from flask import Flask, request, abort
 from pathlib import Path
-# this is document.py on his --the document engine. 
-from document import Document
+ 
+# 7/1 -- MY TIRE KICKING VERSION 
 
 app = Flask(__name__)
-
-# !! 7/1: This is not saving doc_outline as a dictionary.  
-# I attempted to use the request.form a completely different way. 
+ 
 @app.route('/doc-engine', methods=['GET', 'POST'])
 def generate_test():
     if request.method == 'POST':

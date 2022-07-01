@@ -12,7 +12,10 @@ import requests
 
 # yaml_raw = Path(r"C:\Users\estahl\projects\SDWAN-api-poc\newraw_data.yaml")
 
-url = "http://127.0.0.1:5000/to-gui"
+# 7/1 - it should be sending the request sa a file upload .
+
+
+url = "http://127.0.0.1:5000/from-gui"
 
 payload = {
 	'product': 'sd-wan',
@@ -21,3 +24,5 @@ payload = {
 }
 
 requests.post(url, data=payload)
+
+# print(response.text)

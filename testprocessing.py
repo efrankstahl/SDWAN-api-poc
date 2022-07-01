@@ -53,6 +53,7 @@ full_data = load_data(yaml_raw)
 
 # Now testing the create_doc_outline function 
 # with raw_data.yml + doc_v3.jinja2
+# 6/30: This function accepts a dictionary and a path.
 def create_doc_outline(data, template_str):
     template = jinja2.Template(template_str, trim_blocks=True)
     outline_string = template.render(data=data, j_dumps=j_dumps, j_loads=json.loads, TableCount=TableCount, re=re)
@@ -61,14 +62,17 @@ def create_doc_outline(data, template_str):
 
 # Ruben's note: If I don't include .read_file(), it will try to run this with just the Path, 
 # not the actual contents of the path. 
+
 doc_outline = create_doc_outline(full_data, sdwan_template.read_file())
+
+
 # 6/30: error resolved
 #print(doc_outline)
 # 6/29: It's a string
 print(type(doc_outline))
 
 print(doc_outline[0])
-
+print("Full data is datatype ", type(full_data))
 # 6/30 : already created this file of doc_outltine output.
 #file = open('filled_template.txt', 'w')
 #file.write(doc_outline)

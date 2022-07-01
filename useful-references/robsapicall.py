@@ -2,6 +2,8 @@
 import requests
 url = 'http://127.0.0.1:5000/doc-engine'
 
+#  7/1 : editted to attempt to send a dictionary as a value in his existing code
+# {'kevin': 'steven','Henchmen': ['Gruppo', 'Blembo', 'Dembo']},
 payload = {
     'doc_outline': 'doc_outline.json',
     'doc_name': 'As-Built Documentation',

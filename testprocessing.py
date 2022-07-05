@@ -16,7 +16,7 @@ import yaml
 yaml_raw = Path(r"C:\Users\estahl\projects\SDWAN-api-poc\newraw_data.yaml")
 
 
-sdwan_template = Path(r"C:\Users\estahl\projects\SDWAN-api-poc\services\template-engine\templates\doc_v3.jinja2") 
+sdwan_template = Path(r"C:\Users\estahl\projects\SDWAN-api-poc\services\template-engine\templates\doc_v4.jinja2") 
 
 class TableCount(object):
     def __init__(self, start_value=1):

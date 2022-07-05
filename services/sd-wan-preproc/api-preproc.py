@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 # 6/28: Will import an API file upload eventually, but will have to figure out how from scratch. 
 yaml_raw = Path(r"C:\Users\estahl\projects\SDWAN-api-poc\newraw_data.yaml") 
-sdwan_template = Path(r"C:\Users\estahl\projects\SDWAN-api-poc\services\template-engine\templates\doc_v3.jinja2")
+sdwan_template = Path(r"C:\Users\estahl\projects\SDWAN-api-poc\services\template-engine\templates\doc_v4.jinja2")
 
 loaded_data = {} 
 
@@ -54,7 +54,7 @@ def fromgui():
         if not loaded_data:
             return "Woops, your initial POST request didn't work."
         else:
-            return loaded_data 
+            return loaded_data['raw_data'] 
  
 
  

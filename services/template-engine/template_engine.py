@@ -8,13 +8,13 @@ import requests
 import re 
 import yaml
 
-# Template paths for diff engines... we won't actually need to supply tehse fo rnow 
-# 6/24: but flask will use these to figure out which template to load !
+# Template paths for diff engines
+# (Functionality to be added later.) 
 '''
 file_directory = Path('debug_output/')
 panos_template = Path('panos_doc.jinja2')
 '''
-sdwan_template = Path('doc_v3.jinja2')
+sdwan_template = Path('doc_v4.jinja2')
 # 6/23 API: This has to receive the API data 
 # 6/23 API: AND IT WILL SEND THE DOCUMENT OUTLINE AS A LIST (like JSON, but a python object)
 

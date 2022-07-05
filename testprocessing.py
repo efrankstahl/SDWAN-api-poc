@@ -72,7 +72,7 @@ doc_outline = create_doc_outline(full_data, sdwan_template.read_file())
 print(type(doc_outline))
 
 print(doc_outline[0])
-print("Full data is datatype ", type(full_data))
+print("Doc_outine is datatype ", type(doc_outline))
 # 6/30 : already created this file of doc_outltine output.
 #file = open('filled_template.txt', 'w')
 #file.write(doc_outline)

@@ -44,9 +44,8 @@ def generate_test():
             # perform final replacements
             # doc_obj.replace_m_values(replacement_texts)
             print(doc_obj.get_url())
-            return "Hello World"
-    if request.method == 'GET':  
-        return doc_outline
+        return "Hello World"
+   
 if __name__ == "__main__":
     app.run()
 

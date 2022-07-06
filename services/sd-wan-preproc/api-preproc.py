@@ -1,62 +1,83 @@
 
 import json 
-from flask import Flask, request 
-from pathlib import Path
+from flask import Flask, request, jsonify
+# these functions will be incorporated when refactoring 
 from preprocessorSDWAN import load_data, parse_data
 import requests 
- 
+import yaml
+
 app = Flask(__name__)
+  
 
-# 7/1:  The payload from the api POST is going to contain the extra info, like product
-#     ! The actual config data will be sent as an uploaded file.  
+ALLOWED_EXTENSIONS = set(['yaml', 'yml'])
 
-# 6/28: Will import an API file upload eventually, but will have to figure out how from scratch. 
-yaml_raw = Path(r"C:\Users\estahl\projects\SDWAN-api-poc\newraw_data.yaml") 
-sdwan_template = Path(r"C:\Users\estahl\projects\SDWAN-api-poc\services\template-engine\templates\doc_v4.jinja2")
+# needed?  
+payload2 = {}
 
-loaded_data = {} 
-
+ 
+def allowed_file(filename):
+    # 7/5:  This is just going to return the file extension.
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 @app.route('/')
 def home():
     return "Proof of Concept for Swiftdoc preproc/template engine."
- 
-# This function will take all that "file upload" malarkey, then process
+  
 @app.route('/from-gui', methods=['GET','POST'])
-def fromgui():
-    if request.method == 'POST':
-        # PLACEHOLDER.  This data will be sent by the gui as a file upload.
-        loaded_data['raw_data'] = load_data(yaml_raw)
-        # Below data is supplied by gui as a payload
-        loaded_data['product'] = request.form['product'] 
-        loaded_data['replacement_values'] = request.form['replacement_values']
-        loaded_data['gdoc_type'] = request.form['gdoc_type']
+def fromgui(): 
+    # 7/6 : see what happens when we save request.json as Ruben suggested
+    # 7/6, later:  We can't, because it's not being sent from the gui as a json file 
+    if request.method == 'POST': 
+        if 'file' not in request.files:
+            resp = jsonify({'Failure': 'No "File" key in the request'})
+            resp.status_code = 400
+            return resp     
+        # Attempt to grab the yaml file
+        file = request.files['file'] 
+        if file.filename == '':
+            resp = jsonify({'Failure': 'No file selected for uploading.'})
+            resp.status_code = 400
+            return resp
+        if file and allowed_file(file.filename): 
+            # 7/5 8:31pm:  This is probably where the actual problem lies. 
+            file = request.files['file']
+            raw_yaml_data = file.stream.read()
+            file.stream.close()
+            #  could add the filename for pizazz
+            resp = jsonify({'Success': 'File successfully read'})
+            resp.status_code = 201
 
-        # 6:29: going to exclude this for now to remove unncessary compelxity 
-        # parsed_data = parse_data(loaded_data['raw_data']) 
 
-        # Anton 6/28:  the data that gets 'returned' is used by the next method in the process. 
-        #               ? how to write it so that 'return' delivers that?
-    
-        # 7/1 - what about the non-config data?  does loaded_data process a dict ok?
-        payload = loaded_data
+            processed_yaml = yaml.safe_load(raw_yaml_data)
 
-        # 6/29: processing the post request (or whatever) from the GUI
-        # now triggers a post request to the template engine
-        url = 'http://127.0.0.1:8000/from-preprocessor'
+            payload2['yaml_data'] = processed_yaml
+            payload2['product'] = request.form['product']
+            
+            # reminder that you need to make the boolean value here a string, actually, before you send.
+            if request.form['gdoc_type'] == True:
+                payload2['gdoc_type'] == "True"
+            else:
+                payload2['gdoc_type'] = "False"
+             
+            url = 'http://127.0.0.1:8000/from-preprocessor'
+                 
+     
+            # 7-5: json=payload added. !! actual sending is as a json string file.
+            requests.post(url, json=payload2)
+            return payload2['gdoc_type']
+        else: 
+            resp = jsonify({'Failure': 'File type must be yaml/yaml'})
+            resp.status_code = 400
+            return resp 
 
-         
-        
-    
-        requests.post(url, data=payload)
-        return "Data submitted."
-    if request.method == 'GET': 
-        # 6/30: Temporary for bugchecking.
-        if not loaded_data:
+# 7/6: This can likely be removed, but keeping it for bugfixing purposes for now.
+    if request.method == 'GET':
+        exists = 'payload2' in locals() or 'payload2' in globals()
+
+        if not exists:
             return "Woops, your initial POST request didn't work."
         else:
-            return loaded_data['raw_data'] 
- 
+            return payload2
 
  
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=5000)
+    app.run(host='127.0.0.1', port=5000, debug = True)

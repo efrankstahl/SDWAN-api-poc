@@ -1,6 +1,5 @@
-# Just the functions we need to set up the preprocessy bit
-# this is the pre-processor for SD-WAN, specifically
-
+# 7/6: I am currenly not using any of these functions in the api, so... 
+# unless I refactor some stuff into functions, this isn't needed. 
 from dataclasses import dataclass
 from unipath import Path
 from jinja2 import Template
@@ -9,18 +8,10 @@ import jinja2
 import re 
 import requests
 import yaml
+ 
 
-# TEMPORARY 
-# from template_engine import create_doc_outline
+# 7/5 this needs to be changed for use in the new preprocessor. 
 
-# eventually this will have to receive an API 
-# 6/24 for now we gotta make it take a single yaml file instead of going thru a directory.
-# 6/24 ! we can make a sendgui.py that sends the yaml file thru api 
-yaml_raw = Path(r"C:\Users\estahl\projects\SDWAN-api-poc\newraw_data.yaml")
-
-
-# open the yaml file and make it a dictionary
-# eventually i'll be receiving yaml from a GUI/API 
 def load_data(yaml_file):
     with open(yaml_file, "r") as file:
         loaded_data = yaml.load(file, yaml.FullLoader)
@@ -31,7 +22,7 @@ def parse_data(loaded_data):
     return loaded_data
 
 # this is a python dictionary 
-full_data = load_data(yaml_raw)
+# full_data = load_data(yaml_raw)
  
 # 6/29: Is this breaking something? We'll have to change this anyhow.
 # Sends processed data to the API 

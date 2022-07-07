@@ -1,3 +1,0 @@
-6/30: chief concern is the format in which the gui is going to do a file upload over api
-	is that going to be compatible with the jija template?
-	because the current jinja template works fine with just the yaml file. 

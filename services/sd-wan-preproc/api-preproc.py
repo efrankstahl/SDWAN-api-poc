@@ -1,17 +1,20 @@
 
 import json 
 from flask import Flask, request, jsonify
-# these functions will be incorporated when refactoring 
-from preprocessorSDWAN import load_data, parse_data
+# Will potentially incorporate the below when refactoring:   
+# from preprocessorSDWAN import load_data, parse_data
+import logging
 import requests 
+import sys
 import yaml
 
+
 app = Flask(__name__)
-  
+logging.basicConfig(level=logging.DEBUG, stream=sys.stdout, format='%(asctime)s -  %(levelname)s -  %(message)s')  
 
 ALLOWED_EXTENSIONS = set(['yaml', 'yml'])
 
-# needed?  
+# Test if necessary.  
 payload2 = {}
 
  
@@ -22,62 +25,56 @@ def allowed_file(filename):
 def home():
     return "Proof of Concept for Swiftdoc preproc/template engine."
   
-@app.route('/from-gui', methods=['GET','POST'])
+@app.route('/from-gui', methods=['POST'])
 def fromgui(): 
     # 7/6 : see what happens when we save request.json as Ruben suggested
     # 7/6, later:  We can't, because it's not being sent from the gui as a json file 
     if request.method == 'POST': 
         if 'file' not in request.files:
-            resp = jsonify({'Failure': 'No "File" key in the request'})
+            resp = jsonify({'Failure': 'Request does not contain "File" key.'})
             resp.status_code = 400
             return resp     
-        # Attempt to grab the yaml file
+        # Attempt to grab the yaml file:
         file = request.files['file'] 
         if file.filename == '':
             resp = jsonify({'Failure': 'No file selected for uploading.'})
             resp.status_code = 400
             return resp
+        # Success case:
         if file and allowed_file(file.filename): 
-            # 7/5 8:31pm:  This is probably where the actual problem lies. 
             file = request.files['file']
             raw_yaml_data = file.stream.read()
             file.stream.close()
-            #  could add the filename for pizazz
+            #  Add filename? 
             resp = jsonify({'Success': 'File successfully read'})
             resp.status_code = 201
 
 
             processed_yaml = yaml.safe_load(raw_yaml_data)
 
+            # Craft post request for template engine.
             payload2['yaml_data'] = processed_yaml
             payload2['product'] = request.form['product']
-            
-            # reminder that you need to make the boolean value here a string, actually, before you send.
+            payload2['doc_name'] = request.form['doc_name']
+            payload2['init_id'] = request.form['init_id']
+            # Convert Boolean to string before sending.
             if request.form['gdoc_type'] == True:
                 payload2['gdoc_type'] == "True"
             else:
                 payload2['gdoc_type'] = "False"
+
+
              
             url = 'http://127.0.0.1:8000/from-preprocessor'
                  
      
-            # 7-5: json=payload added. !! actual sending is as a json string file.
+            # Send payload as json.
             requests.post(url, json=payload2)
-            return payload2['gdoc_type']
+            return resp
         else: 
             resp = jsonify({'Failure': 'File type must be yaml/yaml'})
             resp.status_code = 400
             return resp 
-
-# 7/6: This can likely be removed, but keeping it for bugfixing purposes for now.
-    if request.method == 'GET':
-        exists = 'payload2' in locals() or 'payload2' in globals()
-
-        if not exists:
-            return "Woops, your initial POST request didn't work."
-        else:
-            return payload2
-
  
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=5000, debug = True)

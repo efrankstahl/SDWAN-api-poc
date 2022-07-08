@@ -1,12 +1,19 @@
 
+import ast
 from dataclasses import dataclass
 from unipath import Path
 import json
 import jinja2
 from jinja2 import Template
+import logging 
 import requests
 import re 
+import sys
 import yaml
+
+
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s -  %(levelname)s -  %(message)s')
+
 
 # Template paths for diff engines
 # (Functionality to be added later.) 
@@ -37,25 +44,15 @@ def j_dumps(raw_text):
         raw_text = str(raw_text)
     json_txt = json.dumps(raw_text)
     return json_txt
+ 
 
-
-# 6/28: so we're not making a get request... it's always posting.  
-# ARE THE FLASK APPS POSTING TO THE NEXT FLASK APP IN THE CHAIN? 
-# THEN WHAT EVEN GOES ON IN THE ACTUAL ENGINES?
-
-
-"""
-url = 'http://127.0.0.1:5000/to-gui'
-
-response = requests.get(url)
-print(response.text)
-"""
 # 6/24: Ruben's function from the video on the 21st:
 # (the flask api WILL CALL THIS FUNCTION)
 # 'template str' being --we'll define the paths to a bunch fo template strings at the top of the file!
 def create_doc_outline(data, template_str):
     template = jinja2.Template(template_str, trim_blocks=True)
-    doc_outline = template.render(data=data, j_dumps=j_dumps, j_loads=json.loads, TableCount=TableCount, re=re)
+    initial_outline = template.render(data=data, j_dumps=j_dumps, j_loads=json.loads, TableCount=TableCount, re=re)
+    doc_outline = ast.literal_eval(initial_outline)
     return doc_outline 
 
 # oh ho!! in the new version this function will take the result of the api call as input.  

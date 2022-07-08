@@ -5,10 +5,14 @@ from unipath import Path
 from jinja2 import Template
 import json
 import jinja2
+import logging 
 import re 
 import requests
+import sys
 import yaml
- 
+
+
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s -  %(levelname)s -  %(message)s')
 
 # 7/5 this needs to be changed for use in the new preprocessor. 
 
@@ -29,12 +33,14 @@ def parse_data(loaded_data):
 #url = 'http://127.0.0.1:5000/to-template'
 
 # 6/28 REMOVE PROBABLY
+'''
 payload = {
     'raw_data': full_data,
     'product': 'SD-WAN',
     'replacement_values': '[ PLACEHOLDER FOR THE DOC ENGINE ]',
     'gdoc_type': True
 }
+'''
 
 #response = requests.post(url, data=payload)
  

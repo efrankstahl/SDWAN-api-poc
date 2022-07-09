@@ -1,0 +1,12 @@
+2022-07-09 11:47:11,764 - [ SDWAN Preprocessor ] -  CRITICAL : POST request received.
+2022-07-09 11:48:44,436 - [ SDWAN Preprocessor ] -  CRITICAL : POST request received.
+2022-07-09 11:49:18,024 - [ SDWAN Preprocessor ] -  CRITICAL : POST request received.
+2022-07-09 11:50:34,959 - [ SDWAN Preprocessor ] -  CRITICAL : POST request received.
+2022-07-09 11:51:09,567 - [ SDWAN Preprocessor ] -  CRITICAL : POST request received.
+2022-07-09 11:56:06,694 - [ SDWAN Preprocessor ] -  CRITICAL : POST request received.
+2022-07-09 12:00:24,564 - [ SDWAN Preprocessor ] -  CRITICAL : POST request received.
+2022-07-09 12:01:39,607 - [ SDWAN Preprocessor ] -  INFO : POST request received.
+2022-07-09 12:02:07,590 - [ SDWAN Preprocessor ] -  INFO : POST request received.
+2022-07-09 12:02:26,567 - [ SDWAN Preprocessor ] -  INFO : POST request received.
+2022-07-09 12:03:22,735 - [ SDWAN Preprocessor ] -  INFO : POST request received.
+2022-07-09 12:03:22,740 - [ SDWAN Preprocessor ] -  INFO : yaml file succesfully received.

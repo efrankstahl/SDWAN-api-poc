@@ -1,8 +1,8 @@
 # when it gets to templating engine you wanna dELETE THE RAW DATA FROM THE OBJECt, 
 # AND ONLY SEND THE DOC_OUTLINE, just .pop it off. 
+# 7/8:  
 
-
-# 7/7:  Keeping all libraries for now until refactoring is complete.
+# TODO: Remove unnecessary libraries.
 import json 
 from flask import Flask, jsonify, request 
 import jinja2
@@ -17,13 +17,27 @@ from unipath import Path
 import yaml
 
 app = Flask(__name__)
-logging.basicConfig(level=logging.DEBUG, stream=sys.stdout, format='%(asctime)s -  %(levelname)s -  %(message)s')
-logging.disable(logging.DEBUG)
 
-# 7/7: Change path before final version. 
-sdwan_template = Path(r"C:\Users\estahl\projects\SDWAN-api-poc\services\template-engine\templates\doc_v4.jinja2")
-# panos_template = Path()
-# vmseries_template = Path()
+""" Logger initialization. """
+tag = {'app_name': 'Templating Engine'} 
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+file_handler = logging.FileHandler(r'services\template-engine\template-engine-log.txt')
+stdout_handler = logging.StreamHandler(sys.stdout)
+formatter = logging.Formatter('%(asctime)s - [ %(app_name)s ] -  %(levelname)s : %(message)s')
+file_handler.setFormatter(formatter)
+stdout_handler.setFormatter(formatter)
+logger.addHandler(file_handler)
+# Disable stdout printout in live version?
+logger.addHandler(stdout_handler)
+
+logger = logging.LoggerAdapter(logger, tag)
+""" End logger initialization. """
+# 7/8: TODO: Confirm relative path is functional. 
+sdwan_template = Path(r"services\template-engine\templates\doc_v4.jinja2")
+""" Additional template paths for later use"""
+# panos_template = Path('placeholder')
+# vmseries_template = Path('placeholder')
 
  
 # TODO: Check if necessary.
@@ -34,66 +48,70 @@ doc_outline = []
 def homepage():
     return "Template engine homepage."
 
-@app.route('/from-preprocessor', methods=['GET','POST']) 
-# 7/7: create doc outline. 
+@app.route('/templating-engine', methods=['GET','POST']) 
 def frompreprocessor():
     if request.method == 'POST':
-        # 7/7:  Work starts here. 
         # 7/7:  evidently, request.json saves the json content as a dictionary object? cool cool cool.
-        raw_incoming = request.json
-        # 7/7: TODO: check what the product is and select template.
+        raw_incoming = request.json 
 
         # List of allowed products.
         product_list = ['sdwan', 'panos', 'vmseries']
         if raw_incoming['product'].lower() not in product_list:
             resp = jsonify({'Failure': 'Unknown product type.'})
             resp.status_code = 400
-            logging.error('Product type {} not in allowed product list.'.format(raw_incoming['product']))
+            logger.error('Product type {} not in allowed product list.'.format(raw_incoming['product']))
             return resp
         # TODO: Check for missing 'product' field.
         elif raw_incoming['product'] == 'sdwan':
             template_path = sdwan_template
-            logging.info("[ SD-WAN template selected ]")
+            logger.info("SD-WAN template selected")
+        
+        else:
+            resp = jsonify({'Failure': 'Unknown error when reading product type.'})
+            logger.error("Unknown exception occurred when parsing product type.")
+            return resp    
         # FUTURE: add different assignments for product types. 
         '''
         elif raw_incoming['product'].lower() == 'panos':
             template_path = panos_template
         elif raw_incoming['product'].lower() == 'vmseries':
             template_path = vmseries_template
-
-        else:
-            resp = jsonify({'Failure': 'Unknown error when reading product type.'})
-            logging.error("Unknown exception occurred when parsing product type.")
-            return resp
         '''
-        logging.info("passing request.json: {}".format(type(request.json)))
+
+
+        logger.info("passing request.json: {}".format(type(request.json)))
         # request.data is the raw bytestream?
         # request.json returns a DICTIONARY, not a string? 
 
-        # 7/7:  raw_incoming['product'] returns successfully
-        logging.debug('print raw_incoming[product]: {}'.format(raw_incoming['product']))
+        logger.debug('print raw_incoming[product]: {}'.format(raw_incoming['product']))
  
         
         # 7/6: Do we still have to use json.loads on create_doc outline?
         
-        # TODO: Get create_doc_outline to work! 
-
-        doc_outline = create_doc_outline(raw_incoming['yaml_data'], template_path.read_file())
+        doc_outline = create_doc_outline(raw_incoming['parsed_data'], template_path.read_file())
          
         # confirm that format of doc_outline is a list: 
-        logging.info('Type of doc_outline should be a list: {}'.format(type(doc_outline))) 
-        logging.debug('contents of doc_outline: {}'.format(doc_outline))
+        logger.info('Type of doc_outline should be a list: {}'.format(type(doc_outline))) 
+        logger.debug('contents of doc_outline: {}'.format(doc_outline))
         # 7/7 TODO: remove the non-config data before you send it on. 
+        '''
+        payload = {
+            'doc_outline': doc_outline,
+            'doc_name': doc_name,
+            'gdoc_selected': gdoc_selected,
+            'init_id': init_id,
+            'replacement_values': replacement_values
+        }
+
+        response = requests.post('http://127.0.0.1:8000/doc-engine', json=payload)
+        print("A POST request containing the document outline has been sent.")
+        return response.content, response.status_code
+'''
         resp = 'Placeholder.'
         return resp  
 
-    # TODO: Remove. 
-    if request.method == 'GET':
-        if not raw_incoming:
-            return "Haven't received any post data from the preprocessor yet..."
-        else:
-            return raw_incoming
+
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=8000, debug=True)
+    app.run(host='127.0.0.1', port=8000)
 
  

@@ -5,7 +5,7 @@ import sys
 logging.basicConfig(level=logging.DEBUG, stream=sys.stdout,format='%(asctime)s -  %(levelname)s -  %(message)s')
 logging.disable(logging.DEBUG)
 
-url = "http://127.0.0.1:5000/from-gui"
+url = "http://127.0.0.1:5000/sdwan-preprocessor"
 	
 
  
@@ -19,7 +19,7 @@ payload={
 	'gdoc_type': True,
 	'product': 'sdwan',
 	'doc_name': 'Blessed Test Doc that Definitely Works',
-	'init_id': 'currently_placeholder_nonsense'
+	'init_id': 12342311
 
     # I don't think I put the yaml file here. it's arriving separately from the payload, via files.
 }

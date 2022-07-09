@@ -13,7 +13,7 @@
             "values": [[{{j_dumps('\n'.join(data.enterprise_prefixes))}}]]
         }
     },
-{# START Stack Policies #}
+{# START Stack Policies #}  
     {"HEADING_2": {"text": "Stack Policies"}},
     {"paragraph": {"text": "his section describes the Application Policies to be used for standardization of the SD-WAN deployment. Prisma SD-WAN uses mapping of third-party services and Prisma SD-WAN data centers to allow flexibility when creating network policy rules, while accounting for uniqueness across sites."}},
     {"HEADING_3": {"text": "Path Policies"}},
@@ -23,7 +23,7 @@
         "table": {
             "headers": ["Path Policy Stack", "Path Policy Set(s)", "Default Path Policy Set"],
             "col_widths": [120],
-            "head_caption": {"text":  "Table {{table_count.next()}} – Path Policy Stack(s)"},
+            "head_caption": {"text":  "Table {{table_count.next()}} – Path Policy S tack(s)"},
               "values":
               [
                   {% for s_name, s_value in data.path.path_policy_stacks.items() %}

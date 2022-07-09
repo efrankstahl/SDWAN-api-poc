@@ -1,0 +1,33 @@
+2022-07-09 11:47:14,153 - [ Templating Engine ] -  INFO : SD-WAN template selected
+2022-07-09 11:47:14,154 - [ Templating Engine ] -  INFO : passing request.json: <class 'dict'>
+2022-07-09 11:47:14,162 - [ Templating Engine ] -  INFO : Type of doc_outline should be a list: <class 'list'>
+2022-07-09 11:48:46,823 - [ Templating Engine ] -  INFO : SD-WAN template selected
+2022-07-09 11:48:46,824 - [ Templating Engine ] -  INFO : passing request.json: <class 'dict'>
+2022-07-09 11:48:46,830 - [ Templating Engine ] -  INFO : Type of doc_outline should be a list: <class 'list'>
+2022-07-09 11:49:20,428 - [ Templating Engine ] -  INFO : SD-WAN template selected
+2022-07-09 11:49:20,430 - [ Templating Engine ] -  INFO : passing request.json: <class 'dict'>
+2022-07-09 11:49:20,437 - [ Templating Engine ] -  INFO : Type of doc_outline should be a list: <class 'list'>
+2022-07-09 11:50:37,448 - [ Templating Engine ] -  INFO : SD-WAN template selected
+2022-07-09 11:50:37,449 - [ Templating Engine ] -  INFO : passing request.json: <class 'dict'>
+2022-07-09 11:50:37,458 - [ Templating Engine ] -  INFO : Type of doc_outline should be a list: <class 'list'>
+2022-07-09 11:51:12,038 - [ Templating Engine ] -  INFO : SD-WAN template selected
+2022-07-09 11:51:12,039 - [ Templating Engine ] -  INFO : passing request.json: <class 'dict'>
+2022-07-09 11:51:12,045 - [ Templating Engine ] -  INFO : Type of doc_outline should be a list: <class 'list'>
+2022-07-09 11:56:09,256 - [ Templating Engine ] -  INFO : SD-WAN template selected
+2022-07-09 11:56:09,257 - [ Templating Engine ] -  INFO : passing request.json: <class 'dict'>
+2022-07-09 11:56:09,262 - [ Templating Engine ] -  INFO : Type of doc_outline should be a list: <class 'list'>
+2022-07-09 12:00:26,930 - [ Templating Engine ] -  INFO : SD-WAN template selected
+2022-07-09 12:00:26,930 - [ Templating Engine ] -  INFO : passing request.json: <class 'dict'>
+2022-07-09 12:00:26,938 - [ Templating Engine ] -  INFO : Type of doc_outline should be a list: <class 'list'>
+2022-07-09 12:01:41,948 - [ Templating Engine ] -  INFO : SD-WAN template selected
+2022-07-09 12:01:41,949 - [ Templating Engine ] -  INFO : passing request.json: <class 'dict'>
+2022-07-09 12:01:41,955 - [ Templating Engine ] -  INFO : Type of doc_outline should be a list: <class 'list'>
+2022-07-09 12:02:10,046 - [ Templating Engine ] -  INFO : SD-WAN template selected
+2022-07-09 12:02:10,047 - [ Templating Engine ] -  INFO : passing request.json: <class 'dict'>
+2022-07-09 12:02:10,057 - [ Templating Engine ] -  INFO : Type of doc_outline should be a list: <class 'list'>
+2022-07-09 12:02:29,141 - [ Templating Engine ] -  INFO : SD-WAN template selected
+2022-07-09 12:02:29,142 - [ Templating Engine ] -  INFO : passing request.json: <class 'dict'>
+2022-07-09 12:02:29,148 - [ Templating Engine ] -  INFO : Type of doc_outline should be a list: <class 'list'>
+2022-07-09 12:03:25,134 - [ Templating Engine ] -  INFO : SD-WAN template selected
+2022-07-09 12:03:25,136 - [ Templating Engine ] -  INFO : passing request.json: <class 'dict'>
+2022-07-09 12:03:25,140 - [ Templating Engine ] -  INFO : Type of doc_outline should be a list: <class 'list'>
